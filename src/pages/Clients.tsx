@@ -5,115 +5,135 @@ import { Quote, Star, Award, Users, Globe, TrendingUp, Shield, Clock, Zap, Targe
 export default function Clients() {
   const clients = [
     { 
-      name: 'Tata Group', 
-      sector: 'Conglomerate', 
-      projects: 25,
-      logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=120&fit=crop&crop=center',
-      revenue: '$128B',
-      established: '1868'
-    },
-    { 
-      name: 'Reliance Industries', 
-      sector: 'Oil & Gas', 
+      name: 'Samsung India', 
+      sector: 'Electronics Manufacturing', 
       projects: 18,
-      logo: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=200&h=120&fit=crop&crop=center',
-      revenue: '$104B',
-      established: '1973'
+      logo: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=200&h=120&fit=crop&crop=center',
+      revenue: '$72B',
+      established: '1995'
     },
     { 
-      name: 'Larsen & Toubro', 
-      sector: 'Engineering & Construction', 
-      projects: 32,
-      logo: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=200&h=120&fit=crop&crop=center',
-      revenue: '$23B',
-      established: '1938'
+      name: 'Kia Motors India', 
+      sector: 'Automotive Manufacturing', 
+      projects: 12,
+      logo: 'https://images.unsplash.com/photo-1605559421013-3b2e3b5d7b3d?w=200&h=120&fit=crop&crop=center',
+      revenue: '$58B',
+      established: '2017'
     },
     { 
-      name: 'Mahindra Group', 
-      sector: 'Automotive & Aerospace', 
-      projects: 15,
-      logo: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=200&h=120&fit=crop&crop=center',
-      revenue: '$20B',
-      established: '1945'
+      name: 'FLSmidth', 
+      sector: 'Engineering & Manufacturing', 
+      projects: 8,
+      logo: 'https://images.unsplash.com/photo-1593642634524-b40b5baae6bb?w=200&h=120&fit=crop&crop=center',
+      revenue: '$2.5B',
+      established: '1882'
     },
     { 
-      name: 'Adani Group', 
-      sector: 'Infrastructure & Energy', 
-      projects: 22,
-      logo: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=200&h=120&fit=crop&crop=center',
-      revenue: '$15B',
+      name: 'HAEWON Engineering', 
+      sector: 'Industrial Engineering', 
+      projects: 6,
+      logo: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200&h=120&fit=crop&crop=center',
+      revenue: '$850M',
+      established: '1992'
+    },
+    { 
+      name: 'JUNGDO Engineering', 
+      sector: 'Construction & Engineering', 
+      projects: 5,
+      logo: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=200&h=120&fit=crop&crop=center',
+      revenue: '$1.2B',
+      established: '1985'
+    },
+    { 
+      name: 'SAMHO Construction', 
+      sector: 'Industrial Construction', 
+      projects: 4,
+      logo: 'https://images.unsplash.com/photo-1581093450021-4a7360e9a7a4?w=200&h=120&fit=crop&crop=center',
+      revenue: '$950M',
+      established: '1990'
+    },
+    { 
+      name: 'DAEMYOUNG Engineering', 
+      sector: 'Mechanical Engineering', 
+      projects: 7,
+      logo: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=200&h=120&fit=crop&crop=center',
+      revenue: '$780M',
       established: '1988'
     },
     { 
-      name: 'Bajaj Group', 
-      sector: 'Financial Services', 
-      projects: 12,
-      logo: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=200&h=120&fit=crop&crop=center',
-      revenue: '$12B',
-      established: '1926'
-    },
-    { 
-      name: 'Godrej Group', 
-      sector: 'Consumer & Industrial', 
-      projects: 16,
-      logo: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=200&h=120&fit=crop&crop=center',
-      revenue: '$8B',
-      established: '1897'
-    },
-    { 
-      name: 'Birla Group', 
-      sector: 'Diversified Conglomerate', 
-      projects: 20,
-      logo: 'https://images.unsplash.com/photo-1560472355-536de3962603?w=200&h=120&fit=crop&crop=center',
-      revenue: '$65B',
-      established: '1857'
+      name: 'HYOJIN Engineering', 
+      sector: 'Industrial Services', 
+      projects: 5,
+      logo: 'https://images.unsplash.com/photo-1581093057305-3ecb60a6a5d2?w=200&h=120&fit=crop&crop=center',
+      revenue: '$650M',
+      established: '1995'
     }
   ];
 
   const testimonials = [
     {
-      name: 'Rajesh Mehta',
-      position: 'Executive Director - Projects',
-      company: 'Tata Steel',
-      quote: 'GIC delivered our automation project ahead of schedule with exceptional quality. Their technical expertise and project management skills are outstanding. The ROI exceeded our expectations by 40%.',
+      name: 'Rajiv Sharma',
+      position: 'Plant Manager',
+      company: 'Samsung Display Center',
+      quote: 'GIC has consistently delivered high-quality electrical and mechanical support for our operations. Their team is responsive, technically sound, and always meets deadlines with precision.',
       rating: 5,
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face',
-      projectValue: '$15M',
+      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop&crop=face',
+      projectValue: '$18M',
+      completionTime: '10 months'
+    },
+    {
+      name: 'Arjun Patel',
+      position: 'Operations Head',
+      company: 'Kia Motors India',
+      quote: 'We trust GIC for their all-in-one approach — skilled manpower, technical execution, and commitment to safety. They bring valuable support to every phase of our projects.',
+      rating: 5,
+      image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=120&h=120&fit=crop&crop=face',
+      projectValue: '$12M',
       completionTime: '8 months'
     },
     {
-      name: 'Priya Sharma',
-      position: 'General Manager - Infrastructure',
-      company: 'Reliance Industries',
-      quote: 'Working with Global India Corporation has been a game-changer for our infrastructure development. They consistently exceed expectations and deliver world-class solutions.',
+      name: 'Michael Schneider',
+      position: 'Project Director',
+      company: 'FLSmidth',
+      quote: 'The demolition project was handled with care, compliance, and zero disruption to ongoing site activities. GIC\'s execution was smooth, timely, and cost-effective.',
       rating: 5,
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b72bfa76?w=120&h=120&fit=crop&crop=face',
-      projectValue: '$25M',
-      completionTime: '12 months'
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face',
+      projectValue: '$8M',
+      completionTime: '6 months'
     },
     {
-      name: 'Amit Kumar',
-      position: 'Chief Operations Officer',
-      company: 'Larsen & Toubro',
-      quote: 'The level of professionalism and technical competence demonstrated by GIC is remarkable. They are our trusted engineering partner for critical infrastructure projects.',
+      name: 'Kim Jae-Hoon',
+      position: 'Site Manager',
+      company: 'HAEWON Engineering',
+      quote: 'We\'ve partnered with GIC across multiple sites for HVAC and civil work. Their professionalism, safety standards, and trained workforce have made them a reliable extension of our project team.',
       rating: 5,
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&h=120&fit=crop&crop=face',
-      projectValue: '$35M',
-      completionTime: '14 months'
+      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&h=120&fit=crop&crop=face',
+      projectValue: '$6M',
+      completionTime: '5 months'
+    },
+    {
+      name: 'Priya Nair',
+      position: 'IT Infrastructure Lead',
+      company: 'NEW VISION Fire Safety',
+      quote: 'From manpower supply to IT infrastructure setup, GIC has proven to be a dependable partner. Their flexibility and ability to scale based on our site needs is impressive.',
+      rating: 5,
+      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop&crop=face',
+      projectValue: '$4M',
+      completionTime: '4 months'
     }
   ];
 
   const stats = [
-    { icon: Users, number: '100+', label: 'Fortune 500 Clients', color: 'from-blue-500 to-blue-700', bgColor: 'bg-blue-50' },
-    { icon: Award, number: '500+', label: 'Projects Delivered', color: 'from-emerald-500 to-emerald-700', bgColor: 'bg-emerald-50' },
-    { icon: Globe, number: '25+', label: 'Countries Served', color: 'from-purple-500 to-purple-700', bgColor: 'bg-purple-50' },
-    { icon: TrendingUp, number: '98.5%', label: 'Client Satisfaction', color: 'from-orange-500 to-orange-700', bgColor: 'bg-orange-50' }
+    { icon: Users, number: '50+', label: 'Industrial Clients', color: 'from-blue-500 to-blue-700', bgColor: 'bg-blue-50' },
+    { icon: Award, number: '120+', label: 'Projects Delivered', color: 'from-emerald-500 to-emerald-700', bgColor: 'bg-emerald-50' },
+    { icon: Globe, number: '15+', label: 'Cities Served', color: 'from-purple-500 to-purple-700', bgColor: 'bg-purple-50' },
+    { icon: TrendingUp, number: '98%', label: 'Client Satisfaction', color: 'from-orange-500 to-orange-700', bgColor: 'bg-orange-50' }
   ];
 
   const achievements = [
     {
       title: 'Industry Recognition',
-      description: 'Winner of "Engineering Excellence Award 2024" by CII',
+      description: 'Winner of "Engineering Excellence Award" by CII',
       icon: Award,
       gradient: 'from-yellow-400 to-orange-500'
     },
@@ -125,13 +145,13 @@ export default function Clients() {
     },
     {
       title: 'Innovation Leader',
-      description: 'Patent holder for 15+ engineering innovations',
+      description: 'Patent holder for engineering innovations',
       icon: Zap,
       gradient: 'from-purple-400 to-pink-500'
     },
     {
       title: 'Delivery Excellence',
-      description: '95% projects delivered ahead of schedule',
+      description: '90% projects delivered ahead of schedule',
       icon: Clock,
       gradient: 'from-green-400 to-teal-500'
     }
@@ -156,7 +176,7 @@ export default function Clients() {
               transition={{ delay: 0.2 }}
               className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent"
             >
-              Our Esteemed Clients
+              Our Trusted Clients
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -164,7 +184,7 @@ export default function Clients() {
               transition={{ delay: 0.4 }}
               className="text-xl md:text-2xl max-w-4xl mx-auto opacity-90 leading-relaxed"
             >
-              Partnering with India's most prestigious corporations to deliver engineering excellence and drive innovation across industries
+              Partnering with leading industrial corporations and global engineering firms to deliver multi-disciplinary engineering solutions
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -176,7 +196,7 @@ export default function Clients() {
                 Trusted Since 2016
               </span>
               <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium">
-                ₹2500+ Cr Projects Delivered
+                ₹500+ Cr Projects Delivered
               </span>
             </motion.div>
           </motion.div>
@@ -193,10 +213,10 @@ export default function Clients() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Numbers That Speak Excellence
+              Our Impact in Numbers
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our track record demonstrates consistent delivery and client satisfaction across diverse industry verticals
+              Delivering consistent results across diverse industrial engineering domains
             </p>
           </motion.div>
 
@@ -238,10 +258,10 @@ export default function Clients() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-bold text-gray-900 mb-6">
-              Trusted by Industry Titans
+              Our Valued Clients
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              From century-old conglomerates to modern industrial leaders, we've earned the trust of India's most respected corporations through consistent delivery of engineering excellence
+              Trusted by leading industrial corporations and global engineering firms for multi-disciplinary engineering solutions
             </p>
           </motion.div>
 
@@ -279,7 +299,7 @@ export default function Clients() {
                   <div className="flex justify-between items-center mb-4">
                     <div>
                       <div className="text-2xl font-bold text-blue-600">{client.projects}</div>
-                      <div className="text-xs text-gray-500">Active Projects</div>
+                      <div className="text-xs text-gray-500">Completed Projects</div>
                     </div>
                     <div className="text-right">
                       <div className="text-sm font-semibold text-gray-900">{client.revenue}</div>
@@ -289,7 +309,7 @@ export default function Clients() {
                   
                   <div className="flex items-center text-xs text-green-600 bg-green-50 px-3 py-2 rounded-lg">
                     <CheckCircle className="h-3 w-3 mr-2" />
-                    Active Partnership
+                    Ongoing Partnership
                   </div>
                 </div>
               </motion.div>
@@ -308,10 +328,10 @@ export default function Clients() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Industry Recognition & Achievements
+              Our Credentials
             </h2>
             <p className="text-xl text-gray-600">
-              Our commitment to excellence has been recognized by leading industry bodies
+              Recognized for excellence in industrial engineering and contracting services
             </p>
           </motion.div>
 
@@ -353,7 +373,7 @@ export default function Clients() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl font-bold mb-6">
-              Voices of Success
+              Client Testimonials
             </h2>
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
               Hear directly from our partners about their experience working with Global India Corporation
@@ -361,7 +381,7 @@ export default function Clients() {
           </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
+            {testimonials.slice(0, 3).map((testimonial, index) => (
               <motion.div
                 key={testimonial.name}
                 initial={{ opacity: 0, y: 30 }}
@@ -414,6 +434,43 @@ export default function Clients() {
               </motion.div>
             ))}
           </div>
+
+          {/* Additional testimonials in a row */}
+          <div className="grid md:grid-cols-2 gap-8 mt-12">
+            {testimonials.slice(3).map((testimonial, index) => (
+              <motion.div
+                key={testimonial.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 shadow-lg"
+              >
+                <div className="flex items-start gap-4">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full object-cover border-2 border-white/30"
+                  />
+                  <div>
+                    <div className="flex items-center gap-1 mb-2">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
+                    <p className="text-white/90 text-sm leading-relaxed mb-3">
+                      "{testimonial.quote}"
+                    </p>
+                    <div>
+                      <h4 className="font-bold text-white text-sm">{testimonial.name}</h4>
+                      <p className="text-blue-200 text-xs">{testimonial.position}, {testimonial.company}</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -426,10 +483,10 @@ export default function Clients() {
           className="max-w-6xl mx-auto text-center px-4 sm:px-6 lg:px-8"
         >
           <h2 className="text-5xl font-bold mb-6">
-            Ready to Join Our Success Story?
+            Ready to Partner With Us?
           </h2>
           <p className="text-xl mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed">
-            Partner with us to transform your engineering challenges into competitive advantages. Let's build the future together.
+            Join our growing list of satisfied clients and experience the GIC difference in engineering excellence and manpower solutions.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -458,7 +515,7 @@ export default function Clients() {
             </div>
             <div>
               <div className="text-3xl font-bold mb-2">₹500Cr+</div>
-              <div className="text-blue-100">Annual Turnover</div>
+              <div className="text-blue-100">Projects Delivered</div>
             </div>
             <div>
               <div className="text-3xl font-bold mb-2">8+</div>

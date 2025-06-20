@@ -14,78 +14,78 @@ export default function About() {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   const milestones = [
-    { year: '2016', event: 'Founded with vision to transform infrastructure', icon: Target, details: 'Started with 25 engineers and a mission to revolutionize Indian infrastructure' },
-    { year: '2017', event: 'First major metro project completion', icon: Building2, details: 'Successfully delivered Delhi Metro Line expansion project' },
-    { year: '2018', event: 'Expanded to industrial automation sector', icon: Zap, details: 'Pioneered smart factory solutions for manufacturing giants' },
-    { year: '2019', event: 'Launched R&D Innovation Center', icon: Cog, details: 'Established state-of-the-art research facility in Bangalore' },
-    { year: '2020', event: 'Achieved ISO 9001:2015 certification', icon: Award, details: 'Recognized for world-class quality management systems' },
-    { year: '2021', event: 'Digital transformation initiatives', icon: Globe, details: 'Launched AI-powered project management platforms' },
-    { year: '2022', event: 'Launched technology services division', icon: TrendingUp, details: 'Expanded into IoT, AI, and digital infrastructure solutions' },
-    { year: '2023', event: 'Sustainable infrastructure focus', icon: Shield, details: 'Committed to carbon-neutral construction by 2030' },
-    { year: '2024', event: 'Serving 20+ cities across India', icon: Users, details: 'Expanded operations with 5000+ skilled professionals' }
+    { year: '2016', event: 'Founded with vision to transform infrastructure', icon: Target, details: 'Started with a mission to revolutionize industrial infrastructure services' },
+    { year: '2017', event: 'First major industrial project completion', icon: Building2, details: 'Successfully delivered electrical works for Samsung Display Center' },
+    { year: '2018', event: 'Expanded to mechanical and HVAC services', icon: Zap, details: 'Pioneered industrial HVAC solutions for manufacturing plants' },
+    { year: '2019', event: 'Established Korean vendor partnerships', icon: Cog, details: 'Became trusted contractor for multiple Korean engineering firms' },
+    { year: '2020', event: 'Launched IT & Networking division', icon: Globe, details: 'Expanded services to include structured network cabling solutions' },
+    { year: '2021', event: 'Achieved major client milestones', icon: Award, details: 'Recognized for excellence in service by Samsung and Kia Motors' },
+    { year: '2022', event: 'Expanded manpower services', icon: TrendingUp, details: 'Increased skilled workforce deployment across industries' },
+    { year: '2023', event: 'Enhanced safety protocols', icon: Shield, details: 'Implemented advanced safety measures across all projects' },
+    { year: '2024', event: 'Serving 20+ industrial clients', icon: Users, details: 'Expanded operations with 500+ skilled professionals' }
   ];
 
   const leaders = [
     {
       name: 'Rajesh Kumar',
-      position: 'Chairman & CEO',
-      experience: '25+ years in infrastructure development',
-      education: 'IIT Delhi, Harvard Business School',
-      achievement: 'Led $2B+ infrastructure projects',
+      position: 'Founder & CEO',
+      experience: '15+ years in industrial contracting',
+      education: 'Engineering Graduate, Project Management Certified',
+      achievement: 'Led 200+ industrial projects',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop'
     },
     {
       name: 'Priya Sharma',
-      position: 'Chief Technology Officer',
-      experience: '20+ years in industrial automation',
-      education: 'IIT Bombay, Stanford University',
-      achievement: 'Pioneer in smart infrastructure solutions',
+      position: 'Operations Director',
+      experience: '12+ years in industrial services',
+      education: 'Mechanical Engineering, MBA',
+      achievement: 'Expert in Korean work methodologies',
       image: 'https://images.unsplash.com/photo-1494790108755-2616b72bfa76?w=400&h=400&fit=crop'
     },
     {
       name: 'Amit Patel',
-      position: 'Chief Operations Officer',
-      experience: '18+ years in project management',
-      education: 'IIT Madras, MIT Sloan',
-      achievement: 'Delivered 200+ projects on time',
+      position: 'Electrical Services Head',
+      experience: '10+ years in industrial electrical',
+      education: 'Electrical Engineering',
+      achievement: 'Certified in high-voltage systems',
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop'
     },
     {
-      name: 'Dr. Sunita Reddy',
-      position: 'Chief Innovation Officer',
-      experience: '15+ years in R&D',
-      education: 'IISc Bangalore, MIT',
-      achievement: '50+ patents in infrastructure tech',
+      name: 'Sunita Reddy',
+      position: 'HR & Manpower Director',
+      experience: '8+ years in skilled workforce',
+      education: 'Human Resources Management',
+      achievement: 'Trained 1000+ technicians',
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop'
     }
   ];
 
   const innovations = [
     {
-      title: 'Smart Infrastructure Solutions',
-      description: 'AI-powered systems for predictive maintenance and real-time monitoring',
+      title: 'Industrial Electrical Solutions',
+      description: 'HT/LT cable laying, transformer installation, and high mast lighting systems for industrial plants',
       icon: Cog,
       image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop'
     },
     {
-      title: 'Sustainable Construction',
-      description: 'Green building technologies reducing carbon footprint by 40%',
+      title: 'HVAC Systems',
+      description: 'Dust collection, exhaust systems, chiller units, and environmental control solutions',
       icon: Shield,
       image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop'
     },
     {
-      title: 'Digital Twin Technology',
-      description: 'Virtual replicas for optimized project planning and execution',
+      title: 'Industrial Networking',
+      description: 'Structured network cabling, server installation, and smart surveillance systems',
       icon: Globe,
       image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop'
     }
   ];
 
   const achievements = [
-    { number: '500+', label: 'Projects Completed', icon: CheckCircle },
-    { number: '5000+', label: 'Team Members', icon: Users },
-    { number: '20+', label: 'Cities Served', icon: Globe },
-    { number: '₹50B+', label: 'Project Value', icon: TrendingUp }
+    { number: '200+', label: 'Projects Completed', icon: CheckCircle },
+    { number: '500+', label: 'Team Members', icon: Users },
+    { number: '20+', label: 'Industrial Clients', icon: Globe },
+    { number: '₹50Cr+', label: 'Project Value', icon: TrendingUp }
   ];
 
   const values = [
@@ -96,28 +96,28 @@ export default function About() {
     },
     {
       icon: Users,
-      title: 'People First',
-      description: 'Our team\'s growth, well-being, and professional development are fundamental to our organizational success.'
+      title: 'Skilled Workforce',
+      description: 'Our team of engineers, electricians, and technicians are trained to handle industrial challenges.'
     },
     {
       icon: Zap,
-      title: 'Innovation',
-      description: 'Embracing cutting-edge technology and innovative solutions to solve the most complex engineering challenges.'
+      title: 'Precision',
+      description: 'Structured planning and quality checks ensure projects are completed with accuracy and efficiency.'
     },
     {
       icon: Globe,
-      title: 'Sustainable Future',
-      description: 'Building with environmental responsibility and contributing to India\'s sustainable development goals.'
+      title: 'Korean Methodology',
+      description: 'Blending Indian and Korean work practices for superior project execution.'
     },
     {
       icon: Eye,
-      title: 'Transparency',
-      description: 'Maintaining open communication and ethical practices in all our business relationships and operations.'
+      title: 'Flexibility',
+      description: 'Tailored services to fit each client\'s technical needs, timeline, and operational goals.'
     },
     {
       icon: Heart,
-      title: 'Community Impact',
-      description: 'Creating lasting positive impact on communities through thoughtful infrastructure development.'
+      title: 'Everything is Possible',
+      description: 'Our mindset that drives every service we offer, from electrical systems to plant engineering.'
     }
   ];
 
@@ -129,7 +129,7 @@ export default function About() {
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop" 
-            alt="Modern infrastructure"
+            alt="Industrial infrastructure"
             className="w-full h-full object-cover"
           />
         </div>
@@ -146,7 +146,7 @@ export default function About() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            Building Tomorrow
+            Industrial Excellence
           </motion.h1>
           <motion.p 
             className="text-xl md:text-2xl mb-12 opacity-90 leading-relaxed"
@@ -154,7 +154,7 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
           >
-            Engineering excellence meets innovation to create infrastructure that transforms lives and powers India's growth story.
+            Engineering contracting and manpower solutions that power industries with precision, safety, and innovation.
           </motion.p>
           
           <motion.div
@@ -164,7 +164,7 @@ export default function About() {
             transition={{ duration: 1, delay: 1.1 }}
           >
             <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 hover:scale-105">
-              Explore Our Journey
+              Our Services
             </button>
             <button 
               onClick={() => setIsVideoPlaying(true)}
@@ -239,17 +239,17 @@ export default function About() {
                   Our Heritage
                 </div>
                 <h2 className="text-5xl font-bold text-gray-900 leading-tight">
-                  Pioneering India's Infrastructure Revolution
+                  Powering Industrial Growth Since 2016
                 </h2>
                 <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                   <p>
-                    Born in 2016 from a vision to transform India's infrastructure landscape, Global India Corporation has evolved into a powerhouse of engineering excellence and technological innovation.
+                    Global India Corporation (GIC) is a leading multi-disciplinary engineering contracting and manpower supply company, established in 2016. We specialize in Electrical, Mechanical (HVAC), Civil, Demolition, and IT Networking services.
                   </p>
                   <p>
-                    We began with a fundamental belief that exceptional engineering, combined with cutting-edge technology and sustainable practices, could address the most pressing infrastructure challenges facing modern India.
+                    With a strong focus on quality, safety, and timely execution, GIC has earned a reputation for supporting complex engineering requirements with efficiency and professionalism. Our approach blends Indian and Korean-style work methodologies.
                   </p>
                   <p>
-                    Today, we stand as a trusted partner to Fortune 500 companies, government agencies, and emerging businesses, having successfully delivered over 500 projects across 20+ cities with a combined value exceeding ₹50 billion.
+                    We believe that "Everything is Possible" — a mindset that drives every service we offer, from high-voltage electrical systems to structured network infrastructure and plant engineering support.
                   </p>
                 </div>
                 <div className="flex items-center gap-4 pt-4">
@@ -258,7 +258,7 @@ export default function About() {
                       <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 border-2 border-white"></div>
                     ))}
                   </div>
-                  <span className="text-sm text-gray-500">5000+ professionals driving innovation</span>
+                  <span className="text-sm text-gray-500">500+ professionals driving industrial excellence</span>
                 </div>
               </div>
             </motion.div>
@@ -273,7 +273,7 @@ export default function About() {
               <div className="relative">
                 <img
                   src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=600&fit=crop"
-                  alt="Our innovation center"
+                  alt="Our industrial team"
                   className="rounded-2xl shadow-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent rounded-2xl"></div>
@@ -287,8 +287,8 @@ export default function About() {
                   <div className="flex items-center gap-2">
                     <Award className="h-6 w-6 text-yellow-500" />
                     <div>
-                      <div className="text-sm font-bold">ISO Certified</div>
-                      <div className="text-xs text-gray-500">Quality Excellence</div>
+                      <div className="text-sm font-bold">Trusted Partner</div>
+                      <div className="text-xs text-gray-500">Samsung, Kia Motors</div>
                     </div>
                   </div>
                 </motion.div>
@@ -298,8 +298,8 @@ export default function About() {
                   animate={{ y: [0, 10, 0] }}
                   transition={{ duration: 3, repeat: Infinity, delay: 1 }}
                 >
-                  <div className="text-2xl font-bold">500+</div>
-                  <div className="text-sm opacity-90">Projects Delivered</div>
+                  <div className="text-2xl font-bold">200+</div>
+                  <div className="text-sm opacity-90">Industrial Projects</div>
                 </motion.div>
               </div>
             </motion.div>
@@ -317,11 +317,11 @@ export default function About() {
             className="text-center mb-16"
           >
             <div className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-semibold mb-6">
-              Innovation at Core
+              Our Services
             </div>
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">Pioneering the Future</h2>
+            <h2 className="text-5xl font-bold text-gray-900 mb-6">Comprehensive Industrial Solutions</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our innovation labs are constantly developing breakthrough technologies that redefine what's possible in infrastructure and engineering.
+              We provide a complete range of engineering and technical contracting services tailored for industrial needs.
             </p>
           </motion.div>
 
@@ -366,9 +366,9 @@ export default function About() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-5xl font-bold mb-6">Our Journey of Excellence</h2>
+            <h2 className="text-5xl font-bold mb-6">Our Industrial Journey</h2>
             <p className="text-xl opacity-80 max-w-3xl mx-auto">
-              Every milestone represents our commitment to pushing boundaries and achieving the extraordinary.
+              Every milestone represents our commitment to industrial excellence and client satisfaction.
             </p>
           </motion.div>
 
@@ -421,9 +421,9 @@ export default function About() {
             <div className="inline-block bg-blue-100 text-blue-800 px-6 py-2 rounded-full text-sm font-semibold mb-6">
               Leadership Excellence
             </div>
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">Visionary Leaders</h2>
+            <h2 className="text-5xl font-bold text-gray-900 mb-6">Our Expert Team</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Meet the exceptional minds driving our innovation and success across every dimension of our business.
+              Meet the professionals driving our industrial contracting services and client success.
             </p>
           </motion.div>
 
@@ -469,8 +469,6 @@ export default function About() {
       <section className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
         <div className="absolute inset-0">
          <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2260%22%20height=%2260%22%20viewBox=%220%200%2060%2060%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg%20fill=%22none%22%20fill-rule=%22evenodd%22%3E%3Cg%20fill=%22%239C92AC%22%20fill-opacity=%220.05%22%3E%3Ccircle%20cx=%2230%22%20cy=%2230%22%20r=%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
-
-
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -482,7 +480,7 @@ export default function About() {
           >
             <h2 className="text-5xl font-bold mb-6">Our Core Values</h2>
             <p className="text-xl opacity-80 max-w-3xl mx-auto">
-              The fundamental principles that guide every decision, action, and innovation in our journey toward excellence.
+              The principles that guide every decision and action in our industrial services.
             </p>
           </motion.div>
 
@@ -517,16 +515,16 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6">Ready to Build the Future Together?</h2>
+            <h2 className="text-4xl font-bold mb-6">Ready to Power Your Industrial Projects?</h2>
             <p className="text-xl opacity-90 mb-8 leading-relaxed">
-              Join us in creating infrastructure that not only meets today's needs but anticipates tomorrow's possibilities.
+              Partner with us for engineering contracting and manpower solutions that deliver results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-                Partner With Us
+                Get a Quote
               </button>
               <button className="border-2 border-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300">
-                View Our Projects
+                Contact Our Team
               </button>
             </div>
           </motion.div>

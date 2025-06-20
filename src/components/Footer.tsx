@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
-  Globe, 
+  Building,
   Mail, 
   Phone, 
   MapPin, 
@@ -11,7 +11,12 @@ import {
   Instagram,
   Youtube,
   ArrowUp,
-  Heart
+  Heart,
+  Zap,
+  Cog,
+  HardHat,
+  Cpu,
+  Users
 } from 'lucide-react';
 
 export default function Footer() {
@@ -22,31 +27,31 @@ export default function Footer() {
   const footerLinks = {
     company: [
       { name: 'About Us', href: '/about' },
+      { name: 'Why GIC', href: '/why-gic' },
       { name: 'Our Team', href: '/about#team' },
       { name: 'Careers', href: '/careers' },
-      { name: 'News & Media', href: '/news' },
-      { name: 'Investor Relations', href: '/investors' }
+      { name: 'News & Media', href: '/news' }
     ],
     services: [
-      { name: 'Web Development', href: '/services#web' },
-      { name: 'Mobile Apps', href: '/services#mobile' },
-      { name: 'Cloud Solutions', href: '/services#cloud' },
-      { name: 'AI & Analytics', href: '/services#ai' },
-      { name: 'Consulting', href: '/services#consulting' }
+      { name: 'Electrical Services', href: '/services/electrical', icon: Zap },
+      { name: 'Mechanical & HVAC', href: '/services/mechanical', icon: Cog },
+      { name: 'Civil & Demolition', href: '/services/civil', icon: HardHat },
+      { name: 'IT & Networking', href: '/services/it', icon: Cpu },
+      { name: 'Manpower Supply', href: '/services/manpower', icon: Users }
     ],
-    resources: [
-      { name: 'Blog', href: '/blog' },
-      { name: 'Case Studies', href: '/projects' },
-      { name: 'Documentation', href: '/docs' },
-      { name: 'Support Center', href: '/support' },
-      { name: 'Privacy Policy', href: '/privacy' }
+    projects: [
+      { name: 'Samsung Display Center', href: '/projects#samsung' },
+      { name: 'Kia Motors India', href: '/projects#kia' },
+      { name: 'FLSmidth Plant', href: '/projects#flsmidth' },
+      { name: 'HAEWON Engineering', href: '/projects#haewon' },
+      { name: 'All Projects', href: '/projects' }
     ],
     legal: [
       { name: 'Terms of Service', href: '/terms' },
       { name: 'Privacy Policy', href: '/privacy' },
-      { name: 'Cookie Policy', href: '/cookies' },
-      { name: 'GDPR Compliance', href: '/gdpr' },
-      { name: 'Accessibility', href: '/accessibility' }
+      { name: 'Safety Policy', href: '/safety' },
+      { name: 'Quality Standards', href: '/quality' },
+      { name: 'Contact Us', href: '/contact' }
     ]
   };
 
@@ -112,7 +117,7 @@ export default function Footer() {
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <Globe className="w-7 h-7 text-white" />
+                    <Building className="w-7 h-7 text-white" />
                   </motion.div>
                   <motion.div
                     className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-gray-900"
@@ -124,29 +129,29 @@ export default function Footer() {
                   <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                     Global India Corporation
                   </h3>
-                  <p className="text-gray-400 text-sm">Innovating Tomorrow</p>
+                  <p className="text-gray-400 text-sm">Engineering Excellence Since 2016</p>
                 </div>
               </div>
               
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Empowering businesses worldwide with cutting-edge technology solutions. 
-                We transform ideas into digital reality through innovation, expertise, and 
-                unwavering commitment to excellence.
+                Pioneering multi-disciplinary engineering solutions with technical expertise, 
+                safety-first approach, and world-class execution to transform industrial 
+                and commercial projects.
               </p>
 
               {/* Contact Info */}
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-gray-300">
                   <Mail className="w-5 h-5 text-blue-400" />
-                  <span>contact@globalindia.com</span>
+                  <span>globalindiacorps@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300">
                   <Phone className="w-5 h-5 text-blue-400" />
-                  <span>+91 98765 43210</span>
+                  <span>+91-9047642156</span>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-300">
                   <MapPin className="w-5 h-5 text-blue-400" />
-                  <span>Mumbai, Maharashtra, India</span>
+                  <span>Kancheepuram, Tamil Nadu, India</span>
                 </div>
               </div>
             </motion.div>
@@ -159,7 +164,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <Link 
                       to={link.href}
-                      className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm"
+                      className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm flex items-center gap-2"
                     >
                       {link.name}
                     </Link>
@@ -175,8 +180,9 @@ export default function Footer() {
                   <li key={link.name}>
                     <Link 
                       to={link.href}
-                      className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm"
+                      className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm flex items-center gap-2"
                     >
+                      <link.icon className="w-4 h-4" />
                       {link.name}
                     </Link>
                   </li>
@@ -185,9 +191,9 @@ export default function Footer() {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <h4 className="text-lg font-semibold mb-6 text-white">Resources</h4>
+              <h4 className="text-lg font-semibold mb-6 text-white">Projects</h4>
               <ul className="space-y-3">
-                {footerLinks.resources.map((link) => (
+                {footerLinks.projects.map((link) => (
                   <li key={link.name}>
                     <Link 
                       to={link.href}
@@ -208,24 +214,24 @@ export default function Footer() {
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
               <div>
-                <h4 className="text-xl font-semibold mb-2 text-white">Stay Updated</h4>
+                <h4 className="text-xl font-semibold mb-2 text-white">Get Project Consultation</h4>
                 <p className="text-gray-300">
-                  Subscribe to our newsletter for the latest insights and updates.
+                  Contact us for engineering solutions tailored to your requirements.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 bg-gray-800 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:from-blue-700 hover:to-purple-700"
+                <Link
+                  to="/contact"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:from-blue-700 hover:to-purple-700 text-center"
                 >
-                  Subscribe
-                </motion.button>
+                  Request a Quote
+                </Link>
+                <Link
+                  to="/contact"
+                  className="bg-gray-800 border border-gray-700 text-white px-6 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-700 text-center"
+                >
+                  Contact Our Team
+                </Link>
               </div>
             </div>
           </motion.div>

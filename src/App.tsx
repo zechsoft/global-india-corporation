@@ -24,6 +24,7 @@ function App() {
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        
         <Footer />
         <FloatingContact />
       </div>

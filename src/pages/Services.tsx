@@ -1,186 +1,167 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Building, Cog, Zap, ChevronRight, CheckCircle, Wrench, Truck, Factory, Globe, Shield, Lightbulb } from 'lucide-react';
+import { 
+  Zap, 
+  HardHat, 
+  Cpu, 
+  Users, 
+  Wrench, 
+  Hammer, 
+  ChevronRight, 
+  CheckCircle,
+  Phone,
+  Mail,
+  MapPin
+} from 'lucide-react';
 
 export default function Services() {
   const [activeTab, setActiveTab] = useState(0);
 
   const services = [
     {
-      title: 'Infrastructure Development',
-      icon: Building,
-      description: 'Comprehensive infrastructure solutions for modern India',
-      features: [
-        'Smart City Development',
-        'Transportation Networks',
-        'Water Management Systems',
-        'Urban Planning & Design',
-        'Sustainable Construction',
-        'Project Management',
-        'Metro Rail Systems',
-        'Highways & Expressways',
-        'Airports & Ports',
-        'Power Transmission',
-        'Water Treatment Plants',
-        'Waste Management Systems'
-      ],
-      projects: ['Delhi Metro Phase 4', 'Mumbai Coastal Road', 'Navi Mumbai Airport', 'Chennai Metro Extension', 'Hyderabad Metro', 'Pune Metro'],
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop',
-      stats: { projects: '500+', cities: '100+', experience: '25 Years' }
-    },
-    {
-      title: 'Industrial Automation',
-      icon: Cog,
-      description: 'Advanced automation solutions for manufacturing excellence',
-      features: [
-        'Process Automation',
-        'Quality Control Systems',
-        'Robotics Integration',
-        'IoT Implementation',
-        'Predictive Maintenance',
-        'Efficiency Optimization',
-        'SCADA Systems',
-        'PLC Programming',
-        'HMI Development',
-        'Industrial IoT',
-        'Digital Twin Technology',
-        'AI-Powered Analytics'
-      ],
-      projects: ['Tata Motors Automation', 'Reliance Petrochemicals', 'Mahindra Manufacturing', 'Bajaj Auto Plant', 'Hero MotoCorp', 'Maruti Suzuki'],
-      image: 'https://images.unsplash.com/photo-1565514020179-026b92b84bb6?w=600&h=400&fit=crop',
-      stats: { efficiency: '40% Increase', downtime: '60% Reduction', clients: '200+' }
-    },
-    {
-      title: 'Technology Services',
+      title: 'Electrical Services',
       icon: Zap,
-      description: 'Digital transformation and IT consulting solutions',
+      description: 'Reliable electrical contracting for industrial and commercial projects',
       features: [
-        'System Integration',
-        'Data Analytics',
-        'Cloud Solutions',
-        'Cybersecurity',
-        'Digital Transformation',
-        'Technical Support',
-        'Enterprise Software',
-        'Mobile Applications',
-        'Artificial Intelligence',
-        'Machine Learning',
-        'Blockchain Solutions',
-        'DevOps Services'
-      ],
-      projects: ['HDFC Bank Digital Platform', 'ICICI Tech Upgrade', 'SBI Core Banking', 'Infosys Collaboration', 'TCS Partnership', 'Wipro Alliance'],
-      image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&h=400&fit=crop',
-      stats: { deployments: '1000+', uptime: '99.9%', support: '24/7' }
-    },
-    {
-      title: 'Heavy Engineering',
-      icon: Wrench,
-      description: 'Manufacturing and assembly of heavy machinery and equipment',
-      features: [
-        'Equipment Manufacturing',
-        'Structural Fabrication',
-        'Heavy Machinery',
-        'Pressure Vessels',
-        'Industrial Boilers',
-        'Custom Engineering',
-        'Turbine Manufacturing',
-        'Generator Assembly',
-        'Conveyor Systems',
-        'Material Handling',
-        'Plant Erection',
-        'Commissioning Services'
-      ],
-      projects: ['NTPC Power Plant', 'BHEL Turbines', 'Adani Power Equipment', 'JSW Steel Plant', 'Tata Steel Machinery', 'SAIL Equipment'],
-      image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop',
-      stats: { capacity: '50,000 MT', precision: '±0.1mm', delivery: '100% On-time' }
-    },
-    {
-      title: 'Defense & Aerospace',
-      icon: Shield,
-      description: 'Strategic defense and aerospace engineering solutions',
-      features: [
-        'Defense Systems',
-        'Aerospace Components',
-        'Missile Technology',
-        'Radar Systems',
-        'Naval Engineering',
-        'Military Vehicles',
-        'Avionics Systems',
-        'Satellite Technology',
-        'Communication Systems',
-        'Surveillance Equipment',
-        'Maintenance Services',
-        'Training Solutions'
-      ],
-      projects: ['HAL Collaboration', 'DRDO Partnership', 'BEL Systems', 'Indian Navy Projects', 'IAF Modernization', 'ISRO Support'],
-      image: 'https://images.unsplash.com/photo-1614728894747-a83421916094?w=600&h=400&fit=crop',
-      stats: { contracts: '100+', security: 'Top Secret', certification: 'IS 9001' }
-    },
-    {
-      title: 'Energy & Power',
-      icon: Lightbulb,
-      description: 'Renewable energy and power generation solutions',
-      features: [
-        'Solar Power Plants',
-        'Wind Energy Systems',
-        'Hydroelectric Projects',
-        'Thermal Power Plants',
-        'Nuclear Engineering',
-        'Grid Integration',
-        'Energy Storage',
-        'Smart Grid Solutions',
+        'HT/LT Cable Laying & Termination',
+        'Transformer Installation',
+        'High Mast & Street Lighting',
+        'Overhead Line Erection',
+        'Panel Installation & Wiring',
+        'Electrical Equipment Testing & Maintenance',
+        'Switchgear Installation',
+        'Earthing Systems',
+        'Cable Tray Installation',
+        'Lighting Control Systems',
         'Power Distribution',
-        'Transmission Lines',
-        'Substations',
-        'Energy Efficiency'
+        'Preventive Maintenance'
       ],
-      projects: ['Adani Solar Park', 'Tata Power Wind', 'NTPC Thermal', 'NHPC Hydro', 'Nuclear Power Corp', 'Suzlon Wind Farms'],
-      image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=400&fit=crop',
-      stats: { capacity: '10,000 MW', renewable: '70%', efficiency: '95%' }
+      projects: [
+        'Samsung Display Center - Noida', 
+        'Kia Motors India - Penukonda',
+        'HAEWON Engineering Projects',
+        'JUNGDO Engineering Sites',
+        'FLSmidth Plant Electrical',
+        'Samsung India Electronics'
+      ],
+      image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600&h=400&fit=crop',
+      stats: { projects: '120+', clients: '25+', safety: 'Zero Incidents' }
     },
     {
-      title: 'Transportation',
-      icon: Truck,
-      description: 'Comprehensive transportation and logistics solutions',
+      title: 'Mechanical & HVAC',
+      icon: Wrench,
+      description: 'Expert mechanical services with HVAC specialization',
       features: [
-        'Railway Systems',
-        'Metro Projects',
-        'Highway Construction',
-        'Port Development',
-        'Airport Infrastructure',
-        'Logistics Solutions',
-        'Traffic Management',
-        'Intelligent Transport',
-        'Rolling Stock',
-        'Signaling Systems',
-        'Maintenance Facilities',
-        'Operations Management'
+        'Equipment & Machinery Installation',
+        'Sheet Metal Fabrication',
+        'Industrial Piping Support',
+        'Structural Metal Work',
+        'Dust Collection & Exhaust Systems',
+        'Chiller Systems & Ductless Units',
+        'Rooftop & Split AC Systems',
+        'Environmental Chambers',
+        'Refrigeration Piping',
+        'HVAC Control Systems',
+        'Ventilation Systems',
+        'Preventive Maintenance'
       ],
-      projects: ['Indian Railways', 'Delhi Airport T3', 'JNPT Port', 'Bangalore Metro', 'Kochi Metro', 'Lucknow Metro'],
-      image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&h=400&fit=crop',
-      stats: { routes: '5000+ km', passengers: '10M Daily', connectivity: '500+ Cities' }
+      projects: [
+        'Kia Motors HVAC Installation',
+        'SAMHO Construction Projects',
+        'DAEMYOUNG Engineering Sites',
+        'HYOJIN Engineering Works',
+        'NEW VISION Fire Safety',
+        'Industrial Plant HVAC'
+      ],
+      image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&h=400&fit=crop',
+      stats: { systems: '80+', efficiency: '40% Improved', clients: '18+' }
     },
     {
-      title: 'Process Industries',
-      icon: Factory,
-      description: 'Specialized solutions for process and chemical industries',
+      title: 'Civil & Demolition',
+      icon: Hammer,
+      description: 'Civil construction and controlled demolition solutions',
       features: [
-        'Chemical Processing',
-        'Pharmaceutical Plants',
-        'Food Processing',
-        'Oil & Gas Refineries',
-        'Petrochemicals',
-        'Fertilizer Plants',
-        'Process Optimization',
-        'Safety Systems',
-        'Environmental Solutions',
-        'Quality Control',
-        'Maintenance Services',
-        'Regulatory Compliance'
+        'Flooring, Brickwork & Masonry',
+        'Foundation Work & Site Preparation',
+        'Trenches, Drains & Repair Structures',
+        'Safe Dismantling of Structures',
+        'Concrete Breaking & Debris Removal',
+        'Controlled Industrial Demolition',
+        'Structural Repairs',
+        'Industrial Flooring',
+        'Wall Construction',
+        'Site Clearance',
+        'Waste Management',
+        'Safety Compliance'
       ],
-      projects: ['Reliance Jamnagar', 'ONGC Refineries', 'IOC Facilities', 'GAIL Pipelines', 'Coromandel Fertilizers', 'UPL Chemicals'],
-      image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=600&h=400&fit=crop',
-      stats: { plants: '200+', safety: 'Zero Incidents', compliance: '100%' }
+      projects: [
+        'Industrial Plant Demolition',
+        'Factory Civil Works',
+        'HAEWON Engineering Civil',
+        'JUNGDO Construction Sites',
+        'Plant Infrastructure Upgrades',
+        'Commercial Space Preparation'
+      ],
+      image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop',
+      stats: { projects: '65+', safety: '100%', clients: '15+' }
+    },
+    {
+      title: 'IT & Networking',
+      icon: Cpu,
+      description: 'Secure and scalable IT infrastructure solutions',
+      features: [
+        'Structured Network Cabling',
+        'Server & Network Rack Installation',
+        'Power & Cooling Management',
+        'Smart Surveillance Systems',
+        'City Fiber & Data Solutions',
+        'On-site Technical Support',
+        'Data Center Setup',
+        'Wireless Networks',
+        'CCTV Installation',
+        'Access Control Systems',
+        'Network Security',
+        'System Integration'
+      ],
+      projects: [
+        'Samsung IT Infrastructure',
+        'Corporate Network Installations',
+        'Data Center Cabling',
+        'Industrial Network Solutions',
+        'Smart Building Systems',
+        'Commercial IT Setup'
+      ],
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
+      stats: { installations: '90+', uptime: '99.9%', clients: '20+' }
+    },
+    {
+      title: 'Manpower Supply',
+      icon: Users,
+      description: 'Skilled manpower across engineering disciplines',
+      features: [
+        'Engineers & Supervisors',
+        'Electricians & Fitters',
+        'Welders & Riggers',
+        'Painters & Helpers',
+        'HVAC Technicians',
+        'Network Operators',
+        'Civil Workers',
+        'Demolition Experts',
+        'Mechanical Technicians',
+        'IT Support Staff',
+        'Safety Officers',
+        'Project Managers'
+      ],
+      projects: [
+        'Samsung Vendor Support',
+        'Kia Motors Manpower',
+        'FLSmidth Deployment',
+        'HAEWON Engineering Staff',
+        'JUNGDO Engineering Team',
+        'Industrial Plant Workforce'
+      ],
+      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop',
+      stats: { personnel: '500+', clients: '30+', retention: '95%' }
     }
   ];
 
@@ -191,8 +172,8 @@ export default function Services() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1080&fit=crop"
-            alt="Engineering Excellence"
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop"
+            alt="GIC Engineering Services"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/80 to-indigo-900/90"></div>
@@ -211,7 +192,7 @@ export default function Services() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              Engineering Excellence
+              GIC Engineering Services
             </motion.h1>
             <motion.p 
               className="text-xl md:text-2xl max-w-4xl mx-auto opacity-90 mb-8"
@@ -219,7 +200,7 @@ export default function Services() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              Comprehensive engineering solutions designed to build the future of India through innovation, technology, and sustainable development
+              Multi-disciplinary engineering contracting and manpower solutions since 2016, delivering quality, safety, and innovation
             </motion.p>
             <motion.div
               className="flex flex-wrap justify-center gap-8 text-sm md:text-base"
@@ -228,20 +209,20 @@ export default function Services() {
               transition={{ delay: 0.6 }}
             >
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-yellow-400">25+</div>
-                <div className="opacity-90">Years Experience</div>
+                <div className="text-2xl md:text-3xl font-bold text-yellow-400">2016</div>
+                <div className="opacity-90">Established</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-yellow-400">1000+</div>
-                <div className="opacity-90">Projects Completed</div>
+                <div className="text-2xl md:text-3xl font-bold text-yellow-400">500+</div>
+                <div className="opacity-90">Skilled Personnel</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-yellow-400">50+</div>
-                <div className="opacity-90">Cities Served</div>
+                <div className="text-2xl md:text-3xl font-bold text-yellow-400">30+</div>
+                <div className="opacity-90">Clients Served</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-yellow-400">100+</div>
-                <div className="opacity-90">Countries Presence</div>
+                <div className="text-2xl md:text-3xl font-bold text-yellow-400">100%</div>
+                <div className="opacity-90">Safety Record</div>
               </div>
             </motion.div>
           </motion.div>
@@ -320,7 +301,7 @@ export default function Services() {
 
                   {/* Features Grid */}
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-6">Key Capabilities</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-6">Key Services</h3>
                     <div className="grid md:grid-cols-2 gap-4">
                       {services[activeTab].features.map((feature, index) => (
                         <motion.div
@@ -339,7 +320,7 @@ export default function Services() {
 
                   {/* Example Projects */}
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-6">Major Projects</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-6">Completed Projects</h3>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {services[activeTab].projects.map((project, index) => (
                         <motion.div
@@ -361,6 +342,81 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Clients Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Esteemed Clients</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Trusted by leading organizations across multiple industries
+            </p>
+          </motion.div>
+
+          {/* Client Logos - Replace with actual client logos */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            {['Samsung', 'Kia Motors', 'FLSmidth', 'HAEWON', 'JUNGDO', 'DAEMYOUNG'].map((client, index) => (
+              <motion.div
+                key={client}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white p-6 rounded-lg shadow-md flex items-center justify-center h-32"
+              >
+                <span className="text-2xl font-bold text-gray-700">{client}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-blue-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl font-bold mb-4">Client Testimonials</h2>
+            <p className="text-lg opacity-90 max-w-3xl mx-auto">
+              What our clients say about working with GIC
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              "GIC has consistently delivered high-quality electrical and mechanical support for our operations. Their team is responsive, technically sound, and always meets deadlines with precision.",
+              "We've partnered with GIC across multiple sites for HVAC and civil work. Their professionalism, safety standards, and trained workforce have made them a reliable extension of our project team.",
+              "From manpower supply to IT infrastructure setup, GIC has proven to be a dependable partner. Their flexibility and ability to scale based on our site needs is impressive."
+            ].map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-blue-700 p-8 rounded-lg"
+              >
+                <div className="mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400">★</span>
+                  ))}
+                </div>
+                <p className="mb-6 italic">"{testimonial}"</p>
+                <div className="font-semibold">— Major Client</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-blue-900 text-white">
         <motion.div
@@ -370,15 +426,29 @@ export default function Services() {
           className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8"
         >
           <h2 className="text-4xl font-bold mb-6">
-            Ready to Start Your Project?
+            Ready to Discuss Your Project?
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Let's discuss how our engineering expertise can bring your vision to life
+            Contact GIC for reliable engineering solutions and skilled manpower support
           </p>
+          <div className="space-y-4 max-w-md mx-auto">
+            <div className="flex items-center justify-center gap-3">
+              <Phone className="h-6 w-6" />
+              <span>+91-9047642156, +91-9942471687</span>
+            </div>
+            <div className="flex items-center justify-center gap-3">
+              <Mail className="h-6 w-6" />
+              <span>globalindiacorps@gmail.com</span>
+            </div>
+            <div className="flex items-center justify-center gap-3">
+              <MapPin className="h-6 w-6" />
+              <span>3B/1A, Kovalavedu Main Road, Walajabad, Kancheepuram, Tamil Nadu 631604</span>
+            </div>
+          </div>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
+            className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300 mt-8"
           >
             Get Free Consultation
           </motion.button>

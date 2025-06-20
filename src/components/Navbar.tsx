@@ -101,7 +101,7 @@ export default function Navbar() {
               <h1 className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
                 Global India Corporation
               </h1>
-              <p className="text-xs text-gray-500 hidden sm:block">Innovating Tomorrow</p>
+              <p className="text-xs text-gray-500 hidden sm:block">Everything is Possible</p>
             </div>
           </motion.div>
 

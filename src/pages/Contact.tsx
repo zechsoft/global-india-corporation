@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from 'lucide-react';
 
@@ -14,7 +14,7 @@ export default function Contact() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     
@@ -34,41 +34,10 @@ export default function Contact() {
     alert('Thank you for your message! We will get back to you soon.');
   };
 
-  const offices = [
-    {
-      city: 'Mumbai',
-      address: '15th Floor, Corporate Tower, Bandra Kurla Complex, Mumbai - 400051',
-      phone: '+91 22 4567 8900',
-      email: 'mumbai@globalindia.corp',
-      isHeadquarters: true
-    },
-    {
-      city: 'Delhi',
-      address: 'Plot 25, Sector 44, Gurugram, Haryana - 122003',
-      phone: '+91 124 456 7890',
-      email: 'delhi@globalindia.corp',
-      isHeadquarters: false
-    },
-    {
-      city: 'Bangalore',
-      address: 'Tech Park, Electronic City, Bangalore - 560100',
-      phone: '+91 80 2345 6789',
-      email: 'bangalore@globalindia.corp',
-      isHeadquarters: false
-    },
-    {
-      city: 'Chennai',
-      address: 'IT Corridor, Old Mahabalipuram Road, Chennai - 600096',
-      phone: '+91 44 3456 7890',
-      email: 'chennai@globalindia.corp',
-      isHeadquarters: false
-    }
-  ];
-
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="py-20 gradient-bg text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop"
@@ -83,11 +52,14 @@ export default function Contact() {
             className="text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Get in Touch
+              Get in Touch with GIC
             </h1>
             <p className="text-xl md:text-2xl max-w-4xl mx-auto opacity-90">
-              Ready to transform your vision into reality? Let's discuss your next engineering project
+              Ready to transform your industrial vision into reality? Let's discuss your next engineering project
             </p>
+            <div className="mt-8 text-lg">
+              <p className="italic">"Everything is Possible" - Your trusted engineering partner since 2016</p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -172,10 +144,11 @@ export default function Contact() {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                     >
                       <option value="">Select a service</option>
-                      <option value="infrastructure">Infrastructure Development</option>
-                      <option value="automation">Industrial Automation</option>
-                      <option value="technology">Technology Services</option>
-                      <option value="consulting">Engineering Consulting</option>
+                      <option value="electrical">Electrical Services</option>
+                      <option value="mechanical">Mechanical & HVAC</option>
+                      <option value="civil">Civil & Demolition</option>
+                      <option value="it-networking">IT & Networking</option>
+                      <option value="manpower">Manpower Supply</option>
                     </select>
                   </div>
 
@@ -229,16 +202,26 @@ export default function Contact() {
                     <Phone className="h-6 w-6 text-blue-600 mt-1" />
                     <div>
                       <h4 className="font-semibold text-gray-900">Phone</h4>
-                      <p className="text-gray-600">+91 22 4567 8900</p>
-                      <p className="text-gray-600">+91 98765 43210</p>
+                      <p className="text-gray-600">+91-9047642156</p>
+                      <p className="text-gray-600">+91-9942471687</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Mail className="h-6 w-6 text-blue-600 mt-1" />
                     <div>
                       <h4 className="font-semibold text-gray-900">Email</h4>
-                      <p className="text-gray-600">info@globalindia.corp</p>
-                      <p className="text-gray-600">projects@globalindia.corp</p>
+                      <p className="text-gray-600">globalindiacorps@gmail.com</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <MapPin className="h-6 w-6 text-blue-600 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Address</h4>
+                      <p className="text-gray-600">
+                        3B/1A, Kovalavedu Main Road<br/>
+                        Walajabad, Kancheepuram<br/>
+                        Tamil Nadu 631604
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -256,7 +239,7 @@ export default function Contact() {
                 <h4 className="font-bold text-gray-900 mb-3">Quick Connect</h4>
                 <p className="text-gray-600 mb-4">For immediate assistance, reach out via WhatsApp</p>
                 <motion.a
-                  href="https://wa.me/+919876543210"
+                  href="https://wa.me/+919047642156"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
@@ -267,12 +250,20 @@ export default function Contact() {
                   WhatsApp Us
                 </motion.a>
               </div>
+
+              <div className="bg-gradient-to-br from-orange-50 to-red-100 p-6 rounded-lg">
+                <h4 className="font-bold text-gray-900 mb-3">Our Specialty</h4>
+                <p className="text-gray-600 mb-2 font-medium">Indian-Korean Work Methodology</p>
+                <p className="text-sm text-gray-600">
+                  Trusted by Samsung, Kia Motors, and leading Korean engineering firms for precision and reliability.
+                </p>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Office Locations */}
+      {/* Company Overview */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -282,48 +273,108 @@ export default function Contact() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Our Offices
+              About Global India Corporation
             </h2>
-            <p className="text-xl text-gray-600">
-              Find us across major cities in India
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              Leading multi-disciplinary engineering contracting and manpower supply company since 2016
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {offices.map((office, index) => (
-              <motion.div
-                key={office.city}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className={`bg-white p-6 rounded-lg shadow-lg ${office.isHeadquarters ? 'ring-2 ring-blue-200' : ''}`}
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-xl font-bold text-gray-900">{office.city}</h3>
-                  {office.isHeadquarters && (
-                    <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">
-                      Headquarters
-                    </span>
-                  )}
-                </div>
-                
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-blue-600 mt-1" />
-                    <p className="text-gray-600">{office.address}</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Phone className="h-5 w-5 text-blue-600" />
-                    <p className="text-gray-600">{office.phone}</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Mail className="h-5 w-5 text-blue-600" />
-                    <p className="text-gray-600">{office.email}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white p-6 rounded-lg shadow-lg"
+            >
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-blue-600 font-bold text-xl">⚡</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Electrical Services</h3>
+              <p className="text-gray-600">
+                HT/LT cable laying, transformer installation, high mast lighting, and complete electrical solutions.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white p-6 rounded-lg shadow-lg"
+            >
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-green-600 font-bold text-xl">🔧</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Mechanical & HVAC</h3>
+              <p className="text-gray-600">
+                Equipment installation, HVAC systems, dust collection, and industrial piping support.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white p-6 rounded-lg shadow-lg"
+            >
+              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-orange-600 font-bold text-xl">🏗️</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Civil & Demolition</h3>
+              <p className="text-gray-600">
+                Foundation work, structural construction, controlled demolition, and site preparation.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-white p-6 rounded-lg shadow-lg"
+            >
+              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-purple-600 font-bold text-xl">🌐</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">IT & Networking</h3>
+              <p className="text-gray-600">
+                Network cabling, server installation, surveillance systems, and IT infrastructure setup.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="bg-white p-6 rounded-lg shadow-lg"
+            >
+              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-red-600 font-bold text-xl">👷</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Manpower Supply</h3>
+              <p className="text-gray-600">
+                Skilled engineers, technicians, electricians, and specialized workforce for industrial projects.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="bg-white p-6 rounded-lg shadow-lg"
+            >
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-indigo-600 font-bold text-xl">🤝</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Trusted Partner</h3>
+              <p className="text-gray-600">
+                Serving Samsung, Kia Motors, and leading Korean engineering firms with excellence since 2016.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -341,7 +392,7 @@ export default function Contact() {
               Find Us on Map
             </h2>
             <p className="text-xl text-gray-600">
-              Visit our headquarters in Mumbai
+              Visit our office in Walajabad, Kancheepuram
             </p>
           </motion.div>
 
@@ -349,17 +400,28 @@ export default function Contact() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-gray-200 h-96 rounded-lg shadow-lg flex items-center justify-center"
+            className="bg-gradient-to-br from-blue-50 to-indigo-100 h-96 rounded-lg shadow-lg flex items-center justify-center"
           >
             <div className="text-center">
               <MapPin className="h-16 w-16 text-blue-600 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 Global India Corporation
               </h3>
-              <p className="text-gray-600">
-                15th Floor, Corporate Tower<br />
-                Bandra Kurla Complex, Mumbai - 400051
+              <p className="text-gray-600 text-lg">
+                3B/1A, Kovalavedu Main Road<br />
+                Walajabad, Kancheepuram<br />
+                Tamil Nadu 631604
               </p>
+              <div className="mt-6 space-x-4">
+                <span className="inline-flex items-center gap-2 text-blue-600 font-medium">
+                  <Phone className="h-4 w-4" />
+                  +91-9047642156
+                </span>
+                <span className="inline-flex items-center gap-2 text-blue-600 font-medium">
+                  <Mail className="h-4 w-4" />
+                  globalindiacorps@gmail.com
+                </span>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -367,4 +429,3 @@ export default function Contact() {
     </div>
   );
 }
- 
