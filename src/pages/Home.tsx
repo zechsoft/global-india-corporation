@@ -12,7 +12,7 @@ export default function Home() {
       title: 'Electrical Services', 
       icon: Zap, 
       desc: 'Reliable, safe, and efficient electrical contracting services for industrial and commercial projects',
-      features: ['HT/LT Cable Laying & Termination', 'Transformer Installation', 'High Mast & Street Lighting', 'Panel Installation & Wiring'],
+      features: ['HT/LT Cable Laying & Termination', 'Transformer Installation', 'High Mast & Street Lighting', 'Panel Installation & Wiring', 'Electrical Equipment Testing & Maintenance', 'Overhead Line Erection'],
       image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600&h=400&fit=crop',
       projects: '120+',
       growth: '+35%'
@@ -21,7 +21,7 @@ export default function Home() {
       title: 'Mechanical & HVAC', 
       icon: Cog, 
       desc: 'Expert mechanical services with strong specialization in HVAC systems',
-      features: ['Equipment Installation', 'Sheet Metal Fabrication', 'Chiller Systems', 'Dust Collection Systems'],
+      features: ['Equipment & Machinery Installation', 'Sheet Metal Fabrication', 'Industrial Piping Support', 'Chiller Systems & Ductless Units', 'Dust Collection & Exhaust Systems', 'Refrigeration Piping'],
       image: 'https://images.unsplash.com/photo-1601134467661-3d775b999c8b?w=600&h=400&fit=crop',
       projects: '90+',
       growth: '+40%'
@@ -30,7 +30,7 @@ export default function Home() {
       title: 'Civil & Demolition', 
       icon: Building, 
       desc: 'Targeted civil construction support and controlled demolition solutions',
-      features: ['Flooring & Masonry', 'Foundation Work', 'Safe Dismantling', 'Concrete Breaking'],
+      features: ['Flooring & Masonry', 'Foundation Work', 'Safe Dismantling', 'Concrete Breaking', 'Trenches & Drains', 'Controlled Industrial Demolition'],
       image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=400&fit=crop',
       projects: '75+',
       growth: '+30%'
@@ -39,7 +39,7 @@ export default function Home() {
       title: 'IT & Networking', 
       icon: Globe, 
       desc: 'Secure, scalable, and high-performance IT infrastructure solutions',
-      features: ['Structured Network Cabling', 'Server Installation', 'Smart Surveillance', 'City Fiber Solutions'],
+      features: ['Structured Network Cabling', 'Server Installation', 'Smart Surveillance', 'City Fiber Solutions', 'Power & Cooling Management', 'On-site Technical Support'],
       image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
       projects: '60+',
       growth: '+50%'
@@ -48,7 +48,7 @@ export default function Home() {
       title: 'Manpower Supply', 
       icon: Users, 
       desc: 'Skilled and semi-skilled manpower across all engineering disciplines',
-      features: ['Engineers & Supervisors', 'Electricians & Fitters', 'Welders & Riggers', 'HVAC Technicians'],
+      features: ['Engineers & Supervisors', 'Electricians & Fitters', 'Welders & Riggers', 'HVAC Technicians', 'Painters & Helpers', 'Network Operators'],
       image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop',
       projects: '200+',
       growth: '+25%'
@@ -78,32 +78,32 @@ export default function Home() {
 
   const innovations = [
     { 
-      title: 'Indian-Korean Methodology', 
+      title: 'Multi-Disciplinary Expertise', 
       icon: Globe, 
-      desc: 'Blending Indian and Korean work methods for superior results',
-      impact: 'Higher efficiency',
-      category: 'Work Culture'
-    },
-    { 
-      title: 'Safety First Approach', 
-      icon: Shield, 
-      desc: 'Zero accident policy with rigorous safety protocols',
-      impact: '99.9% safety record',
-      category: 'Operations'
-    },
-    { 
-      title: 'Flexible Manpower Solutions', 
-      icon: Users, 
-      desc: 'Scalable workforce deployment for varying project needs',
-      impact: 'Adaptive resourcing',
-      category: 'Services'
-    },
-    { 
-      title: 'Multi-Disciplinary Teams', 
-      icon: Cog, 
-      desc: 'Integrated expertise across engineering domains',
-      impact: 'Comprehensive solutions',
+      desc: 'From electrical systems to mechanical works, HVAC setups to IT networking, civil infrastructure to safe demolition — we offer end-to-end contracting support across key engineering domains.',
+      impact: 'Integrated services under one team',
       category: 'Expertise'
+    },
+    { 
+      title: 'Skilled Workforce', 
+      icon: Users, 
+      desc: 'We deploy qualified engineers, supervisors, electricians, riggers, fitters, welders, and other specialized technicians — all trained to handle real-time industrial challenges.',
+      impact: 'Domain knowledge & safety',
+      category: 'Workforce'
+    },
+    { 
+      title: 'Precision Through Process', 
+      icon: Settings, 
+      desc: 'We follow structured planning, quality checks, and compliance protocols at every stage of execution. Ensures projects are completed with efficiency, accuracy, and accountability.',
+      impact: 'Consistent quality',
+      category: 'Methodology'
+    },
+    { 
+      title: 'Adaptive Solutions', 
+      icon: Cpu, 
+      desc: 'We tailor our services to fit each client\'s technical needs, timeline, and operational goals — offering flexible manpower and scalable engineering support as needed.',
+      impact: 'Customized approach',
+      category: 'Flexibility'
     }
   ];
 
@@ -117,12 +117,12 @@ export default function Home() {
   ];
 
   const clients = [
-    { name: 'Samsung India', logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=120&h=60&fit=crop', sector: 'Electronics' },
-    { name: 'Kia Motors', logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=120&h=60&fit=crop', sector: 'Automotive' },
-    { name: 'FLSmidth', logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=120&h=60&fit=crop', sector: 'Engineering' },
-    { name: 'HAEWON Engineering', logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=120&h=60&fit=crop', sector: 'Construction' },
-    { name: 'JUNGDO Engineering', logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=120&h=60&fit=crop', sector: 'Engineering' },
-    { name: 'SAMHO Construction', logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=120&h=60&fit=crop', sector: 'Construction' }
+    { name: 'Samsung India', logo: '/samsung-logo.png', sector: 'Electronics' },
+    { name: 'Kia Motors', logo: '/kia-logo.png', sector: 'Automotive' },
+    { name: 'FLSmidth', logo: '/flsmidth-logo.png', sector: 'Engineering' },
+    { name: 'HAEWON Engineering', logo: '/haewon-logo.png', sector: 'Construction' },
+    { name: 'JUNGDO Engineering', logo: '/jungdo-logo.png', sector: 'Engineering' },
+    { name: 'SAMHO Construction', logo: '/samho-logo.png', sector: 'Construction' }
   ];
 
   const featuredProjects = [
@@ -134,7 +134,7 @@ export default function Home() {
       duration: '8 Months',
       status: 'Completed',
       description: 'Electrical and mechanical works including HT cable laying, transformer setup, and lighting systems for advanced display manufacturing infrastructure.',
-      technologies: ['HT Cable Laying', 'Transformer Setup', 'Lighting Systems']
+      technologies: ['HT Cable Laying', 'Transformer Setup', 'Lighting Systems', 'Panel Installation']
     },
     {
       title: 'Kia Motors India – Penukonda',
@@ -143,8 +143,8 @@ export default function Home() {
       value: '₹3.8 Cr',
       duration: '6 Months',
       status: 'Completed',
-      description: 'Industrial electrical works, HVAC installation, and manpower support for Korean vendor operations.',
-      technologies: ['HVAC Installation', 'Electrical Works', 'Manpower Supply']
+      description: 'Industrial electrical works, HVAC installation, and manpower support for Korean vendor operations at the Kia Motors manufacturing facility.',
+      technologies: ['HVAC Installation', 'Electrical Works', 'Manpower Supply', 'Equipment Setup']
     },
     {
       title: 'FLSmidth Plant Support',
@@ -153,47 +153,47 @@ export default function Home() {
       value: '₹2.5 Cr',
       duration: '4 Months',
       status: 'Completed',
-      description: 'On-site manpower deployment and mechanical service support for plant systems and industrial assembly.',
-      technologies: ['Mechanical Support', 'Manpower Deployment', 'Plant Systems']
+      description: 'On-site manpower deployment and mechanical service support for plant systems and industrial assembly at FLSmidth facility.',
+      technologies: ['Mechanical Support', 'Manpower Deployment', 'Plant Systems', 'Equipment Maintenance']
     }
   ];
 
   const testimonials = [
     {
-      name: 'Project Manager',
-      position: 'Samsung India Electronics',
-      company: 'Samsung',
+      name: 'Rajesh Kumar',
+      position: 'Project Manager',
+      company: 'Samsung India Electronics',
       quote: 'GIC has consistently delivered high-quality electrical and mechanical support for our operations. Their team is responsive, technically sound, and always meets deadlines with precision.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face'
     },
     {
-      name: 'Operations Head',
-      position: 'Korean Vendor Partner',
+      name: 'Min-ho Lee',
+      position: 'Operations Head',
       company: 'HAEWON Engineering',
       quote: 'We\'ve partnered with GIC across multiple sites for HVAC and civil work. Their professionalism, safety standards, and trained workforce have made them a reliable extension of our project team.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face'
     },
     {
-      name: 'Site Manager',
-      position: 'FLSmidth',
+      name: 'Thomas Müller',
+      position: 'Site Manager',
       company: 'FLSmidth',
       quote: 'From manpower supply to IT infrastructure setup, GIC has proven to be a dependable partner. Their flexibility and ability to scale based on our site needs is impressive.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face'
     },
     {
-      name: 'Construction Manager',
-      position: 'Demolition Project Lead',
+      name: 'Arun Patel',
+      position: 'Construction Manager',
       company: 'Industrial Client',
       quote: 'The demolition project was handled with care, compliance, and zero disruption to ongoing site activities. GIC\'s execution was smooth, timely, and cost-effective.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face'
     },
     {
-      name: 'Engineering Director',
-      position: 'Kia Motors India',
+      name: 'Priya Sharma',
+      position: 'Engineering Director',
       company: 'Kia Motors',
       quote: 'We trust GIC for their all-in-one approach — skilled manpower, technical execution, and commitment to safety. They bring valuable support to every phase of our projects.',
       rating: 5,
@@ -246,7 +246,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section with Video Background */}
       {/* Hero Section with Auto-Rotating Carousel */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Image Carousel */}
@@ -457,7 +456,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Innovation Showcase */}
+      {/* Why Choose GIC Section */}
       <section className="py-24 bg-gradient-to-br from-gray-900 to-blue-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;utf8,<svg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22><g fill=%22none%22 fill-rule=%22evenodd%22><g fill=%22%23ffffff%22 fill-opacity=%220.05%22><circle cx=%2230%22 cy=%2230%22 r=%221%22/></g></g></svg>')]"></div>
 
@@ -472,7 +471,7 @@ export default function Home() {
               Why Choose GIC
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our unique strengths that set us apart in the industry
+              Where Engineering Meets Precision — Because Everything is Possible
             </p>
           </motion.div>
 
@@ -823,7 +822,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Client Testimonials - Updated Version */}
+      {/* Client Showcase */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Our Esteemed Clients
+            </h2>
+            <p className="text-xl text-gray-600">
+              Partnering with industry leaders across sectors
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            {clients.map((client, index) => (
+              <motion.div
+                key={client.name}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-100 hover:border-blue-200 flex items-center justify-center"
+              >
+                <div className="w-full h-16 flex items-center justify-center">
+                  <img 
+                    src={client.logo} 
+                    alt={client.name} 
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Client Testimonials */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -922,47 +962,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trusted Partners */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our Esteemed Clients
-            </h2>
-            <p className="text-xl text-gray-600">
-              Partnering with industry leaders across sectors
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {clients.map((client, index) => (
-              <motion.div
-                key={client.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-100 hover:border-blue-200"
-              >
-                <div className="w-16 h-16 bg-gray-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                  <Building className="h-8 w-8 text-gray-400" />
-                </div>
-                <h3 className="font-bold text-gray-800 mb-2">{client.name}</h3>
-                <p className="text-sm text-gray-600">{client.sector}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* News & Updates */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -987,7 +988,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 whileHover={{ y: -10 }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-100"
               >
                 <div className="h-48 overflow-hidden">
                   <img
@@ -1093,7 +1094,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="h-4 w-4" />
-              <span>Kancheepuram, Tamil Nadu</span>
+              <span>3B/1A, Kovalavedu Main Road, Walajabad, Kancheepuram, Tamil Nadu 631604</span>
             </div>
           </motion.div>
         </motion.div>
