@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Award, Globe, Users, CheckCircle, Settings, Building, Cog, Zap, Shield, Play, Calendar, MapPin, Phone, Mail, Target, Lightbulb, Cpu, Rocket, BarChart3, Clock, Star, TrendingUp, Eye, HeartHandshake, Leaf, ChevronDown, Menu } from 'lucide-react';
+import { ArrowRight, Award, Globe, Users, CheckCircle, Settings, Building, Cog, Zap, Shield, Play, Calendar, MapPin, Phone, Mail, Target, Lightbulb, Cpu, Rocket, BarChart3, Clock, Star, TrendingUp, Eye, HeartHandshake, Leaf, ChevronDown, Menu, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function Home() {
   const [playingVideo, setPlayingVideo] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const services = [
     { 
@@ -33,8 +34,40 @@ export default function Home() {
       image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=400&fit=crop',
       projects: '75+',
       growth: '+30%'
+    },
+    { 
+      title: 'IT & Networking', 
+      icon: Globe, 
+      desc: 'Secure, scalable, and high-performance IT infrastructure solutions',
+      features: ['Structured Network Cabling', 'Server Installation', 'Smart Surveillance', 'City Fiber Solutions'],
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
+      projects: '60+',
+      growth: '+50%'
+    },
+    { 
+      title: 'Manpower Supply', 
+      icon: Users, 
+      desc: 'Skilled and semi-skilled manpower across all engineering disciplines',
+      features: ['Engineers & Supervisors', 'Electricians & Fitters', 'Welders & Riggers', 'HVAC Technicians'],
+      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop',
+      projects: '200+',
+      growth: '+25%'
     }
   ];
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex + 3 >= services.length ? 0 : prevIndex + 3
+    );
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? Math.max(0, services.length - 3) : Math.max(0, prevIndex - 3)
+    );
+  };
+
+  const visibleServices = services.slice(currentIndex, currentIndex + 3);
 
   const stats = [
     { number: '8+', label: 'Years Excellence', icon: Award, desc: 'Since 2016' },
@@ -141,6 +174,30 @@ export default function Home() {
       quote: 'We\'ve partnered with GIC across multiple sites for HVAC and civil work. Their professionalism, safety standards, and trained workforce have made them a reliable extension of our project team.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face'
+    },
+    {
+      name: 'Site Manager',
+      position: 'FLSmidth',
+      company: 'FLSmidth',
+      quote: 'From manpower supply to IT infrastructure setup, GIC has proven to be a dependable partner. Their flexibility and ability to scale based on our site needs is impressive.',
+      rating: 5,
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face'
+    },
+    {
+      name: 'Construction Manager',
+      position: 'Demolition Project Lead',
+      company: 'Industrial Client',
+      quote: 'The demolition project was handled with care, compliance, and zero disruption to ongoing site activities. GIC\'s execution was smooth, timely, and cost-effective.',
+      rating: 5,
+      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face'
+    },
+    {
+      name: 'Engineering Director',
+      position: 'Kia Motors India',
+      company: 'Kia Motors',
+      quote: 'We trust GIC for their all-in-one approach — skilled manpower, technical execution, and commitment to safety. They bring valuable support to every phase of our projects.',
+      rating: 5,
+      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop&crop=face'
     }
   ];
 
@@ -165,139 +222,157 @@ export default function Home() {
     }
   ];
 
+  // Testimonials carousel state
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+  const testimonialsPerView = 2;
+  const totalTestimonialSlides = Math.ceil(testimonials.length / testimonialsPerView);
+
+  const nextTestimonial = () => {
+    setCurrentTestimonialIndex((prevIndex) => 
+      prevIndex + 1 >= totalTestimonialSlides ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonialIndex((prevIndex) => 
+      prevIndex - 1 < 0 ? totalTestimonialSlides - 1 : prevIndex - 1
+    );
+  };
+
+  const currentTestimonials = testimonials.slice(
+    currentTestimonialIndex * testimonialsPerView,
+    (currentTestimonialIndex + 1) * testimonialsPerView
+  );
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Video Background */}
-    {/* Hero Section with Auto-Rotating Carousel */}
-<section className="relative h-screen flex items-center justify-center overflow-hidden">
-  {/* Image Carousel */}
-  <div className="absolute inset-0 z-0">
-    {[
-      {
-        url: 'https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-        title: 'Electrical Services',
-        desc: 'HT/LT Cable Laying • Transformer Installation • Panel Wiring'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-        title: 'Mechanical & HVAC',
-        desc: 'Chiller Systems • Sheet Metal Fabrication • Equipment Installation'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-        title: 'Civil & Demolition',
-        desc: 'Foundation Work • Safe Dismantling • Concrete Breaking'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-        title: 'IT & Networking',
-        desc: 'Structured Cabling • Server Installation • Fiber Solutions'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1581093057305-5e0d6fab2c14?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-        title: 'Manpower Supply',
-        desc: 'Skilled Engineers • Technicians • Supervisors • Helpers'
-      }
-    ].map((slide, index) => (
-      <motion.div
-        key={index}
-        className="absolute inset-0"
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: [0, 1, 1, 0],
-          scale: [1, 1.02, 1.02, 1]
-        }}
-        transition={{
-          duration: 25, // Total duration for all slides (5 slides × 5s each)
-          times: [0, 0.05, 0.95, 1], // Fade in/out timing
-          ease: "linear",
-          repeat: Infinity,
-          repeatDelay: 0,
-          delay: index * 5 // Each slide stays for 5 seconds
-        }}
-      >
-        <img
-          src={slide.url}
-          alt={slide.title}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-800/60 to-transparent">
-          <div className="absolute bottom-10 left-10 max-w-md text-left">
+      {/* Hero Section with Auto-Rotating Carousel */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Image Carousel */}
+        <div className="absolute inset-0 z-0">
+          {[
+            {
+              url: 'https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+              title: 'Electrical Services',
+              desc: 'HT/LT Cable Laying • Transformer Installation • Panel Wiring'
+            },
+            {
+              url: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+              title: 'Mechanical & HVAC',
+              desc: 'Chiller Systems • Sheet Metal Fabrication • Equipment Installation'
+            },
+            {
+              url: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+              title: 'Civil & Demolition',
+              desc: 'Foundation Work • Safe Dismantling • Concrete Breaking'
+            },
+            {
+              url: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+              title: 'IT & Networking',
+              desc: 'Structured Cabling • Server Installation • Fiber Solutions'
+            },
+            {
+              url: 'https://images.unsplash.com/photo-1581093057305-5e0d6fab2c14?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
+              title: 'Manpower Supply',
+              desc: 'Skilled Engineers • Technicians • Supervisors • Helpers'
+            }
+          ].map((slide, index) => (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              key={index}
+              className="absolute inset-0"
+              initial={{ opacity: 0 }}
               animate={{
                 opacity: [0, 1, 1, 0],
-                y: [20, 0, 0, -20]
+                scale: [1, 1.02, 1.02, 1]
               }}
               transition={{
-                duration: 25,
-                times: [0, 0.1, 0.9, 1],
-                delay: index * 5
+                duration: 25, // Total duration for all slides (5 slides × 5s each)
+                times: [0, 0.05, 0.95, 1], // Fade in/out timing
+                ease: "linear",
+                repeat: Infinity,
+                repeatDelay: 0,
+                delay: index * 5 // Each slide stays for 5 seconds
               }}
-              className="text-white"
             >
-              <span className="inline-block px-3 py-1 bg-yellow-400 text-blue-900 rounded-full text-sm font-semibold mb-3">
-                {slide.title}
-              </span>
-              <p className="text-xl font-medium mt-2">{slide.desc}</p>
+              <img
+                src={slide.url}
+                alt={slide.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-800/60 to-transparent">
+                <div className="absolute bottom-10 left-10 max-w-md text-left">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{
+                      opacity: [0, 1, 1, 0],
+                      y: [20, 0, 0, -20]
+                    }}
+                    transition={{
+                      duration: 25,
+                      times: [0, 0.1, 0.9, 1],
+                      delay: index * 5
+                    }}
+                    className="text-white"
+                  >
+                    <span className="inline-block px-3 py-1 bg-yellow-400 text-blue-900 rounded-full text-sm font-semibold mb-3">
+                      {slide.title}
+                    </span>
+                    <p className="text-xl font-medium mt-2">{slide.desc}</p>
+                  </motion.div>
+                </div>
+              </div>
             </motion.div>
-          </div>
+          ))}
         </div>
-      </motion.div>
-    ))}
-  </div>
 
-  {/* Main Hero Content (centered) */}
-  <motion.div
-    className="relative z-10 text-center max-w-6xl mx-auto px-4"
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1.2 }}
-  >
-    <motion.h1 
-      className="text-5xl md:text-7xl font-bold mb-8 text-white leading-tight"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.5 }}
-    >
-      Global India
-      <span className="block bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-        Corporation
-      </span>
-    </motion.h1>
-    
-    <motion.p 
-      className="text-xl md:text-2xl mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.8 }}
-    >
-      Multi-disciplinary engineering solutions with technical expertise, safety-first approach, and world-class execution.
-    </motion.p>
-    
-    <div className="flex flex-col sm:flex-row gap-6 justify-center">
-      <Link
-        to="/services"
-        className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-10 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-3 text-white shadow-2xl"
-      >
-        Explore Services 
-        <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-      </Link>
-      <Link
-        to="/contact"
-        className="group bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 text-white flex items-center gap-3"
-      >
-        <Phone className="h-5 w-5" />
-        Contact Us
-      </Link>
-    </div>
-  </motion.div>
+        {/* Main Hero Content (centered) */}
+        <motion.div
+          className="relative z-10 text-center max-w-6xl mx-auto px-4"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2 }}
+        >
+          <motion.h1 
+            className="text-5xl md:text-7xl font-bold mb-8 text-white leading-tight"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          >
+            Global India
+            <span className="block bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+              Corporation
+            </span>
+          </motion.h1>
+          
+          <motion.p 
+            className="text-xl md:text-2xl mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+          >
+            Multi-disciplinary engineering solutions with technical expertise, safety-first approach, and world-class execution.
+          </motion.p>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Link
+              to="/services"
+              className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-10 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-3 text-white shadow-2xl"
+            >
+              Explore Services 
+              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link
+              to="/contact"
+              className="group bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 text-white flex items-center gap-3"
+            >
+              <Phone className="h-5 w-5" />
+              Contact Us
+            </Link>
+          </div>
+        </motion.div>
+      </section>
 
-  {/* Navigation (same as before) */}
-  <div className="absolute top-6 left-0 right-0 z-20">
-    {/* ... navigation code remains unchanged ... */}
-  </div>
-</section>
       {/* Innovation Marquee */}
       <section className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white py-4 overflow-hidden border-y border-blue-700">
         <motion.div 
@@ -450,60 +525,98 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2, duration: 0.8 }}
-                whileHover={{ y: -15 }}
-                className="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500"
-              >
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-lg p-2">
-                    <service.icon className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <div className="flex gap-4">
-                      <div>
-                        <div className="text-2xl font-bold">{service.projects}</div>
-                        <div className="text-xs opacity-80">Projects</div>
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-green-400">{service.growth}</div>
-                        <div className="text-xs opacity-80">Growth</div>
+          {/* Carousel Container */}
+          <div className="relative">
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevSlide}
+              disabled={currentIndex === 0}
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <ChevronLeft className="h-6 w-6 text-gray-600" />
+            </button>
+            
+            <button
+              onClick={nextSlide}
+              disabled={currentIndex + 3 >= services.length}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <ChevronRight className="h-6 w-6 text-gray-600" />
+            </button>
+
+            {/* Services Grid */}
+            <div className="grid lg:grid-cols-3 gap-8 px-12">
+              {visibleServices.map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2, duration: 0.8 }}
+                  whileHover={{ y: -15 }}
+                  className="group bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500"
+                >
+                  <div className="relative h-64 overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-lg p-2">
+                      <service.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <div className="flex gap-4">
+                        <div>
+                          <div className="text-2xl font-bold">{service.projects}</div>
+                          <div className="text-xs opacity-80">Projects</div>
+                        </div>
+                        <div>
+                          <div className="text-2xl font-bold text-green-400">{service.growth}</div>
+                          <div className="text-xs opacity-80">Growth</div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{service.desc}</p>
                   
-                  <div className="space-y-3 mb-6">
-                    {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-3">
-                        <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
-                        <span className="text-sm text-gray-600">{feature}</span>
-                      </div>
-                    ))}
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">{service.desc}</p>
+                    
+                    <div className="space-y-3 mb-6">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center gap-3">
+                          <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                          <span className="text-sm text-gray-600">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Link 
+                      to="/services"
+                      className="block w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors duration-300 text-center"
+                    >
+                      Learn More
+                    </Link>
                   </div>
-                  
-                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors duration-300">
-                    Learn More
-                  </button>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Pagination Dots */}
+            <div className="flex justify-center mt-8 space-x-2">
+              {Array.from({ length: Math.ceil(services.length / 3) }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index * 3)}
+                  className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                    Math.floor(currentIndex / 3) === index 
+                      ? 'bg-blue-600' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -710,7 +823,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Client Testimonials */}
+      {/* Client Testimonials - Updated Version */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -727,38 +840,84 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12 mb-16">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.name}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2, duration: 0.8 }}
-                className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
+          <div className="relative">
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevTestimonial}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 group"
+            >
+              <ChevronLeft className="h-6 w-6 text-gray-600 group-hover:text-blue-600" />
+            </button>
+            
+            <button
+              onClick={nextTestimonial}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 group"
+            >
+              <ChevronRight className="h-6 w-6 text-gray-600 group-hover:text-blue-600" />
+            </button>
+
+            {/* Testimonials Container */}
+            <div className="overflow-hidden">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentTestimonialIndex * 100}%)` }}
               >
-                <div className="flex items-center gap-1 mb-6">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <blockquote className="text-lg text-gray-600 mb-6 leading-relaxed italic">
-                  "{testimonial.quote}"
-                </blockquote>
-                <div className="flex items-center gap-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
-                  <div>
-                    <div className="font-bold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600">{testimonial.position}</div>
-                    <div className="text-sm text-blue-600 font-medium">{testimonial.company}</div>
+                {Array.from({ length: totalTestimonialSlides }).map((_, slideIndex) => (
+                  <div key={slideIndex} className="w-full flex-shrink-0">
+                    <div className="grid lg:grid-cols-2 gap-8">
+                      {testimonials
+                        .slice(slideIndex * testimonialsPerView, (slideIndex + 1) * testimonialsPerView)
+                        .map((testimonial, index) => (
+                          <motion.div
+                            key={`${slideIndex}-${index}`}
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.2, duration: 0.8 }}
+                            className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 h-full"
+                          >
+                            <div className="flex items-center gap-1 mb-6">
+                              {[...Array(testimonial.rating)].map((_, i) => (
+                                <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                              ))}
+                            </div>
+                            <blockquote className="text-lg text-gray-600 mb-6 leading-relaxed italic">
+                              "{testimonial.quote}"
+                            </blockquote>
+                            <div className="flex items-center gap-4">
+                              <img
+                                src={testimonial.image}
+                                alt={testimonial.name}
+                                className="w-12 h-12 rounded-full object-cover"
+                              />
+                              <div>
+                                <div className="font-bold text-gray-900">{testimonial.name}</div>
+                                <div className="text-sm text-gray-600">{testimonial.position}</div>
+                                <div className="text-sm text-blue-600 font-medium">{testimonial.company}</div>
+                              </div>
+                            </div>
+                          </motion.div>
+                        ))}
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                ))}
+              </div>
+            </div>
+
+            {/* Pagination Dots */}
+            <div className="flex justify-center mt-12 space-x-2">
+              {Array.from({ length: totalTestimonialSlides }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTestimonialIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentTestimonialIndex
+                      ? 'bg-blue-600 w-8'
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
