@@ -11,10 +11,11 @@ export default function Navbar() {
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
+    { name: 'Why GIC', href: '/careers' },
     { name: 'Services', href: '/services' },
     { name: 'Projects', href: '/projects' },
     { name: 'Clients', href: '/clients' },
-    { name: 'Careers', href: '/careers' },
+    
     { name: 'Contact', href: '/contact' },
   ];
 

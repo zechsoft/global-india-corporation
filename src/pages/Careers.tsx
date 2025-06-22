@@ -1,371 +1,329 @@
-import  { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Briefcase, MapPin, Clock, Users, Award, Heart, ChevronDown, ChevronUp } from 'lucide-react';
+import { useState } from 'react';
+import { Cog, Users, Shield, RefreshCw, Globe, Award, Clock, CheckCircle, Star, ArrowRight, Building2, Target, TrendingUp } from 'lucide-react';
 
-export default function Careers() {
-  const [expandedJob, setExpandedJob] = useState<number | null>(null);
+export default function WhyGIC() {
+  const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
 
-  const jobs = [
+  const mainFeatures = [
     {
-      title: 'Senior Civil Engineer',
-      department: 'Infrastructure',
-      location: 'Mumbai, Maharashtra',
-      type: 'Full-time',
-      experience: '5-8 years',
-      description: 'Lead infrastructure projects including design, planning, and execution of large-scale construction projects.',
-      requirements: [
-        'B.Tech/M.Tech in Civil Engineering',
-        '5+ years in infrastructure projects',
-        'Experience with AutoCAD, Revit',
-        'Project management certification preferred'
-      ],
-      responsibilities: [
-        'Project planning and design',
-        'Team leadership and coordination',
-        'Quality assurance and compliance',
-        'Client communication and reporting'
-      ]
-    },
-    {
-      title: 'Automation Engineer',
-      department: 'Industrial Automation',
-      location: 'Bangalore, Karnataka',
-      type: 'Full-time',
-      experience: '3-6 years',
-      description: 'Design and implement automation solutions for manufacturing processes using latest technologies.',
-      requirements: [
-        'B.Tech in Electronics/Electrical/Mechanical',
-        '3+ years in industrial automation',
-        'PLC programming experience',
-        'Knowledge of SCADA systems'
-      ],
-      responsibilities: [
-        'Automation system design',
-        'PLC programming and testing',
-        'System integration and commissioning',
-        'Technical documentation'
-      ]
-    },
-    {
-      title: 'Project Manager',
-      department: 'Technology Services',
-      location: 'Delhi, NCR',
-      type: 'Full-time',
-      experience: '7-10 years',
-      description: 'Manage large-scale technology implementation projects ensuring timely delivery and quality standards.',
-      requirements: [
-        'B.Tech/MBA with technical background',
-        '7+ years in project management',
-        'PMP certification required',
-        'Experience with Agile methodologies'
-      ],
-      responsibilities: [
-        'Project planning and execution',
-        'Stakeholder management',
-        'Risk assessment and mitigation',
-        'Budget and resource management'
-      ]
-    },
-    {
-      title: 'Quality Assurance Engineer',
-      department: 'Quality Control',
-      location: 'Chennai, Tamil Nadu',
-      type: 'Full-time',
-      experience: '2-5 years',
-      description: 'Ensure quality standards across all projects through systematic testing and validation processes.',
-      requirements: [
-        'B.Tech in relevant engineering discipline',
-        '2+ years in quality assurance',
-        'Knowledge of ISO standards',
-        'Testing and validation experience'
-      ],
-      responsibilities: [
-        'Quality system implementation',
-        'Process auditing and compliance',
-        'Testing and validation protocols',
-        'Documentation and reporting'
-      ]
-    }
-  ];
-
-  const benefits = [
-    {
-      icon: Award,
-      title: 'Competitive Salary',
-      description: 'Industry-leading compensation packages with performance bonuses'
-    },
-    {
-      icon: Heart,
-      title: 'Health & Wellness',
-      description: 'Comprehensive medical insurance for you and your family'
+      icon: Cog,
+      title: 'Multi-Disciplinary Expertise',
+      description: 'From electrical systems to mechanical works, HVAC setups to IT networking, civil infrastructure to safe demolition — we offer end-to-end contracting support across key engineering domains. Our clients benefit from integrated services under one professional team.',
+      color: 'from-slate-600 to-slate-700'
     },
     {
       icon: Users,
-      title: 'Learning & Development',
-      description: 'Continuous learning opportunities and skill development programs'
+      title: 'Skilled & Dedicated Workforce',
+      description: 'We deploy qualified engineers, supervisors, electricians, riggers, fitters, welders, and other specialized technicians — all trained to handle real-time industrial challenges. Every team member is selected for their domain knowledge, discipline, and commitment to safety.',
+      color: 'from-blue-600 to-blue-700'
     },
     {
-      icon: Briefcase,
-      title: 'Career Growth',
-      description: 'Clear career progression paths with leadership opportunities'
+      icon: Shield,
+      title: 'Precision Through Process',
+      description: 'We follow structured planning, quality checks, and compliance protocols at every stage of execution. Whether it\'s a shutdown service or a plant expansion, our process ensures projects are completed with efficiency, accuracy, and accountability.',
+      color: 'from-emerald-600 to-emerald-700'
     },
     {
-      icon: Clock,
-      title: 'Work-Life Balance',
-      description: 'Flexible working hours and remote work options'
+      icon: RefreshCw,
+      title: 'Adaptive & Customized Solutions',
+      description: 'No two projects are the same. That\'s why we tailor our services to fit each client\'s technical needs, timeline, and operational goals — offering flexible manpower and scalable engineering support as needed.',
+      color: 'from-amber-600 to-amber-700'
     },
     {
-      icon: MapPin,
-      title: 'Travel Opportunities',
-      description: 'Opportunities to work on projects across different cities'
+      icon: Globe,
+      title: 'Indian-Korean Work Methodology',
+      description: 'Our unique blend of Indian and Korean methods allows us to exceed expectations in performance, safety, and project management. This cultural synergy reflects in our high client satisfaction and long-standing industry relationships.',
+      color: 'from-indigo-600 to-indigo-700'
     }
   ];
 
+  const strengths = [
+    {
+      icon: Building2,
+      title: 'Large-Scale Project Capability',
+      description: 'Proven ability to handle both minor and large-scale industrial projects with consistent quality delivery'
+    },
+    {
+      icon: Target,
+      title: 'Flexible Service Models',
+      description: 'Tailored solutions designed to meet specific client requirements and operational constraints'
+    },
+    {
+      icon: Clock,
+      title: 'On-Time Delivery',
+      description: 'Consistent project delivery within agreed timelines, even under the most challenging schedules'
+    },
+    {
+      icon: Award,
+      title: 'Proven Methodology',
+      description: 'Unique Indian-Korean hybrid work methodology ensuring superior project outcomes'
+    },
+    {
+      icon: Star,
+      title: 'Trusted Partnership',
+      description: 'Preferred vendor for globally recognized clients across diverse industrial sectors'
+    },
+    {
+      icon: TrendingUp,
+      title: 'Continuous Innovation',
+      description: 'Committed to adopting latest technologies and methodologies for optimal project execution'
+    }
+  ];
+
+  const stats = [
+    { number: '2016', label: 'Year Established', sublabel: 'Years of Excellence' },
+    { number: '100+', label: 'Projects Completed', sublabel: 'Successful Deliveries' },
+    { number: '50+', label: 'Skilled Engineers', sublabel: 'Expert Team Members' },
+    { number: '24/7', label: 'Support Available', sublabel: 'Round-the-Clock Service' }
+  ];
+
+  const keyPoints = [
+    'Technical Excellence & Innovation',
+    'Safety-First Approach',
+    'Reliable Project Execution',
+    'Global Quality Standards',
+    'Comprehensive Service Portfolio'
+  ];
+
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 gradient-bg text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Join Our Team
+      <section className="relative py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-transparent"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.1),transparent_70%)]"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-600/20 border border-blue-400/30 rounded-full mb-8">
+              <span className="text-blue-300 text-sm font-medium">Engineering Excellence Since 2016</span>
+            </div>
+            
+            <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              Why Choose
+              <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mt-2">
+                GIC Engineering?
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl max-w-4xl mx-auto opacity-90">
-              Be part of India's leading engineering corporation and build the future of infrastructure
+            
+            <p className="text-xl lg:text-2xl text-slate-300 mb-8 leading-relaxed font-light">
+              Where Engineering Meets Precision — Because Everything is Possible
             </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Why Join Us */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Why Work with GIC?
-            </h2>
-            <p className="text-xl text-gray-600">
-              Join a team that values innovation, excellence, and professional growth
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={benefit.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-lg text-center cursor-pointer"
-              >
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full mb-4"
-                >
-                  <benefit.icon className="h-8 w-8 text-white" />
-                </motion.div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
-              </motion.div>
-            ))}
+            
+            <div className="max-w-3xl mx-auto">
+              <p className="text-lg text-slate-400 leading-relaxed">
+                When industrial clients seek a partner, they require more than just a contractor — they need dependability, skill, and unwavering integrity in every project delivery.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Current Openings */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Current Openings
-            </h2>
-            <p className="text-xl text-gray-600">
-              Explore exciting career opportunities across our departments
-            </p>
-          </motion.div>
-
-          <div className="space-y-6">
-            {jobs.map((job, index) => (
-              <motion.div
-                key={job.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-lg shadow-lg overflow-hidden"
+      {/* Stats Section */}
+      <section className="py-20 bg-slate-50 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div
+                key={stat.label}
+                className="text-center group"
               >
-                <div
-                  className="p-6 cursor-pointer hover:bg-gray-50 transition-colors"
-                  onClick={() => setExpandedJob(expandedJob === index ? null : index)}
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex-1">
-                      <div className="flex flex-wrap items-center gap-4 mb-2">
-                        <h3 className="text-xl font-bold text-gray-900">{job.title}</h3>
-                        <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                          {job.department}
-                        </span>
-                      </div>
-                      <div className="flex flex-wrap items-center gap-4 text-gray-600">
-                        <div className="flex items-center gap-1">
-                          <MapPin className="h-4 w-4" />
-                          <span>{job.location}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Clock className="h-4 w-4" />
-                          <span>{job.type}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <Briefcase className="h-4 w-4" />
-                          <span>{job.experience}</span>
-                        </div>
-                      </div>
-                    </div>
-                    <motion.div
-                      animate={{ rotate: expandedJob === index ? 180 : 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <ChevronDown className="h-6 w-6 text-gray-400" />
-                    </motion.div>
+                <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-200 group-hover:shadow-md transition-shadow duration-300">
+                  <div className="text-4xl lg:text-5xl font-bold text-slate-900 mb-2">
+                    {stat.number}
                   </div>
-                </div>
-
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{
-                    height: expandedJob === index ? 'auto' : 0,
-                    opacity: expandedJob === index ? 1 : 0
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
-                >
-                  <div className="px-6 pb-6 border-t border-gray-100">
-                    <div className="pt-6 space-y-6">
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-2">Job Description</h4>
-                        <p className="text-gray-600">{job.description}</p>
-                      </div>
-
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-2">Requirements</h4>
-                        <ul className="list-disc list-inside space-y-1 text-gray-600">
-                          {job.requirements.map((req, idx) => (
-                            <li key={idx}>{req}</li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div>
-                        <h4 className="font-bold text-gray-900 mb-2">Key Responsibilities</h4>
-                        <ul className="list-disc list-inside space-y-1 text-gray-600">
-                          {job.responsibilities.map((resp, idx) => (
-                            <li key={idx}>{resp}</li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div className="pt-4">
-                        <motion.button
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300"
-                        >
-                          Apply Now
-                        </motion.button>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Company Culture */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Culture</h2>
-              <div className="space-y-4 text-lg text-gray-600">
-                <p>
-                  At Global India Corporation, we believe in fostering an environment where innovation thrives, 
-                  excellence is celebrated, and every team member has the opportunity to grow.
-                </p>
-                <p>
-                  Our culture is built on collaboration, continuous learning, and the shared vision of 
-                  building India's future through engineering excellence.
-                </p>
-                <div className="flex items-start gap-3 mt-6">
-                  <Users className="h-6 w-6 text-blue-600 mt-1" />
-                  <div>
-                    <h4 className="font-bold text-gray-900 mb-1">Team Collaboration</h4>
-                    <p className="text-gray-600">Work with diverse, talented teams on challenging projects</p>
-                  </div>
+                  <div className="text-slate-600 font-semibold mb-1">{stat.label}</div>
+                  <div className="text-sm text-slate-500">{stat.sublabel}</div>
                 </div>
               </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop"
-                alt="Team collaboration"
-                className="rounded-lg shadow-2xl"
-              />
-            </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Main Features Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-50 border border-blue-200 rounded-full mb-6">
+              <span className="text-blue-700 text-sm font-medium">Our Core Advantages</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+              Engineering Excellence
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Since 2016, GIC has been at the forefront of multi-disciplinary engineering services, earning the trust of leading Indian and global companies.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {mainFeatures.map((feature, index) => (
+              <div
+                key={feature.title}
+                onMouseEnter={() => setHoveredFeature(index)}
+                onMouseLeave={() => setHoveredFeature(null)}
+                className="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500"
+              >
+                {/* Card Header */}
+                <div className={`h-2 bg-gradient-to-r ${feature.color}`}></div>
+                
+                <div className="p-8">
+                  {/* Icon and Title */}
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className={`p-3 rounded-xl bg-gradient-to-r ${feature.color} text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      <feature.icon className="h-6 w-6" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-slate-700 transition-colors">
+                        {feature.title}
+                      </h3>
+                      <div className={`w-12 h-1 bg-gradient-to-r ${feature.color} rounded-full`}></div>
+                    </div>
+                  </div>
+                  
+                  {/* Description */}
+                  <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors">
+                    {feature.description}
+                  </p>
+                  
+                  {/* Bottom accent */}
+                  <div className="mt-6 pt-4 border-t border-slate-100">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-slate-500">Professional Service</span>
+                      <ArrowRight className={`h-4 w-4 text-slate-400 group-hover:text-slate-600 group-hover:translate-x-1 transition-all duration-300`} />
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-slate-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Additional Info Section */}
+          <div className="mt-20 bg-slate-50 rounded-2xl p-8 border border-slate-200">
+            <div className="grid md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Award className="h-8 w-8 text-blue-600" />
+                </div>
+                <h4 className="font-bold text-slate-900 mb-2">Quality Assured</h4>
+                <p className="text-sm text-slate-600">ISO certified processes and global quality standards</p>
+              </div>
+              <div>
+                <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="h-8 w-8 text-emerald-600" />
+                </div>
+                <h4 className="font-bold text-slate-900 mb-2">Safety First</h4>
+                <p className="text-sm text-slate-600">Zero-accident policy with comprehensive safety protocols</p>
+              </div>
+              <div>
+                <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Clock className="h-8 w-8 text-amber-600" />
+                </div>
+                <h4 className="font-bold text-slate-900 mb-2">On Schedule</h4>
+                <p className="text-sm text-slate-600">Consistent delivery within agreed project timelines</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Strengths Grid */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-emerald-50 border border-emerald-200 rounded-full mb-6">
+              <span className="text-emerald-700 text-sm font-medium">Key Strengths</span>
+            </div>
+            <h2 className="text-4xl font-bold text-slate-900 mb-6">
+              What Sets Us Apart
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              The fundamental strengths that make us the preferred partner for engineering solutions
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {strengths.map((strength, index) => (
+              <div
+                key={strength.title}
+                className="bg-white p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300 group"
+              >
+                <div className="flex items-center justify-center w-16 h-16 bg-slate-100 rounded-xl mb-6 group-hover:bg-slate-200 transition-colors duration-300">
+                  <strength.icon className="h-8 w-8 text-slate-600" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4">
+                  {strength.title}
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  {strength.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Statement */}
+      <section className="py-24 bg-slate-900 text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="inline-flex items-center px-4 py-2 bg-blue-600/20 border border-blue-400/30 rounded-full mb-8">
+                <span className="text-blue-300 text-sm font-medium">Our Mission</span>
+              </div>
+              <h2 className="text-4xl font-bold mb-8">Empowering Industrial Excellence</h2>
+              <p className="text-lg leading-relaxed mb-8 text-slate-300">
+                To empower industries with dependable engineering solutions by combining skilled manpower, 
+                technical precision, and a culture of "everything is possible." We aim to be the partner 
+                of choice for clients seeking safe, scalable, and custom-built infrastructure support.
+              </p>
+              <div className="flex items-center gap-3">
+                <CheckCircle className="h-6 w-6 text-emerald-400" />
+                <span className="text-lg font-semibold text-white">Everything is Possible</span>
+              </div>
+            </div>
+            
+            <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700">
+              <h3 className="text-2xl font-bold mb-8 text-center">Why Industry Leaders Choose GIC</h3>
+              <div className="space-y-4">
+                {keyPoints.map((item, index) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-4 p-3 rounded-lg hover:bg-slate-700/50 transition-colors duration-200"
+                  >
+                    <ArrowRight className="h-5 w-5 text-blue-400 flex-shrink-0" />
+                    <span className="text-slate-200">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 gradient-bg text-white">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8"
-        >
-          <h2 className="text-4xl font-bold mb-6">
-            Don't See the Right Role?
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700">
+        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Ready to Experience the GIC Difference?
           </h2>
-          <p className="text-xl mb-8 opacity-90">
-            We're always looking for talented individuals to join our team. Send us your resume!
+          <p className="text-xl text-blue-100 mb-10 leading-relaxed">
+            Join the ranks of satisfied clients who trust GIC for their most critical engineering projects
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
-          >
-            Send Your Resume
-          </motion.button>
-        </motion.div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-white hover:bg-slate-50 text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+              Get Started Today
+            </button>
+            <button className="bg-transparent hover:bg-white/10 text-white px-8 py-4 rounded-lg text-lg font-semibold border-2 border-white/30 hover:border-white/50 transition-all duration-300">
+              View Our Projects
+            </button>
+          </div>
+        </div>
       </section>
     </div>
   );
 }
-  
