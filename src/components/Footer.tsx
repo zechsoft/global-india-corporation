@@ -237,7 +237,7 @@ export default function Footer() {
                   />
                 </div>
                 <div className="flex items-center space-x-1 text-gray-300 text-sm">
-                  <span>Made in</span>
+                  <span>Make in</span>
                   <motion.div
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 1, repeat: Infinity }}
