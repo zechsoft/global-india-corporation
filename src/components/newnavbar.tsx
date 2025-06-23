@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown, Zap, Settings, Hammer, Wifi, Users } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, Globe, ChevronDown, Zap, Settings, Hammer, Wifi, Users } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Globallog from "../assets/apple-icon.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +9,6 @@ export default function Navbar() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const servicesRef = useRef(null);
   const location = useLocation();
-  const navigate = useNavigate();
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -18,73 +16,42 @@ export default function Navbar() {
     { name: 'Why GIC', href: '/careers' },
     { name: 'Services', href: '/services', hasDropdown: true },
     { name: 'Projects', href: '/projects' },
-    { name: 'Clients', href: '#clients', isSection: true },
+    { name: 'Clients', href: '/clients' },
     { name: 'Contact', href: '/contact' },
   ];
 
-  // Updated services array with proper routing
   const services = [
     {
       name: 'Electrical Services',
       icon: Zap,
-      href: '/services/electrical',
-      slug: 'electrical'
+      description: 'HT/LT installations, transformers, lighting solutions',
+      href: '/services/electrical'
     },
     {
       name: 'Mechanical & HVAC',
       icon: Settings,
-      href: '/services/mechanical',
-      slug: 'mechanical'
+      description: 'Equipment installation, HVAC systems, piping',
+      href: '/services/mechanical'
     },
     {
       name: 'Civil & Demolition',
       icon: Hammer,
-      href: '/services/civil',
-      slug: 'civil'
+      description: 'Construction support, controlled demolition',
+      href: '/services/civil'
     },
     {
       name: 'IT & Networking',
       icon: Wifi,
-      href: '/services/it',
-      slug: 'it'
+      description: 'Network cabling, server installation, surveillance',
+      href: '/services/it'
     },
     {
       name: 'Manpower Supply',
       icon: Users,
-      href: '/services/manpower',
-      slug: 'manpower'
+      description: 'Skilled engineers, technicians, supervisors',
+      href: '/services/manpower'
     }
   ];
-
-  // Function to handle client section navigation
-  const handleClientClick = (e) => {
-    e.preventDefault();
-    
-    // If we're not on the home page, navigate to home first
-    if (location.pathname !== '/') {
-      navigate('/');
-      // Wait for navigation to complete, then scroll to clients section
-      setTimeout(() => {
-        scrollToClients();
-      }, 100);
-    } else {
-      // If we're already on home page, just scroll to clients section
-      scrollToClients();
-    }
-    
-    // Close mobile menu if open
-    setIsOpen(false);
-  };
-
-  const scrollToClients = () => {
-    const clientsSection = document.getElementById('clients');
-    if (clientsSection) {
-      clientsSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  };
 
   // Handle scroll effect
   useEffect(() => {
@@ -190,15 +157,11 @@ export default function Navbar() {
           >
             <div className="relative">
               <motion.div
-                className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg overflow-hidden"
+                className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg"
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
               >
-                <img 
-                  src={Globallog} 
-                  alt="Global India Corporation Logo" 
-                  className="w-full h-full object-cover rounded-xl"
-                />
+                <Globe className="w-6 h-6 text-white" />
               </motion.div>
               <motion.div
                 className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white"
@@ -218,8 +181,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center space-x-1">
             {navigation.map((item, index) => {
               const isActive = location.pathname === item.href || 
-                (item.name === 'Services' && location.pathname.startsWith('/services')) ||
-                (item.name === 'Clients' && location.pathname === '/');
+                (item.name === 'Services' && location.pathname.startsWith('/services'));
               
               if (item.hasDropdown) {
                 return (
@@ -259,10 +221,10 @@ export default function Navbar() {
                           animate="visible"
                           exit="hidden"
                           variants={dropdownVariants}
-                          className="absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-200/20 py-2"
+                          className="absolute top-full left-0 mt-2 w-80 bg-white/95 backdrop-blur-lg rounded-2xl shadow-xl border border-gray-200/20 py-2"
                         >
                           {services.map((service, idx) => {
-                            const ServiceIcon = service.icon;
+                            const Icon = service.icon;
                             return (
                               <motion.div
                                 key={service.name}
@@ -273,14 +235,19 @@ export default function Navbar() {
                               >
                                 <Link
                                   to={service.href}
-                                  className="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors duration-200 group"
+                                  className="flex items-start px-4 py-3 hover:bg-gray-50 transition-colors duration-200 group"
                                   onClick={() => setIsServicesOpen(false)}
                                 >
-                                  <ServiceIcon className="w-5 h-5 text-gray-400 group-hover:text-blue-600 mr-3 transition-colors duration-200" />
-                                  <div>
-                                    <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
+                                  <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-200">
+                                    <Icon className="w-5 h-5 text-white" />
+                                  </div>
+                                  <div className="flex-1">
+                                    <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
                                       {service.name}
                                     </h3>
+                                    <p className="text-sm text-gray-500 mt-1">
+                                      {service.description}
+                                    </p>
                                   </div>
                                 </Link>
                               </motion.div>
@@ -290,37 +257,6 @@ export default function Navbar() {
                       )}
                     </AnimatePresence>
                   </div>
-                );
-              }
-
-              // Handle Clients navigation specially
-              if (item.isSection) {
-                return (
-                  <motion.div
-                    key={item.name}
-                    className="relative"
-                    whileHover={{ y: -2 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <button
-                      onClick={handleClientClick}
-                      className={`relative px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
-                        isActive
-                          ? 'text-blue-600 bg-blue-50'
-                          : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-                      }`}
-                    >
-                      {item.name}
-                      {isActive && (
-                        <motion.div
-                          layoutId="activeIndicator"
-                          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-blue-600 rounded-full"
-                          initial={false}
-                          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                        />
-                      )}
-                    </button>
-                  </motion.div>
                 );
               }
 
@@ -400,8 +336,7 @@ export default function Navbar() {
             <div className="px-4 py-6 space-y-2">
               {navigation.map((item, index) => {
                 const isActive = location.pathname === item.href ||
-                  (item.name === 'Services' && location.pathname.startsWith('/services')) ||
-                  (item.name === 'Clients' && location.pathname === '/');
+                  (item.name === 'Services' && location.pathname.startsWith('/services'));
                 
                 if (item.hasDropdown) {
                   return (
@@ -439,7 +374,7 @@ export default function Navbar() {
                             className="ml-4 mt-2 space-y-1"
                           >
                             {services.map((service, idx) => {
-                              const ServiceIcon = service.icon;
+                              const Icon = service.icon;
                               return (
                                 <Link
                                   key={service.name}
@@ -450,7 +385,7 @@ export default function Navbar() {
                                     setIsServicesOpen(false);
                                   }}
                                 >
-                                  <ServiceIcon className="w-4 h-4 mr-2" />
+                                  <Icon className="w-4 h-4 mr-2" />
                                   <span className="text-sm">{service.name}</span>
                                 </Link>
                               );
@@ -458,37 +393,6 @@ export default function Navbar() {
                           </motion.div>
                         )}
                       </AnimatePresence>
-                    </motion.div>
-                  );
-                }
-
-                // Handle Clients navigation in mobile menu
-                if (item.isSection) {
-                  return (
-                    <motion.div
-                      key={item.name}
-                      custom={index}
-                      initial="hidden"
-                      animate="visible"
-                      variants={linkVariants}
-                    >
-                      <button
-                        onClick={handleClientClick}
-                        className={`flex items-center w-full px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
-                          isActive
-                            ? 'text-blue-600 bg-blue-50 border-l-4 border-blue-600'
-                            : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-                        }`}
-                      >
-                        <span>{item.name}</span>
-                        {isActive && (
-                          <motion.div
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            className="ml-auto w-2 h-2 bg-blue-600 rounded-full"
-                          />
-                        )}
-                      </button>
                     </motion.div>
                   );
                 }

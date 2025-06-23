@@ -1,11 +1,16 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Award, Globe, Users, CheckCircle, Settings, Building, Cog, Zap, Shield, Play, Calendar, MapPin, Phone, Mail, Target, Lightbulb, Cpu, Rocket, BarChart3, Clock, Star, TrendingUp, Eye, HeartHandshake, Leaf, ChevronDown, Menu, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Award, Globe, Users, CheckCircle, Settings, Building, Building2, Cog, Zap, Shield, Play, Calendar, MapPin, Phone, Mail, Target, Lightbulb, Cpu, Rocket, BarChart3, Clock, Star, TrendingUp, Eye, HeartHandshake, Leaf, ChevronDown, Menu, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ClientCarousel from './ClientCarousel';
+
+import TestimonialsSection from './TestimonialsSection';
 import { useState } from 'react';
 
 export default function Home() {
   const [playingVideo, setPlayingVideo] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  
+  
 
   const services = [
     { 
@@ -54,20 +59,44 @@ export default function Home() {
       growth: '+25%'
     }
   ];
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex + 3 >= services.length ? 0 : prevIndex + 3
-    );
+const featuredProjects = [
+    {
+      title: "Samsung Display Center – Noida",
+      id: "samsung-display-noida"
+    },
+    {
+      title: "Vendor Projects for Samsung India Electronics Pvt Ltd",
+      id: "samsung-vendor-projects"
+    },
+    {
+      title: "Vendor projects for Kia Motors India",
+      id: "kia-motors-vendor"
+    },
+    {
+      title: "FLSmidth (German Engineering Firm)",
+      id: "flsmidth-german"
+    }
+  ];
+  const handleProjectClick = (projectId) => {
+    // This would typically navigate to the project page
+    console.log(`Navigating to project: ${projectId}`);
+    // In a real application, you might use:
+    // navigate(`/projects/${projectId}`) or window.location.href = `/projects/${projectId}`
   };
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? Math.max(0, services.length - 3) : Math.max(0, prevIndex - 3)
-    );
-  };
+const nextSlide = () => {
+  setCurrentIndex((prevIndex) => 
+    prevIndex + 5 >= services.length ? 0 : prevIndex + 5
+  );
+};
 
-  const visibleServices = services.slice(currentIndex, currentIndex + 3);
+const prevSlide = () => {
+  setCurrentIndex((prevIndex) => 
+    prevIndex === 0 ? Math.max(0, services.length - 5) : Math.max(0, prevIndex - 5)
+  );
+};
+
+const visibleServices = services.slice(currentIndex, currentIndex + 5);
 
   const stats = [
     { number: '8+', label: 'Years Excellence', icon: Award, desc: 'Since 2016' },
@@ -80,30 +109,37 @@ export default function Home() {
     { 
       title: 'Multi-Disciplinary Expertise', 
       icon: Globe, 
-      desc: 'From electrical systems to mechanical works, HVAC setups to IT networking, civil infrastructure to safe demolition — we offer end-to-end contracting support across key engineering domains.',
+      desc: 'From electrical systems to mechanical works, HVAC setups to IT networking, civil infrastructure to safe demolition — we offer end-to-end contracting support across key engineering domains. Our clients benefit from integrated services under one professional team.',
       impact: 'Integrated services under one team',
       category: 'Expertise'
     },
     { 
       title: 'Skilled Workforce', 
       icon: Users, 
-      desc: 'We deploy qualified engineers, supervisors, electricians, riggers, fitters, welders, and other specialized technicians — all trained to handle real-time industrial challenges.',
+      desc: 'We deploy qualified engineers, supervisors, electricians, riggers, fitters, welders, and other specialized technicians — all trained to handle real-time industrial challenges. Every team member is selected for their domain knowledge, discipline, and commitment to safety.',
       impact: 'Domain knowledge & safety',
       category: 'Workforce'
     },
     { 
       title: 'Precision Through Process', 
       icon: Settings, 
-      desc: 'We follow structured planning, quality checks, and compliance protocols at every stage of execution. Ensures projects are completed with efficiency, accuracy, and accountability.',
+      desc: 'We follow structured planning, quality checks, and compliance protocols at every stage of execution. Whether it’s a shutdown service or a plant expansion, our process ensures projects are completed with efficiency, accuracy, and accountability.',
       impact: 'Consistent quality',
       category: 'Methodology'
     },
     { 
       title: 'Adaptive Solutions', 
       icon: Cpu, 
-      desc: 'We tailor our services to fit each client\'s technical needs, timeline, and operational goals — offering flexible manpower and scalable engineering support as needed.',
+      desc: 'No two projects are the same. That’s why we tailor our services to fit each client is technical needs, timeline, and operational goals — offering flexible manpower and scalable engineering support as needed.',
       impact: 'Customized approach',
       category: 'Flexibility'
+    },
+    { 
+      title: 'Indian-Korean Work Methodology', 
+      icon: HeartHandshake, 
+      desc: 'Our unique blend of Indian and Korean methods allows us to exceed expectations in performance, safety, and project management. This cultural synergy reflects in our high client satisfaction and long-standing industry relationships.',
+      impact: 'Best of both worlds',
+      category: 'Innovation'
     }
   ];
 
@@ -116,47 +152,9 @@ export default function Home() {
     { title: 'Client Focus', icon: Users, desc: 'Tailored solutions', color: 'text-red-600' }
   ];
 
-  const clients = [
-    { name: 'Samsung India', logo: '/samsung-logo.png', sector: 'Electronics' },
-    { name: 'Kia Motors', logo: '/kia-logo.png', sector: 'Automotive' },
-    { name: 'FLSmidth', logo: '/flsmidth-logo.png', sector: 'Engineering' },
-    { name: 'HAEWON Engineering', logo: '/haewon-logo.png', sector: 'Construction' },
-    { name: 'JUNGDO Engineering', logo: '/jungdo-logo.png', sector: 'Engineering' },
-    { name: 'SAMHO Construction', logo: '/samho-logo.png', sector: 'Construction' }
-  ];
 
-  const featuredProjects = [
-    {
-      title: 'Samsung Display Center – Noida',
-      image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=500&fit=crop',
-      category: 'Electrical & Mechanical',
-      value: '₹5.2 Cr',
-      duration: '8 Months',
-      status: 'Completed',
-      description: 'Electrical and mechanical works including HT cable laying, transformer setup, and lighting systems for advanced display manufacturing infrastructure.',
-      technologies: ['HT Cable Laying', 'Transformer Setup', 'Lighting Systems', 'Panel Installation']
-    },
-    {
-      title: 'Kia Motors India – Penukonda',
-      image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&h=500&fit=crop',
-      category: 'Industrial Electrical',
-      value: '₹3.8 Cr',
-      duration: '6 Months',
-      status: 'Completed',
-      description: 'Industrial electrical works, HVAC installation, and manpower support for Korean vendor operations at the Kia Motors manufacturing facility.',
-      technologies: ['HVAC Installation', 'Electrical Works', 'Manpower Supply', 'Equipment Setup']
-    },
-    {
-      title: 'FLSmidth Plant Support',
-      image: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800&h=500&fit=crop',
-      category: 'Mechanical',
-      value: '₹2.5 Cr',
-      duration: '4 Months',
-      status: 'Completed',
-      description: 'On-site manpower deployment and mechanical service support for plant systems and industrial assembly at FLSmidth facility.',
-      technologies: ['Mechanical Support', 'Manpower Deployment', 'Plant Systems', 'Equipment Maintenance']
-    }
-  ];
+
+  
 
   const testimonials = [
     {
@@ -232,6 +230,11 @@ export default function Home() {
       prevIndex + 1 >= totalTestimonialSlides ? 0 : prevIndex + 1
     );
   };
+  
+  const handleLearnMore = () => {
+    // Navigate to another GIC page
+    window.location.href = '/careers'; // Replace with your actual route
+  };
 
   const prevTestimonial = () => {
     setCurrentTestimonialIndex((prevIndex) => 
@@ -247,7 +250,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Auto-Rotating Carousel */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+     <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Image Carousel */}
         <div className="absolute inset-0 z-0">
           {[
@@ -300,26 +303,7 @@ export default function Home() {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-800/60 to-transparent">
-                <div className="absolute bottom-10 left-10 max-w-md text-left">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{
-                      opacity: [0, 1, 1, 0],
-                      y: [20, 0, 0, -20]
-                    }}
-                    transition={{
-                      duration: 25,
-                      times: [0, 0.1, 0.9, 1],
-                      delay: index * 5
-                    }}
-                    className="text-white"
-                  >
-                    <span className="inline-block px-3 py-1 bg-yellow-400 text-blue-900 rounded-full text-sm font-semibold mb-3">
-                      {slide.title}
-                    </span>
-                    <p className="text-xl font-medium mt-2">{slide.desc}</p>
-                  </motion.div>
-                </div>
+                {/* Removed the bottom left text section */}
               </div>
             </motion.div>
           ))}
@@ -333,15 +317,12 @@ export default function Home() {
           transition={{ duration: 1.2 }}
         >
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-8 text-white leading-tight"
+            className="text-4xl md:text-6xl font-bold mb-8 text-white leading-tight"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            Global India
-            <span className="block bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-              Corporation
-            </span>
+            Global India Corporation
           </motion.h1>
           
           <motion.p 
@@ -350,13 +331,13 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
           >
-            Multi-disciplinary engineering solutions with technical expertise, safety-first approach, and world-class execution.
+           Everything is Possible
           </motion.p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link
               to="/services"
-              className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-10 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-3 text-white shadow-2xl"
+              className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-3 text-white shadow-2xl"
             >
               Explore Services 
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -399,29 +380,34 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-                About Global India
-                <span className="block text-blue-600">Corporation</span>
+                About Us
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Established in 2016, GIC is a leading multi-disciplinary engineering contracting and manpower supply company specializing in Electrical, Mechanical (HVAC), Civil, Demolition, and IT Networking services.
+               Global India Corporation (GIC) is a leading multi-disciplinary engineering contracting and manpower supply company, established in 2016. We specialize in Electrical, Mechanical (HVAC), Civil, Demolition, and IT Networking services, delivering reliable solutions to industrial and commercial clients across various sectors.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed mb-10">
-                We blend Indian and Korean-style work methodologies to deliver reliable solutions to industrial and commercial clients across various sectors with a strong focus on quality, safety, and timely execution.
+                With a strong focus on quality, safety, and timely execution, GIC has earned a reputation for supporting complex engineering requirements with efficiency and professionalism. Our approach blends Indian and Korean-style work methodologies, enabling us to meet technical challenges while maintaining high standards of compliance and performance.
+At GIC, we believe that “Everything is Possible” — a mindset that drives every service we offer, from high-voltage electrical systems to structured network infrastructure and plant engineering support.
+
               </p>
-              
-              <div className="grid grid-cols-2 gap-6 mb-10">
-                <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">300+</div>
-                  <div className="text-gray-600">Projects Completed</div>
+{/*               
+              <div className="grid grid-cols-1 gap-6 mb-10">
+                <div className="p-6 bg-white rounded-xl shadow-lg">
+                  <h3 className="text-xl font-bold text-blue-600 mb-4">Our Mission</h3>
+                  <p className="text-gray-600">
+                    To empower industries with dependable engineering solutions by combining skilled manpower, technical precision, and a culture of "everything is possible." We aim to be the partner of choice for clients seeking safe, scalable, and custom-built infrastructure support.
+                  </p>
                 </div>
-                <div className="text-center p-6 bg-white rounded-xl shadow-lg">
-                  <div className="text-3xl font-bold text-green-600 mb-2">99.9%</div>
-                  <div className="text-gray-600">Safety Record</div>
+                <div className="p-6 bg-white rounded-xl shadow-lg">
+                  <h3 className="text-xl font-bold text-blue-600 mb-4">Our Vision</h3>
+                  <p className="text-gray-600">
+                    To become a globally recognized engineering solutions provider known for our innovative approach, exceptional quality, and commitment to client success. We strive to set industry benchmarks in safety, efficiency, and sustainable practices while fostering long-term partnerships.
+                  </p>
                 </div>
-              </div>
+              </div> */}
 
               <Link
-                to="/about"
+                to="#why-gic" // Changed to link to Why GIC section
                 className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
               >
                 Learn More <ArrowRight className="h-5 w-5" />
@@ -445,8 +431,8 @@ export default function Home() {
                   <div className="flex items-center gap-3">
                     <Award className="h-8 w-8 text-yellow-500" />
                     <div>
-                      <div className="font-bold text-gray-900">Our Mission</div>
-                      <div className="text-sm text-gray-600">To empower industries with dependable engineering solutions</div>
+                      <div className="font-bold text-gray-900">8+ Years</div>
+                      <div className="text-sm text-gray-600">Industry Experience</div>
                     </div>
                   </div>
                 </div>
@@ -457,56 +443,116 @@ export default function Home() {
       </section>
 
       {/* Why Choose GIC Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 to-blue-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;utf8,<svg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22><g fill=%22none%22 fill-rule=%22evenodd%22><g fill=%22%23ffffff%22 fill-opacity=%220.05%22><circle cx=%2230%22 cy=%2230%22 r=%221%22/></g></g></svg>')]"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <section id="why-gic" className="py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-40">
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(59,130,246,0.05)_50%,transparent_75%)] bg-[length:60px_60px]"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            transition={{ duration: 0.6 }}
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent">
               Why Choose GIC
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <h3 className="text-2xl md:text-3xl font-semibold text-gray-700 mb-8">
               Where Engineering Meets Precision — Because Everything is Possible
+            </h3>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              When industrial clients look for a partner, they seek more than just a contractor — they seek dependability, skill, and integrity. At <strong className="text-blue-700">Global India Corporation (GIC)</strong>, we deliver all three.
             </p>
           </motion.div>
+        </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {innovations.map((innovation, index) => (
-              <motion.div
-                key={innovation.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:border-white/40 transition-all duration-300"
-              >
-                <motion.div
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                  className="mb-6"
-                >
-                  <innovation.icon className="h-12 w-12 text-yellow-400" />
-                </motion.div>
-                <span className="inline-block px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium mb-4">
-                  {innovation.category}
-                </span>
-                <h3 className="text-xl font-bold mb-4">{innovation.title}</h3>
-                <p className="text-gray-300 mb-4 leading-relaxed">{innovation.desc}</p>
-                <div className="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm font-semibold">
-                  {innovation.impact}
+        {/* Cards Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {innovations.map((innovation, index) => (
+            <motion.div
+              key={innovation.title}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.6 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="group bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-gray-200 hover:border-blue-300 transition-all duration-500 shadow-lg hover:shadow-2xl relative overflow-hidden"
+            >
+              {/* Subtle hover effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="relative z-10">
+                {/* Icon and Category */}
+                <div className="flex items-center justify-between mb-6">
+                  <motion.div
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                    className="p-4 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-lg"
+                  >
+                    <innovation.icon className="h-8 w-8 text-white" />
+                  </motion.div>
+                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-semibold border">
+                    {innovation.category}
+                  </span>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
+                {/* Content */}
+                <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-blue-800 transition-colors duration-300">
+                  {innovation.title}
+                </h3>
+                
+                <p className="text-gray-600 mb-6 leading-relaxed text-base">
+                  {innovation.desc}
+                </p>
+
+                {/* Impact Badge */}
+                <div className="flex items-center space-x-2 p-3 bg-blue-50 rounded-xl border border-blue-100">
+                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0" />
+                  <span className="text-blue-800 font-semibold text-sm">
+                    {innovation.impact}
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Call-to-Action Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-12 shadow-2xl">
+            <h3 className="text-3xl font-bold text-white mb-4">
+              Ready to Experience the GIC Difference?
+            </h3>
+            <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+              Discover how our integrated approach and proven methodology can transform your next industrial project.
+            </p>
+            <motion.button
+              onClick={handleLearnMore}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center px-8 py-4 bg-white text-blue-700 font-bold rounded-2xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl group"
+            >
+              Learn More Why GIC
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </motion.button>
+          </div>
+        </motion.div>
+      </div>
+    </section>
       {/* Enhanced Services Section */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -526,22 +572,7 @@ export default function Home() {
 
           {/* Carousel Container */}
           <div className="relative">
-            {/* Navigation Arrows */}
-            <button
-              onClick={prevSlide}
-              disabled={currentIndex === 0}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <ChevronLeft className="h-6 w-6 text-gray-600" />
-            </button>
             
-            <button
-              onClick={nextSlide}
-              disabled={currentIndex + 3 >= services.length}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <ChevronRight className="h-6 w-6 text-gray-600" />
-            </button>
 
             {/* Services Grid */}
             <div className="grid lg:grid-cols-3 gap-8 px-12">
@@ -595,27 +626,14 @@ export default function Home() {
                       to="/services"
                       className="block w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors duration-300 text-center"
                     >
-                      Learn More
+                      Explore More
                     </Link>
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            {/* Pagination Dots */}
-            <div className="flex justify-center mt-8 space-x-2">
-              {Array.from({ length: Math.ceil(services.length / 3) }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index * 3)}
-                  className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                    Math.floor(currentIndex / 3) === index 
-                      ? 'bg-blue-600' 
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                />
-              ))}
-            </div>
+            
           </div>
         </div>
       </section>
@@ -713,312 +731,139 @@ export default function Home() {
       </section>
 
       {/* Featured Projects Showcase */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
-          >
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Our Projects
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Transformative projects that showcase our capabilities
-            </p>
-          </motion.div>
+       <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-40">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f1f5f9' fill-opacity='0.3'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '60px 60px'
+        }}></div>
+      </div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-green-100 to-blue-100 rounded-full blur-3xl opacity-20 translate-y-1/2 -translate-x-1/2"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Header Section */}
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <CheckCircle className="h-4 w-4" />
+            Proven Track Record
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 bg-clip-text text-transparent mb-6">
+            Projects
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-medium">
+            Proven Execution. Trusted by Industry Leaders.
+          </p>
+        </div>
 
-          <div className="space-y-16">
-            {featuredProjects.map((project, index) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2, duration: 0.8 }}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                }`}
-              >
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <div className="relative group">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-96 object-cover rounded-2xl shadow-2xl group-hover:shadow-3xl transition-all duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="absolute bottom-6 left-6 text-white">
-                        <span className="inline-block px-3 py-1 bg-blue-600 rounded-full text-sm font-medium mb-2">
-                          {project.status}
-                        </span>
-                      </div>
-                    </div>
+
+
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Left Side - Company Info */}
+          <div className="space-y-6">
+            <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                  <Building2 className="h-5 w-5 text-white" />
+                </div>
+                <h3 className="text-4xl font-bold bg-gradient-to-r from-gray-900 to-blue-900 bg-clip-text text-transparent">
+                  Projects
+                </h3>
+              </div>
+              
+              <div className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-8">
+                <p className="text-xl italic font-semibold">
+                  Proven Execution. Trusted by Industry Leaders.
+                </p>
+              </div>
+              
+              <div className="prose prose-lg text-gray-700 leading-relaxed space-y-6">
+                <div className="relative">
+                  <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-600 rounded-full"></div>
+                  <div className="pl-6">
+                    <p className="mb-6 text-gray-700 leading-relaxed">
+                      At <span className="font-bold text-gray-900 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Global India Corporation (GIC)</span>, we take pride in delivering high-quality engineering and contracting services to some of the most respected names in the industrial sector. Since our inception in 2016, we have successfully executed a wide range of projects across <span className="font-semibold text-blue-600">electrical</span>, <span className="font-semibold text-green-600">mechanical (HVAC)</span>, <span className="font-semibold text-purple-600">civil</span>, <span className="font-semibold text-orange-600">demolition</span>, and <span className="font-semibold text-indigo-600">IT networking domains</span>, with precision, safety, and client satisfaction at the core.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                      Each project reflects our ability to adapt, mobilize skilled manpower, and meet technical requirements within committed timelines — making us a dependable partner in critical industrial operations.
+                    </p>
                   </div>
                 </div>
                 
-                <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
-                  <span className="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-4">
-                    {project.category}
-                  </span>
-                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                    {project.title}
-                  </h3>
-                  <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                    {project.description}
-                  </p>
-                  
-                  <div className="grid grid-cols-3 gap-6 mb-8">
-                    <div className="text-center p-4 bg-gray-50 rounded-lg">
-                      <div className="text-2xl font-bold text-green-600">{project.value}</div>
-                      <div className="text-sm text-gray-600">Project Value</div>
-                    </div>
-                    <div className="text-center p-4 bg-gray-50 rounded-lg">
-                      <div className="text-2xl font-bold text-blue-600">{project.duration}</div>
-                      <div className="text-sm text-gray-600">Timeline</div>
-                    </div>
-                    <div className="text-center p-4 bg-gray-50 rounded-lg">
-                      <div className="text-2xl font-bold text-purple-600">{project.status}</div>
-                      <div className="text-sm text-gray-600">Status</div>
-                    </div>
-                  </div>
-                  
-                  <div className="mb-8">
-                    <h4 className="font-semibold text-gray-900 mb-3">Key Technologies:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, idx) => (
-                        <span
-                          key={idx}
-                          className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300 flex items-center gap-2">
-                    View Case Study <ArrowRight className="h-4 w-4" />
+                {/* CTA Button */}
+                <div className="mt-8 text-center">
+                  <button className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 via-blue-700 to-purple-700 hover:from-blue-700 hover:via-blue-800 hover:to-purple-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-blue-500/20">
+                    <span className="relative z-10">Explore All Projects</span>
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
+                    
+                    {/* Button glow effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-lg"></div>
                   </button>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mt-16"
-          >
-            <Link
-              to="/projects"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-            >
-              Explore All Projects <ArrowRight className="h-5 w-5" />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Client Showcase */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our Esteemed Clients
-            </h2>
-            <p className="text-xl text-gray-600">
-              Partnering with industry leaders across sectors
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {clients.map((client, index) => (
-              <motion.div
-                key={client.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-100 hover:border-blue-200 flex items-center justify-center"
-              >
-                <div className="w-full h-16 flex items-center justify-center">
-                  <img 
-                    src={client.logo} 
-                    alt={client.name} 
-                    className="max-h-full max-w-full object-contain"
-                  />
+          {/* Right Side - Project Details */}
+          <div className="space-y-6">
+            <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-blue-600 rounded-lg flex items-center justify-center">
+                  <Award className="h-5 w-5 text-white" />
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Client Testimonials */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
-          >
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Client Testimonials
-            </h2>
-            <p className="text-xl text-gray-600">
-              What our clients say about working with us
-            </p>
-          </motion.div>
-
-          <div className="relative">
-            {/* Navigation Arrows */}
-            <button
-              onClick={prevTestimonial}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 group"
-            >
-              <ChevronLeft className="h-6 w-6 text-gray-600 group-hover:text-blue-600" />
-            </button>
-            
-            <button
-              onClick={nextTestimonial}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 group"
-            >
-              <ChevronRight className="h-6 w-6 text-gray-600 group-hover:text-blue-600" />
-            </button>
-
-            {/* Testimonials Container */}
-            <div className="overflow-hidden">
-              <div 
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentTestimonialIndex * 100}%)` }}
-              >
-                {Array.from({ length: totalTestimonialSlides }).map((_, slideIndex) => (
-                  <div key={slideIndex} className="w-full flex-shrink-0">
-                    <div className="grid lg:grid-cols-2 gap-8">
-                      {testimonials
-                        .slice(slideIndex * testimonialsPerView, (slideIndex + 1) * testimonialsPerView)
-                        .map((testimonial, index) => (
-                          <motion.div
-                            key={`${slideIndex}-${index}`}
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.2, duration: 0.8 }}
-                            className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 h-full"
-                          >
-                            <div className="flex items-center gap-1 mb-6">
-                              {[...Array(testimonial.rating)].map((_, i) => (
-                                <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                              ))}
-                            </div>
-                            <blockquote className="text-lg text-gray-600 mb-6 leading-relaxed italic">
-                              "{testimonial.quote}"
-                            </blockquote>
-                            <div className="flex items-center gap-4">
-                              <img
-                                src={testimonial.image}
-                                alt={testimonial.name}
-                                className="w-12 h-12 rounded-full object-cover"
-                              />
-                              <div>
-                                <div className="font-bold text-gray-900">{testimonial.name}</div>
-                                <div className="text-sm text-gray-600">{testimonial.position}</div>
-                                <div className="text-sm text-blue-600 font-medium">{testimonial.company}</div>
-                              </div>
-                            </div>
-                          </motion.div>
-                        ))}
+                <h3 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-blue-900 bg-clip-text text-transparent">
+                  Our Featured Projects
+                </h3>
+              </div>
+              <Link to={'./projects'} className="block">
+              <div className="space-y-4">
+                {featuredProjects.map((project, index) => (
+                  <div
+                    key={index}
+                    className="group relative"
+                  >
+                    <div 
+                      className="relative flex items-center justify-between p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-white/30 hover:border-blue-300/50 hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden group-hover:scale-[1.02] transform"
+                      onClick={() => handleProjectClick(project.id)}
+                    >
+                      {/* Animated background gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-50/0 via-blue-50/30 to-purple-50/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      
+                      <div className="flex items-center gap-4 relative z-10">
+                        <div className="relative">
+                          <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex-shrink-0 shadow-lg"></div>
+                          <div className="absolute inset-0 w-3 h-3 bg-green-400 rounded-full animate-ping opacity-20"></div>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                            {project.title}
+                          </h4>
+                        </div>
+                      </div>
+                      <div className="relative z-10">
+                        <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" />
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
-
-            {/* Pagination Dots */}
-            <div className="flex justify-center mt-12 space-x-2">
-              {Array.from({ length: totalTestimonialSlides }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentTestimonialIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentTestimonialIndex
-                      ? 'bg-blue-600 w-8'
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                />
-              ))}
+              </Link>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+      {/* Client Showcase */}
+      <section id="clients">
+<ClientCarousel />
       </section>
+      {/* Client Testimonials */}
+      <section className="py-24 bg-gray-50"> <TestimonialsSection /></section>
 
       {/* News & Updates */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Latest Updates
-            </h2>
-            <p className="text-xl text-gray-600">
-              Stay informed about our latest achievements and innovations
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {newsUpdates.map((news, index) => (
-              <motion.div
-                key={news.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                whileHover={{ y: -10 }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-100"
-              >
-                <div className="h-48 overflow-hidden">
-                  <img
-                    src={news.image}
-                    alt={news.title}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
-                      {news.category}
-                    </span>
-                    <div className="flex items-center gap-1 text-gray-500 text-sm">
-                      <Calendar className="h-4 w-4" />
-                      {new Date(news.date).toLocaleDateString()}
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 leading-tight">
-                    {news.title}
-                  </h3>
-                  <button className="text-blue-600 hover:text-blue-700 font-semibold text-sm flex items-center gap-1">
-                    Read More <ArrowRight className="h-4 w-4" />
-                  </button>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Enhanced CTA Section */}
       <section className="py-24 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 text-white relative overflow-hidden">

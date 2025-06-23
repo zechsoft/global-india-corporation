@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Zap, 
@@ -15,11 +16,13 @@ import {
 } from 'lucide-react';
 
 export default function Services() {
+  const { serviceType } = useParams(); // Get service type from URL
   const [activeTab, setActiveTab] = useState(0);
 
   const services = [
     {
       title: 'Electrical Services',
+      slug: 'electrical',
       icon: Zap,
       description: 'Reliable electrical contracting for industrial and commercial projects',
       features: [
@@ -49,6 +52,7 @@ export default function Services() {
     },
     {
       title: 'Mechanical & HVAC',
+      slug: 'mechanical',
       icon: Wrench,
       description: 'Expert mechanical services with HVAC specialization',
       features: [
@@ -78,6 +82,7 @@ export default function Services() {
     },
     {
       title: 'Civil & Demolition',
+      slug: 'civil',
       icon: Hammer,
       description: 'Civil construction and controlled demolition solutions',
       features: [
@@ -107,6 +112,7 @@ export default function Services() {
     },
     {
       title: 'IT & Networking',
+      slug: 'it',
       icon: Cpu,
       description: 'Secure and scalable IT infrastructure solutions',
       features: [
@@ -136,6 +142,7 @@ export default function Services() {
     },
     {
       title: 'Manpower Supply',
+      slug: 'manpower',
       icon: Users,
       description: 'Skilled manpower across engineering disciplines',
       features: [
@@ -164,6 +171,16 @@ export default function Services() {
       stats: { personnel: '500+', clients: '30+', retention: '95%' }
     }
   ];
+
+  // Set active tab based on URL parameter
+  useEffect(() => {
+    if (serviceType) {
+      const serviceIndex = services.findIndex(service => service.slug === serviceType);
+      if (serviceIndex !== -1) {
+        setActiveTab(serviceIndex);
+      }
+    }
+  }, [serviceType]);
 
   return (
     <div className="min-h-screen pt-16">
@@ -290,14 +307,7 @@ export default function Services() {
                   </div>
 
                   {/* Stats */}
-                  <div className="grid grid-cols-3 gap-4 bg-gray-50 p-6 rounded-lg">
-                    {Object.entries(services[activeTab].stats).map(([key, value]) => (
-                      <div key={key} className="text-center">
-                        <div className="text-2xl font-bold text-blue-600">{value}</div>
-                        <div className="text-sm text-gray-600 capitalize">{key}</div>
-                      </div>
-                    ))}
-                  </div>
+                  
 
                   {/* Features Grid */}
                   <div>
@@ -319,22 +329,7 @@ export default function Services() {
                   </div>
 
                   {/* Example Projects */}
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-6">Completed Projects</h3>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {services[activeTab].projects.map((project, index) => (
-                        <motion.div
-                          key={project}
-                          initial={{ opacity: 0, scale: 0.9 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: index * 0.1 }}
-                          className="bg-gradient-to-br from-blue-50 to-indigo-100 p-4 rounded-lg text-center hover:shadow-lg transition-shadow"
-                        >
-                          <h4 className="font-semibold text-gray-800">{project}</h4>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
+                  
                 </motion.div>
               </AnimatePresence>
             </div>
@@ -343,79 +338,9 @@ export default function Services() {
       </section>
 
       {/* Clients Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Esteemed Clients</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Trusted by leading organizations across multiple industries
-            </p>
-          </motion.div>
-
-          {/* Client Logos - Replace with actual client logos */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {['Samsung', 'Kia Motors', 'FLSmidth', 'HAEWON', 'JUNGDO', 'DAEMYOUNG'].map((client, index) => (
-              <motion.div
-                key={client}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white p-6 rounded-lg shadow-md flex items-center justify-center h-32"
-              >
-                <span className="text-2xl font-bold text-gray-700">{client}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+     
       {/* Testimonials Section */}
-      <section className="py-20 bg-blue-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-bold mb-4">Client Testimonials</h2>
-            <p className="text-lg opacity-90 max-w-3xl mx-auto">
-              What our clients say about working with GIC
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              "GIC has consistently delivered high-quality electrical and mechanical support for our operations. Their team is responsive, technically sound, and always meets deadlines with precision.",
-              "We've partnered with GIC across multiple sites for HVAC and civil work. Their professionalism, safety standards, and trained workforce have made them a reliable extension of our project team.",
-              "From manpower supply to IT infrastructure setup, GIC has proven to be a dependable partner. Their flexibility and ability to scale based on our site needs is impressive."
-            ].map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-blue-700 p-8 rounded-lg"
-              >
-                <div className="mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-yellow-400">★</span>
-                  ))}
-                </div>
-                <p className="mb-6 italic">"{testimonial}"</p>
-                <div className="font-semibold">— Major Client</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* CTA Section */}
       <section className="py-20 bg-blue-900 text-white">

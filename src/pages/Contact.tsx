@@ -65,7 +65,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20 bg-white">
+     <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Contact Form */}
@@ -235,28 +235,43 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-lg">
-                <h4 className="font-bold text-gray-900 mb-3">Quick Connect</h4>
-                <p className="text-gray-600 mb-4">For immediate assistance, reach out via WhatsApp</p>
-                <motion.a
-                  href="https://wa.me/+919047642156"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-300 inline-flex items-center gap-2"
-                >
-                  <MessageCircle className="h-5 w-5" />
-                  WhatsApp Us
-                </motion.a>
-              </div>
-
-              <div className="bg-gradient-to-br from-orange-50 to-red-100 p-6 rounded-lg">
-                <h4 className="font-bold text-gray-900 mb-3">Our Specialty</h4>
-                <p className="text-gray-600 mb-2 font-medium">Indian-Korean Work Methodology</p>
-                <p className="text-sm text-gray-600">
-                  Trusted by Samsung, Kia Motors, and leading Korean engineering firms for precision and reliability.
-                </p>
+              {/* Location Map */}
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div className="p-4 bg-gray-50 border-b">
+                  <h4 className="font-bold text-gray-900 flex items-center gap-2">
+                    <MapPin className="h-5 w-5 text-blue-600" />
+                    Our Location
+                  </h4>
+                </div>
+                <div className="relative">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.8234567890123!2d79.5123456789!3d12.9234567890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU1JzI0LjQiTiA3OcKwMzAnNDQuNCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin&q=Kovalavedu+Main+Road+Walajabad+Kancheepuram+Tamil+Nadu+631604"
+                    width="100%"
+                    height="280"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full"
+                  ></iframe>
+                  <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 px-3 py-2 rounded-lg shadow-md">
+                    <p className="text-sm font-medium text-gray-900">Global India Corporation</p>
+                    <p className="text-xs text-gray-600">Walajabad, Kancheepuram</p>
+                  </div>
+                </div>
+                <div className="p-4 bg-gray-50">
+                  <motion.a
+                    href="https://maps.google.com/?q=3B/1A+Kovalavedu+Main+Road+Walajabad+Kancheepuram+Tamil+Nadu+631604"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-300 inline-flex items-center justify-center gap-2 text-sm"
+                  >
+                    <MapPin className="h-4 w-4" />
+                    Open in Google Maps
+                  </motion.a>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -264,168 +279,10 @@ export default function Contact() {
       </section>
 
       {/* Company Overview */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              About Global India Corporation
-            </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Leading multi-disciplinary engineering contracting and manpower supply company since 2016
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white p-6 rounded-lg shadow-lg"
-            >
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-blue-600 font-bold text-xl">⚡</span>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Electrical Services</h3>
-              <p className="text-gray-600">
-                HT/LT cable laying, transformer installation, high mast lighting, and complete electrical solutions.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-white p-6 rounded-lg shadow-lg"
-            >
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-green-600 font-bold text-xl">🔧</span>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Mechanical & HVAC</h3>
-              <p className="text-gray-600">
-                Equipment installation, HVAC systems, dust collection, and industrial piping support.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-white p-6 rounded-lg shadow-lg"
-            >
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-orange-600 font-bold text-xl">🏗️</span>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Civil & Demolition</h3>
-              <p className="text-gray-600">
-                Foundation work, structural construction, controlled demolition, and site preparation.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="bg-white p-6 rounded-lg shadow-lg"
-            >
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-purple-600 font-bold text-xl">🌐</span>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">IT & Networking</h3>
-              <p className="text-gray-600">
-                Network cabling, server installation, surveillance systems, and IT infrastructure setup.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="bg-white p-6 rounded-lg shadow-lg"
-            >
-              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-red-600 font-bold text-xl">👷</span>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Manpower Supply</h3>
-              <p className="text-gray-600">
-                Skilled engineers, technicians, electricians, and specialized workforce for industrial projects.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="bg-white p-6 rounded-lg shadow-lg"
-            >
-              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-indigo-600 font-bold text-xl">🤝</span>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Trusted Partner</h3>
-              <p className="text-gray-600">
-                Serving Samsung, Kia Motors, and leading Korean engineering firms with excellence since 2016.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+     
 
       {/* Map Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Find Us on Map
-            </h2>
-            <p className="text-xl text-gray-600">
-              Visit our office in Walajabad, Kancheepuram
-            </p>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-blue-50 to-indigo-100 h-96 rounded-lg shadow-lg flex items-center justify-center"
-          >
-            <div className="text-center">
-              <MapPin className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                Global India Corporation
-              </h3>
-              <p className="text-gray-600 text-lg">
-                3B/1A, Kovalavedu Main Road<br />
-                Walajabad, Kancheepuram<br />
-                Tamil Nadu 631604
-              </p>
-              <div className="mt-6 space-x-4">
-                <span className="inline-flex items-center gap-2 text-blue-600 font-medium">
-                  <Phone className="h-4 w-4" />
-                  +91-9047642156
-                </span>
-                <span className="inline-flex items-center gap-2 text-blue-600 font-medium">
-                  <Mail className="h-4 w-4" />
-                  globalindiacorps@gmail.com
-                </span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 }

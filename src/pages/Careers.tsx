@@ -231,44 +231,10 @@ export default function WhyGIC() {
         </div>
       </section>
 
-      {/* Strengths Grid */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 bg-emerald-50 border border-emerald-200 rounded-full mb-6">
-              <span className="text-emerald-700 text-sm font-medium">Key Strengths</span>
-            </div>
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">
-              What Sets Us Apart
-            </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              The fundamental strengths that make us the preferred partner for engineering solutions
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {strengths.map((strength, index) => (
-              <div
-                key={strength.title}
-                className="bg-white p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300 group"
-              >
-                <div className="flex items-center justify-center w-16 h-16 bg-slate-100 rounded-xl mb-6 group-hover:bg-slate-200 transition-colors duration-300">
-                  <strength.icon className="h-8 w-8 text-slate-600" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">
-                  {strength.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  {strength.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Mission Statement */}
-      <section className="py-24 bg-slate-900 text-white">
+      {/* <section className="py-24 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -303,27 +269,10 @@ export default function WhyGIC() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700">
-        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Experience the GIC Difference?
-          </h2>
-          <p className="text-xl text-blue-100 mb-10 leading-relaxed">
-            Join the ranks of satisfied clients who trust GIC for their most critical engineering projects
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white hover:bg-slate-50 text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
-              Get Started Today
-            </button>
-            <button className="bg-transparent hover:bg-white/10 text-white px-8 py-4 rounded-lg text-lg font-semibold border-2 border-white/30 hover:border-white/50 transition-all duration-300">
-              View Our Projects
-            </button>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 }

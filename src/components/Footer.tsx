@@ -111,20 +111,7 @@ export default function Footer() {
             {/* Company Info */}
             <motion.div className="lg:col-span-2" variants={itemVariants}>
               <div className="flex items-center space-x-3 mb-6">
-                <div className="relative">
-                  <motion.div
-                    className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <Building className="w-7 h-7 text-white" />
-                  </motion.div>
-                  <motion.div
-                    className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-gray-900"
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  />
-                </div>
+                
                 <div>
                   <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                     Global India Corporation
@@ -133,11 +120,7 @@ export default function Footer() {
                 </div>
               </div>
               
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Pioneering multi-disciplinary engineering solutions with technical expertise, 
-                safety-first approach, and world-class execution to transform industrial 
-                and commercial projects.
-              </p>
+              
 
               {/* Contact Info */}
               <div className="space-y-3">
@@ -241,19 +224,35 @@ export default function Footer() {
             className="flex flex-col lg:flex-row justify-between items-center pt-8 border-t border-gray-700"
             variants={itemVariants}
           >
-            <div className="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-8">
-              <div className="flex items-center space-x-1 text-gray-300 text-sm">
-                <span>Made with</span>
-                <motion.div
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 1, repeat: Infinity }}
-                >
-                  <Heart className="w-4 h-4 text-red-500 fill-current" />
-                </motion.div>
-                <span>in India</span>
-              </div>
+            {/* Left side - Make in India with logo */}
+            <div className="flex items-center space-x-4 mb-4 lg:mb-0">
+              {/* Make in India Logo */}
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-8 bg-gradient-to-r from-orange-500 to-green-500 rounded flex items-center justify-center p-1">
+                  <img 
+                    src="src\assets\make-in-india-seeklogo.png" 
+                    alt="Make in India" 
+                    className="w-full h-full object-contain filter brightness-0 invert"
               
-              <div className="flex items-center space-x-6">
+                  />
+                </div>
+                <div className="flex items-center space-x-1 text-gray-300 text-sm">
+                  <span>Made in</span>
+                  <motion.div
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 1, repeat: Infinity }}
+                  >
+                    <Heart className="w-4 h-4 text-red-500 fill-current" />
+                  </motion.div>
+                  <span>India</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right side - Social icons and scroll to top */}
+            <div className="flex items-center space-x-6">
+              {/* Social Media Icons */}
+              <div className="flex items-center space-x-4">
                 {socialLinks.map((social) => (
                   <motion.a
                     key={social.name}
@@ -267,23 +266,8 @@ export default function Footer() {
                   </motion.a>
                 ))}
               </div>
-            </div>
-
-            <div className="flex items-center space-x-6 mt-4 lg:mt-0">
-              <div className="flex items-center space-x-4 text-xs text-gray-400">
-                {footerLinks.legal.slice(0, 3).map((link, index) => (
-                  <span key={link.name}>
-                    <Link 
-                      to={link.href}
-                      className="hover:text-blue-400 transition-colors duration-200"
-                    >
-                      {link.name}
-                    </Link>
-                    {index < 2 && <span className="ml-4">•</span>}
-                  </span>
-                ))}
-              </div>
               
+              {/* Scroll to top button */}
               <motion.button
                 onClick={scrollToTop}
                 className="bg-gray-800 hover:bg-gray-700 p-2 rounded-lg transition-colors duration-200"
