@@ -515,12 +515,7 @@ At GIC, we believe that “Everything is Possible” — a mindset that drives e
                 </p>
 
                 {/* Impact Badge */}
-                <div className="flex items-center space-x-2 p-3 bg-blue-50 rounded-xl border border-blue-100">
-                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0" />
-                  <span className="text-blue-800 font-semibold text-sm">
-                    {innovation.impact}
-                  </span>
-                </div>
+
               </div>
             </motion.div>
           ))}
