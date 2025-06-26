@@ -913,13 +913,7 @@ At GIC, we believe that “Everything is Possible” — a mindset that drives e
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             
-            <Link
-              to="/consultation"
-              className="group bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 text-white flex items-center gap-3"
-            >
-              <Phone className="h-5 w-5" />
-              Free Consultation
-            </Link>
+           
           </div>
           
           <motion.div

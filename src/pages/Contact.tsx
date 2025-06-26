@@ -245,13 +245,14 @@ export default function Contact() {
                 </div>
                 <div className="relative">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.8234567890123!2d79.5123456789!3d12.9234567890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU1JzI0LjQiTiA3OcKwMzAnNDQuNCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin&q=Kovalavedu+Main+Road+Walajabad+Kancheepuram+Tamil+Nadu+631604"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.8234567890123!2d79.86266667390308!3d12.874888287416394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDUyJzI5LjYiTiA3OcKwNTEnNDUuNiJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
                     width="100%"
                     height="280"
                     style={{ border: 0 }}
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
+                    title="Global India Corporation Location"
                     className="w-full"
                   ></iframe>
                   <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 px-3 py-2 rounded-lg shadow-md">
@@ -261,7 +262,7 @@ export default function Contact() {
                 </div>
                 <div className="p-4 bg-gray-50">
                   <motion.a
-                    href="https://maps.google.com/?q=3B/1A+Kovalavedu+Main+Road+Walajabad+Kancheepuram+Tamil+Nadu+631604"
+                    href="https://maps.google.com/?q=12.874888,79.862667"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.02 }}
@@ -277,12 +278,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
-      {/* Company Overview */}
-     
-
-      {/* Map Section */}
-
     </div>
   );
 }
