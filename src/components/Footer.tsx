@@ -230,7 +230,7 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-8 bg-gradient-to-r from-orange-500 to-green-500 rounded flex items-center justify-center p-1">
                   <img 
-                    src="public\assets\make-in-india-seeklogo.png" 
+                    src="/assets/make-in-india-seeklogo.png" 
                     alt="Make in India" 
                     className="w-full h-full object-contain filter brightness-0 invert"
               

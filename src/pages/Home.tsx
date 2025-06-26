@@ -18,7 +18,7 @@ export default function Home() {
       icon: Zap, 
       desc: 'Reliable, safe, and efficient electrical contracting services for industrial and commercial projects',
       features: ['HT/LT Cable Laying & Termination', 'Transformer Installation', 'High Mast & Street Lighting', 'Panel Installation & Wiring', 'Electrical Equipment Testing & Maintenance', 'Overhead Line Erection'],
-      image: 'public/assets/Images/Main Page Section Images/Services Section/Electrical Services N.png',
+      image: '/assets/Images/Main Page Section Images/Services Section/Electrical Services N.png',
       projects: '120+',
       growth: '+35%'
     },
@@ -27,7 +27,7 @@ export default function Home() {
       icon: Cog, 
       desc: 'Expert mechanical services with strong specialization in HVAC systems',
       features: ['Equipment & Machinery Installation', 'Sheet Metal Fabrication', 'Industrial Piping Support', 'Chiller Systems & Ductless Units', 'Dust Collection & Exhaust Systems', 'Refrigeration Piping'],
-      image: 'public/assets/Images/Main Page Section Images/Services Section/Mechanical & HVAC N.png',
+      image: '/assets/Images/Main Page Section Images/Services Section/Mechanical & HVAC N.png',
       projects: '90+',
       growth: '+40%'
     },
@@ -36,7 +36,7 @@ export default function Home() {
       icon: Building, 
       desc: 'Targeted civil construction support and controlled demolition solutions',
       features: ['Flooring & Masonry', 'Foundation Work', 'Safe Dismantling', 'Concrete Breaking', 'Trenches & Drains', 'Controlled Industrial Demolition'],
-      image: 'public/assets/Images/Main Page Section Images/Services Section/Civil & Demolition N.png',
+      image: '/assets/Images/Main Page Section Images/Services Section/Civil & Demolition N.png',
       projects: '75+',
       growth: '+30%'
     },
@@ -45,7 +45,7 @@ export default function Home() {
       icon: Globe, 
       desc: 'Secure, scalable, and high-performance IT infrastructure solutions',
       features: ['Structured Network Cabling', 'Server Installation', 'Smart Surveillance', 'City Fiber Solutions', 'Power & Cooling Management', 'On-site Technical Support'],
-      image: 'public/assets/Images/Main Page Section Images/Services Section/Electrical Services N.png',
+      image: '/assets/Images/Main Page Section Images/Services Section/Electrical Services N.png',
       projects: '60+',
       growth: '+50%'
     },
@@ -54,7 +54,7 @@ export default function Home() {
       icon: Users, 
       desc: 'Skilled and semi-skilled manpower across all engineering disciplines',
       features: ['Engineers & Supervisors', 'Electricians & Fitters', 'Welders & Riggers', 'HVAC Technicians', 'Painters & Helpers', 'Network Operators'],
-      image: 'public/assets/Images/Main Page Section Images/Services Section/Manpower Supply N.png',
+      image: '/assets/Images/Main Page Section Images/Services Section/Manpower Supply N.png',
       projects: '200+',
       growth: '+25%'
     }
@@ -255,27 +255,27 @@ const visibleServices = services.slice(currentIndex, currentIndex + 5);
         <div className="absolute inset-0 z-0">
           {[
   {
-    url: 'public/assets/Images/Home Page Images/1.png',
+    url: '/assets/Images/Home Page Images/1.png',
     title: 'Electrical Services',
     desc: 'HT/LT Cable Laying • Transformer Installation • Panel Wiring'
   },
   {
-    url: 'public/assets/Images/Home Page Images/2.png',
+    url: '/assets/Images/Home Page Images/2.png',
     title: 'Mechanical & HVAC',
     desc: 'Chiller Systems • Sheet Metal Fabrication • Equipment Installation'
   },
   {
-    url: 'public/assets/Images/Home Page Images/3.png',
+    url: '/assets/Images/Home Page Images/3.png',
     title: 'Civil & Demolition',
     desc: 'Foundation Work • Safe Dismantling • Concrete Breaking'
   },
   {
-    url: 'public/assets/Images/Home Page Images/4.png',
+    url: '/assets/Images/Home Page Images/4.png',
     title: 'IT & Networking',
     desc: 'Structured Cabling • Server Installation • Fiber Solutions'
   },
   {
-    url: 'public/assets/Images/Home Page Images/5.png',
+    url: '/assets/Images/Home Page Images/5.png',
     title: 'Manpower Supply',
     desc: 'Skilled Engineers • Technicians • Supervisors • Helpers'
   }
@@ -423,7 +423,7 @@ At GIC, we believe that “Everything is Possible” — a mindset that drives e
             >
               <div className="relative">
                 <img
-                  src="public\assets\Images\Main Page Section Images\About US 3.png"
+                  src="\assets\Images\Main Page Section Images\About US 3.png"
                   alt="Engineering Team"
                   className="rounded-2xl shadow-2xl"
                 />
@@ -866,7 +866,7 @@ At GIC, we believe that “Everything is Possible” — a mindset that drives e
       <section className="py-24 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 text-white relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src='public/assets/Images/Main Page Section Images/About US 3.png'
+            src='/assets/Images/Main Page Section Images/About US 3.png'
             alt="Engineering Team"
             className="w-full h-full object-cover opacity-20"
           />
