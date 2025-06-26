@@ -47,7 +47,7 @@ export default function Services() {
         'FLSmidth Plant Electrical',
         'Samsung India Electronics'
       ],
-      image: '/src/assets/Images/Main Page Section Images/Services Section/Electrical Services N.png',
+      image: '/assets/Images/Main Page Section Images/Services Section/Electrical Services N.png',
       stats: { projects: '120+', clients: '25+', safety: 'Zero Incidents' }
     },
     {
@@ -77,7 +77,7 @@ export default function Services() {
         'NEW VISION Fire Safety',
         'Industrial Plant HVAC'
       ],
-      image: '/src/assets/Images/Main Page Section Images/Services Section/Mechanical & HVAC N.png',
+      image: '/assets/Images/Main Page Section Images/Services Section/Mechanical & HVAC N.png',
       stats: { systems: '80+', efficiency: '40% Improved', clients: '18+' }
     },
     {
@@ -107,7 +107,7 @@ export default function Services() {
         'Plant Infrastructure Upgrades',
         'Commercial Space Preparation'
       ],
-      image: '/src/assets/Images/Main Page Section Images/Services Section/Civil & Demolition N.png',
+      image: '/assets/Images/Main Page Section Images/Services Section/Civil & Demolition N.png',
       stats: { projects: '65+', safety: '100%', clients: '15+' }
     },
     {
@@ -137,7 +137,7 @@ export default function Services() {
         'Smart Building Systems',
         'Commercial IT Setup'
       ],
-      image: '/src/assets/Images/Main Page Section Images/Services Section/IT Networking n.png', // Fixed: Added leading slash
+      image: '/assets/Images/Main Page Section Images/Services Section/IT Networking n.png', // Fixed: Added leading slash
       stats: { installations: '90+', uptime: '99.9%', clients: '20+' }
     },
     {
@@ -167,7 +167,7 @@ export default function Services() {
         'JUNGDO Engineering Team',
         'Industrial Plant Workforce'
       ],
-      image: '/src/assets/Images/Main Page Section Images/Services Section/Manpower Supply N.png', // Fixed: Added leading slash
+      image: '/assets/Images/Main Page Section Images/Services Section/Manpower Supply N.png', // Fixed: Added leading slash
       stats: { personnel: '500+', clients: '30+', retention: '95%' }
     }
   ];

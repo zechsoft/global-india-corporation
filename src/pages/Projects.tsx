@@ -47,7 +47,7 @@ export default function Projects() {
       location: 'Noida, Uttar Pradesh',
       year: '2020',
       status: 'Completed',
-      image: 'src/assets/Images/Key Completed Projects/Samsung display Noida-Plant-Pict n.jpg',
+      image: '/assets/Images/Key Completed Projects/Samsung display Noida-Plant-Pict n.jpg',
       value: '₹15 Crores'
     },
     {
@@ -56,7 +56,7 @@ export default function Projects() {
       location: 'Noida & Chennai',
       year: '2019-2022',
       status: 'Completed',
-      image: 'src/assets/Images/Key Completed Projects/samsung-electronics-1 N.jpg',
+      image: '/assets/Images/Key Completed Projects/samsung-electronics-1 N.jpg',
       description: 'Electrical and IT networking support, manpower supply, and on-site engineering assistance for multiple projects.',
       value: '₹25 Crores'
     },
@@ -66,7 +66,7 @@ export default function Projects() {
       location: 'Penukonda, Andhra Pradesh',
       year: '2021',
       status: 'Completed',
-      image: 'src/assets/Images/Key Completed Projects/Kia.avif',
+      image: '/assets/Images/Key Completed Projects/Kia.avif',
       description: 'Industrial electrical works, HVAC installation, and manpower support for Korean vendor operations.',
       value: '₹18 Crores'
     },

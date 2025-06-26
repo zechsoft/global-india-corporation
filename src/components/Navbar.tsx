@@ -2,7 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown, Zap, Settings, Hammer, Wifi, Users } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Globallog from "../assets/apple-icon.png";
+
+// Fixed: Correct way to reference public folder assets
+const Globallog = "/assets/apple-icon.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
