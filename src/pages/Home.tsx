@@ -535,8 +535,9 @@ At GIC, we believe that “Everything is Possible” — a mindset that drives e
             <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
               Discover how our integrated approach and proven methodology can transform your next industrial project.
             </p>
+            <Link to='/careers'>
             <motion.button
-              onClick={handleLearnMore}
+              
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               className="inline-flex items-center px-8 py-4 bg-white text-blue-700 font-bold rounded-2xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl group"
@@ -544,8 +545,10 @@ At GIC, we believe that “Everything is Possible” — a mindset that drives e
               Learn More Why GIC
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
             </motion.button>
+            </Link>
           </div>
         </motion.div>
+        
       </div>
     </section>
       {/* Enhanced Services Section */}
