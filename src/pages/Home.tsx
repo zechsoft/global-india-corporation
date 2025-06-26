@@ -18,7 +18,7 @@ export default function Home() {
       icon: Zap, 
       desc: 'Reliable, safe, and efficient electrical contracting services for industrial and commercial projects',
       features: ['HT/LT Cable Laying & Termination', 'Transformer Installation', 'High Mast & Street Lighting', 'Panel Installation & Wiring', 'Electrical Equipment Testing & Maintenance', 'Overhead Line Erection'],
-      image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600&h=400&fit=crop',
+      image: 'src/assets/Images/Main Page Section Images/Services Section/Electrical Services N.png',
       projects: '120+',
       growth: '+35%'
     },
@@ -27,7 +27,7 @@ export default function Home() {
       icon: Cog, 
       desc: 'Expert mechanical services with strong specialization in HVAC systems',
       features: ['Equipment & Machinery Installation', 'Sheet Metal Fabrication', 'Industrial Piping Support', 'Chiller Systems & Ductless Units', 'Dust Collection & Exhaust Systems', 'Refrigeration Piping'],
-      image: 'https://images.unsplash.com/photo-1601134467661-3d775b999c8b?w=600&h=400&fit=crop',
+      image: 'src/assets/Images/Main Page Section Images/Services Section/Mechanical & HVAC N.png',
       projects: '90+',
       growth: '+40%'
     },
@@ -36,7 +36,7 @@ export default function Home() {
       icon: Building, 
       desc: 'Targeted civil construction support and controlled demolition solutions',
       features: ['Flooring & Masonry', 'Foundation Work', 'Safe Dismantling', 'Concrete Breaking', 'Trenches & Drains', 'Controlled Industrial Demolition'],
-      image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=400&fit=crop',
+      image: 'src/assets/Images/Main Page Section Images/Services Section/Civil & Demolition N.png',
       projects: '75+',
       growth: '+30%'
     },
@@ -45,7 +45,7 @@ export default function Home() {
       icon: Globe, 
       desc: 'Secure, scalable, and high-performance IT infrastructure solutions',
       features: ['Structured Network Cabling', 'Server Installation', 'Smart Surveillance', 'City Fiber Solutions', 'Power & Cooling Management', 'On-site Technical Support'],
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
+      image: 'src/assets/Images/Main Page Section Images/Services Section/Electrical Services N.png',
       projects: '60+',
       growth: '+50%'
     },
@@ -54,7 +54,7 @@ export default function Home() {
       icon: Users, 
       desc: 'Skilled and semi-skilled manpower across all engineering disciplines',
       features: ['Engineers & Supervisors', 'Electricians & Fitters', 'Welders & Riggers', 'HVAC Technicians', 'Painters & Helpers', 'Network Operators'],
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop',
+      image: 'src/assets/Images/Main Page Section Images/Services Section/Manpower Supply N.png',
       projects: '200+',
       growth: '+25%'
     }
@@ -254,32 +254,32 @@ const visibleServices = services.slice(currentIndex, currentIndex + 5);
         {/* Image Carousel */}
         <div className="absolute inset-0 z-0">
           {[
-            {
-              url: 'https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-              title: 'Electrical Services',
-              desc: 'HT/LT Cable Laying • Transformer Installation • Panel Wiring'
-            },
-            {
-              url: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-              title: 'Mechanical & HVAC',
-              desc: 'Chiller Systems • Sheet Metal Fabrication • Equipment Installation'
-            },
-            {
-              url: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-              title: 'Civil & Demolition',
-              desc: 'Foundation Work • Safe Dismantling • Concrete Breaking'
-            },
-            {
-              url: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-              title: 'IT & Networking',
-              desc: 'Structured Cabling • Server Installation • Fiber Solutions'
-            },
-            {
-              url: 'https://images.unsplash.com/photo-1581093057305-5e0d6fab2c14?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-              title: 'Manpower Supply',
-              desc: 'Skilled Engineers • Technicians • Supervisors • Helpers'
-            }
-          ].map((slide, index) => (
+  {
+    url: 'src/assets/Images/Home Page Images/1.png',
+    title: 'Electrical Services',
+    desc: 'HT/LT Cable Laying • Transformer Installation • Panel Wiring'
+  },
+  {
+    url: 'src/assets/Images/Home Page Images/2.png',
+    title: 'Mechanical & HVAC',
+    desc: 'Chiller Systems • Sheet Metal Fabrication • Equipment Installation'
+  },
+  {
+    url: 'src/assets/Images/Home Page Images/3.png',
+    title: 'Civil & Demolition',
+    desc: 'Foundation Work • Safe Dismantling • Concrete Breaking'
+  },
+  {
+    url: 'src/assets/Images/Home Page Images/4.png',
+    title: 'IT & Networking',
+    desc: 'Structured Cabling • Server Installation • Fiber Solutions'
+  },
+  {
+    url: 'src/assets/Images/Home Page Images/5.png',
+    title: 'Manpower Supply',
+    desc: 'Skilled Engineers • Technicians • Supervisors • Helpers'
+  }
+].map((slide, index) => (
             <motion.div
               key={index}
               className="absolute inset-0"
@@ -336,7 +336,7 @@ const visibleServices = services.slice(currentIndex, currentIndex + 5);
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link
-              to="/services"
+              to="/services/electrical"
               className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-3 text-white shadow-2xl"
             >
               Explore Services 
@@ -407,7 +407,7 @@ At GIC, we believe that “Everything is Possible” — a mindset that drives e
               </div> */}
 
               <Link
-                to="#why-gic" // Changed to link to Why GIC section
+                to="/about" // Changed to link to Why GIC section
                 className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
               >
                 Learn More <ArrowRight className="h-5 w-5" />
@@ -423,7 +423,7 @@ At GIC, we believe that “Everything is Possible” — a mindset that drives e
             >
               <div className="relative">
                 <img
-                  src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=700&fit=crop"
+                  src="src\assets\Images\Main Page Section Images\About US 3.png"
                   alt="Engineering Team"
                   className="rounded-2xl shadow-2xl"
                 />
@@ -788,6 +788,7 @@ At GIC, we believe that “Everything is Possible” — a mindset that drives e
                 
                 {/* CTA Button */}
                 <div className="mt-8 text-center">
+                  <Link to='/services/Electrical Services'>
                   <button className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 via-blue-700 to-purple-700 hover:from-blue-700 hover:via-blue-800 hover:to-purple-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-blue-500/20">
                     <span className="relative z-10">Explore All Projects</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
@@ -795,6 +796,7 @@ At GIC, we believe that “Everything is Possible” — a mindset that drives e
                     {/* Button glow effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-lg"></div>
                   </button>
+                  </Link>
                 </div>
               </div>
             </div>

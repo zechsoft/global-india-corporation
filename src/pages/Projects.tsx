@@ -47,8 +47,7 @@ export default function Projects() {
       location: 'Noida, Uttar Pradesh',
       year: '2020',
       status: 'Completed',
-      image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop',
-      description: 'Electrical and mechanical works including HT cable laying, transformer setup, and lighting systems for advanced display manufacturing infrastructure.',
+      image: 'src/assets/Images/Key Completed Projects/Samsung display Noida-Plant-Pict n.jpg',
       value: '₹15 Crores'
     },
     {
@@ -57,7 +56,7 @@ export default function Projects() {
       location: 'Noida & Chennai',
       year: '2019-2022',
       status: 'Completed',
-      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop',
+      image: 'src/assets/Images/Key Completed Projects/samsung-electronics-1 N.jpg',
       description: 'Electrical and IT networking support, manpower supply, and on-site engineering assistance for multiple projects.',
       value: '₹25 Crores'
     },
@@ -67,7 +66,7 @@ export default function Projects() {
       location: 'Penukonda, Andhra Pradesh',
       year: '2021',
       status: 'Completed',
-      image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop',
+      image: 'src/assets/Images/Key Completed Projects/Kia.avif',
       description: 'Industrial electrical works, HVAC installation, and manpower support for Korean vendor operations.',
       value: '₹18 Crores'
     },

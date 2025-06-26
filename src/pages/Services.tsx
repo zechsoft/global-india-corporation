@@ -47,7 +47,7 @@ export default function Services() {
         'FLSmidth Plant Electrical',
         'Samsung India Electronics'
       ],
-      image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600&h=400&fit=crop',
+      image: '/src/assets/Images/Main Page Section Images/Services Section/Electrical Services N.png',
       stats: { projects: '120+', clients: '25+', safety: 'Zero Incidents' }
     },
     {
@@ -77,7 +77,7 @@ export default function Services() {
         'NEW VISION Fire Safety',
         'Industrial Plant HVAC'
       ],
-      image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&h=400&fit=crop',
+      image: '/src/assets/Images/Main Page Section Images/Services Section/Mechanical & HVAC N.png',
       stats: { systems: '80+', efficiency: '40% Improved', clients: '18+' }
     },
     {
@@ -107,7 +107,7 @@ export default function Services() {
         'Plant Infrastructure Upgrades',
         'Commercial Space Preparation'
       ],
-      image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop',
+      image: '/src/assets/Images/Main Page Section Images/Services Section/Civil & Demolition N.png',
       stats: { projects: '65+', safety: '100%', clients: '15+' }
     },
     {
@@ -137,7 +137,7 @@ export default function Services() {
         'Smart Building Systems',
         'Commercial IT Setup'
       ],
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
+      image: '/src/assets/Images/Main Page Section Images/Services Section/IT Networking n.png', // Fixed: Added leading slash
       stats: { installations: '90+', uptime: '99.9%', clients: '20+' }
     },
     {
@@ -167,7 +167,7 @@ export default function Services() {
         'JUNGDO Engineering Team',
         'Industrial Plant Workforce'
       ],
-      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop',
+      image: '/src/assets/Images/Main Page Section Images/Services Section/Manpower Supply N.png', // Fixed: Added leading slash
       stats: { personnel: '500+', clients: '30+', retention: '95%' }
     }
   ];
@@ -297,6 +297,10 @@ export default function Services() {
                       src={services[activeTab].image}
                       alt={services[activeTab].title}
                       className="w-full h-64 object-cover"
+                      onError={(e) => {
+                        // Fallback image if the original fails to load
+                        e.target.src = "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=600&fit=crop";
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent">
                       <div className="absolute bottom-6 left-6 text-white">
