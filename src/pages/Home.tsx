@@ -45,7 +45,7 @@ export default function Home() {
       icon: Globe, 
       desc: 'Secure, scalable, and high-performance IT infrastructure solutions',
       features: ['Structured Network Cabling', 'Server Installation', 'Smart Surveillance', 'City Fiber Solutions', 'Power & Cooling Management', 'On-site Technical Support'],
-      image: '/assets/Images/Main Page Section Images/Services Section/Electrical Services N.png',
+      image: '/assets/Images/Main Page Section Images/Services Section/IT Networking n.png',
       projects: '60+',
       growth: '+50%'
     },
