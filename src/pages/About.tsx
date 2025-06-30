@@ -168,7 +168,7 @@
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/60 to-purple-900/0 z-10"></div>
           <div className="absolute inset-0">
             <img 
-              src="public\assets\Images\About us .PNG" 
+              src="/assets/Images/About us .PNG" 
               alt="Industrial infrastructure"
               className="w-full h-full object-cover"
             />
