@@ -28,7 +28,7 @@ const services = [
     title: 'Mechanical & HVAC', 
     icon: Cog, 
     desc: 'Expert mechanical services with strong specialization in HVAC systems',
-    features: ['Equipment & Machinery Installation', 'Chiller Systems & Ductless Units'],
+    features: ['Equipment & Machinery Installation', 'Chiller Systems & Ductless Units','Dust Collection & Exhaust Systems'],
     image: '/assets/Images/Main Page Section Images/Services Section/Mechanical & HVAC N.png',
     projects: '90+',
     growth: '+40%',
