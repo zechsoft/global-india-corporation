@@ -731,7 +731,8 @@ const visibleServices = services.slice(currentIndex, currentIndex + 5);
                 
                 {/* CTA Button */}
                 <div className="mt-8 text-center">
-                  <Link to='/services/Electrical Services'
+                  <Link to='/projects'
+                   onClick={() => window.scrollTo(0, 0)}
                   >
                   <button className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 via-blue-700 to-purple-700 hover:from-blue-700 hover:via-blue-800 hover:to-purple-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-blue-500/20">
                     <span className="relative z-10">Explore All Projects</span>
