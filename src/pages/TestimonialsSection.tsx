@@ -5,41 +5,41 @@ const TestimonialsSection = () => {
   // Sample testimonials data
   const testimonials = [
     {
-      name: 'Rajesh Kumar',
-      position: 'Project Manager',
-      company: 'Samsung India Electronics',
+      name: 'Kyu Sung Han',
+      position: 'Director',
+      company: 'Jungdo',
       quote: 'GIC has consistently delivered high-quality electrical and mechanical support for our operations. Their team is responsive, technically sound, and always meets deadlines with precision.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face'
     },
     {
-      name: 'Min-ho Lee',
-      position: 'Operations Head',
-      company: 'HAEWON Engineering',
+      name: 'Jae-Sun, Kim',
+      position: 'Executive Vice President',
+      company: 'Dae Myoung GEC Co., Ltd',
       quote: 'We\'ve partnered with GIC across multiple sites for HVAC and civil work. Their professionalism, safety standards, and trained workforce have made them a reliable extension of our project team.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face'
     },
     {
-      name: 'Thomas Müller',
-      position: 'Site Manager',
-      company: 'FLSmidth',
+      name: 'Shin Dong Seon',
+      position: 'General manager',
+      company: 'Younchang Hungary Kft',
       quote: 'From manpower supply to IT infrastructure setup, GIC has proven to be a dependable partner. Their flexibility and ability to scale based on our site needs is impressive.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face'
     },
     {
-      name: 'Arun Patel',
-      position: 'Construction Manager',
-      company: 'Industrial Client',
+      name: 'Baek Joo, Kim',
+      position: 'Director',
+      company: 'Changwon E&C India Pvt.Ltd',
       quote: 'The demolition project was handled with care, compliance, and zero disruption to ongoing site activities. GIC\'s execution was smooth, timely, and cost-effective.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face'
     },
     {
-      name: 'Priya Sharma',
+      name: 'JANG WOO HYUN',
       position: 'Engineering Director',
-      company: 'Kia Motors',
+      company: 'Hyeopseong Engineering Pvt.Ltd',
       quote: 'We trust GIC for their all-in-one approach — skilled manpower, technical execution, and commitment to safety. They bring valuable support to every phase of our projects.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop&crop=face'
@@ -131,11 +131,7 @@ const TestimonialsSection = () => {
                     "{testimonial.quote}"
                   </blockquote>
                   <div className="flex items-center gap-4">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover"
-                    />
+                    
                     <div>
                       <div className="font-bold text-gray-900">{testimonial.name}</div>
                       <div className="text-sm text-gray-600">{testimonial.position}</div>

@@ -12,53 +12,59 @@ export default function Home() {
   
   
 
-  const services = [
-    { 
-      title: 'Electrical Services', 
-      icon: Zap, 
-      desc: 'Reliable, safe, and efficient electrical contracting services for industrial and commercial projects',
-      features: ['HT/LT Cable Laying & Termination', 'Transformer Installation', 'High Mast & Street Lighting', 'Panel Installation & Wiring', 'Electrical Equipment Testing & Maintenance', 'Overhead Line Erection'],
-      image: '/assets/Images/Main Page Section Images/Services Section/Electrical Services N.png',
-      projects: '120+',
-      growth: '+35%'
-    },
-    { 
-      title: 'Mechanical & HVAC', 
-      icon: Cog, 
-      desc: 'Expert mechanical services with strong specialization in HVAC systems',
-      features: ['Equipment & Machinery Installation', 'Sheet Metal Fabrication', 'Industrial Piping Support', 'Chiller Systems & Ductless Units', 'Dust Collection & Exhaust Systems', 'Refrigeration Piping'],
-      image: '/assets/Images/Main Page Section Images/Services Section/Mechanical & HVAC N.png',
-      projects: '90+',
-      growth: '+40%'
-    },
-    { 
-      title: 'Civil & Demolition', 
-      icon: Building, 
-      desc: 'Targeted civil construction support and controlled demolition solutions',
-      features: ['Flooring & Masonry', 'Foundation Work', 'Safe Dismantling', 'Concrete Breaking', 'Trenches & Drains', 'Controlled Industrial Demolition'],
-      image: '/assets/Images/Main Page Section Images/Services Section/Civil & Demolition N.png',
-      projects: '75+',
-      growth: '+30%'
-    },
-    { 
-      title: 'IT & Networking', 
-      icon: Globe, 
-      desc: 'Secure, scalable, and high-performance IT infrastructure solutions',
-      features: ['Structured Network Cabling', 'Server Installation', 'Smart Surveillance', 'City Fiber Solutions', 'Power & Cooling Management', 'On-site Technical Support'],
-      image: '/assets/Images/Main Page Section Images/Services Section/Electrical Services N.png',
-      projects: '60+',
-      growth: '+50%'
-    },
-    { 
-      title: 'Manpower Supply', 
-      icon: Users, 
-      desc: 'Skilled and semi-skilled manpower across all engineering disciplines',
-      features: ['Engineers & Supervisors', 'Electricians & Fitters', 'Welders & Riggers', 'HVAC Technicians', 'Painters & Helpers', 'Network Operators'],
-      image: '/assets/Images/Main Page Section Images/Services Section/Manpower Supply N.png',
-      projects: '200+',
-      growth: '+25%'
-    }
-  ];
+  
+const services = [
+  { 
+    title: 'Electrical Services', 
+    icon: Zap, 
+    desc: 'Reliable, safe, and efficient electrical contracting services for industrial and commercial projects',
+    features: ['HT/LT Cable Laying & Termination', 'Transformer Installation', 'High Mast & Street Lighting', 'Panel Installation & Wiring', 'Electrical Equipment Testing & Maintenance', 'Overhead Line Erection'],
+    image: '/assets/Images/Main Page Section Images/Services Section/Electrical Services N.png',
+    projects: '120+',
+    growth: '+35%',
+    serviceType: 'electrical' // This matches the :serviceType parameter
+  },
+  { 
+    title: 'Mechanical & HVAC', 
+    icon: Cog, 
+    desc: 'Expert mechanical services with strong specialization in HVAC systems',
+    features: ['Equipment & Machinery Installation', 'Sheet Metal Fabrication', 'Industrial Piping Support', 'Chiller Systems & Ductless Units', 'Dust Collection & Exhaust Systems', 'Refrigeration Piping'],
+    image: '/assets/Images/Main Page Section Images/Services Section/Mechanical & HVAC N.png',
+    projects: '90+',
+    growth: '+40%',
+    serviceType: 'mechanical' // This matches the :serviceType parameter
+  },
+  { 
+    title: 'Civil & Demolition', 
+    icon: Building, 
+    desc: 'Targeted civil construction support and controlled demolition solutions',
+    features: ['Flooring & Masonry', 'Foundation Work', 'Safe Dismantling', 'Concrete Breaking', 'Trenches & Drains', 'Controlled Industrial Demolition'],
+    image: '/assets/Images/Main Page Section Images/Services Section/Civil & Demolition N.png',
+    projects: '75+',
+    growth: '+30%',
+    serviceType: 'civil' // This matches the :serviceType parameter
+  },
+  { 
+    title: 'IT & Networking', 
+    icon: Globe, 
+    desc: 'Secure, scalable, and high-performance IT infrastructure solutions',
+    features: ['Structured Network Cabling', 'Server Installation', 'Smart Surveillance', 'City Fiber Solutions', 'Power & Cooling Management', 'On-site Technical Support'],
+    image: '/assets/Images/Main Page Section Images/Services Section/Electrical Services N.png',
+    projects: '60+',
+    growth: '+50%',
+    serviceType: 'it' // This matches the :serviceType parameter
+  },
+  { 
+    title: 'Manpower Supply', 
+    icon: Users, 
+    desc: 'Skilled and semi-skilled manpower across all engineering disciplines',
+    features: ['Engineers & Supervisors', 'Electricians & Fitters', 'Welders & Riggers', 'HVAC Technicians', 'Painters & Helpers', 'Network Operators'],
+    image: '/assets/Images/Main Page Section Images/Services Section/Manpower Supply N.png',
+    projects: '200+',
+    growth: '+25%',
+    serviceType: 'manpower' // This matches the :serviceType parameter
+  }
+];
 const featuredProjects = [
     {
       title: "Samsung Display Center – Noida",
@@ -158,41 +164,41 @@ const visibleServices = services.slice(currentIndex, currentIndex + 5);
 
   const testimonials = [
     {
-      name: 'Rajesh Kumar',
-      position: 'Project Manager',
-      company: 'Samsung India Electronics',
+      name: 'Kyu Sung Han',
+      position: 'Director',
+      company: 'Jungdo',
       quote: 'GIC has consistently delivered high-quality electrical and mechanical support for our operations. Their team is responsive, technically sound, and always meets deadlines with precision.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face'
     },
     {
-      name: 'Min-ho Lee',
-      position: 'Operations Head',
-      company: 'HAEWON Engineering',
+      name: 'Jae-Sun, Kim',
+      position: 'Executive Vice President',
+      company: 'Dae Myoung GEC Co., Ltd',
       quote: 'We\'ve partnered with GIC across multiple sites for HVAC and civil work. Their professionalism, safety standards, and trained workforce have made them a reliable extension of our project team.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face'
     },
     {
-      name: 'Thomas Müller',
-      position: 'Site Manager',
-      company: 'FLSmidth',
+      name: 'Shin Dong Seon',
+      position: 'General manager',
+      company: 'Younchang Hungary Kft',
       quote: 'From manpower supply to IT infrastructure setup, GIC has proven to be a dependable partner. Their flexibility and ability to scale based on our site needs is impressive.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face'
     },
     {
-      name: 'Arun Patel',
-      position: 'Construction Manager',
-      company: 'Industrial Client',
+      name: 'Baek Joo, Kim',
+      position: 'Director',
+      company: 'Changwon E&C India Pvt.Ltd',
       quote: 'The demolition project was handled with care, compliance, and zero disruption to ongoing site activities. GIC\'s execution was smooth, timely, and cost-effective.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face'
     },
     {
-      name: 'Priya Sharma',
+      name: 'JANG WOO HYUN',
       position: 'Engineering Director',
-      company: 'Kia Motors',
+      company: 'Hyeopseong Engineering Pvt.Ltd',
       quote: 'We trust GIC for their all-in-one approach — skilled manpower, technical execution, and commitment to safety. They bring valuable support to every phase of our projects.',
       rating: 5,
       image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop&crop=face'
@@ -250,108 +256,103 @@ const visibleServices = services.slice(currentIndex, currentIndex + 5);
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Auto-Rotating Carousel */}
-     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Image Carousel */}
-        <div className="absolute inset-0 z-0">
-          {[
-  {
-    url: '/assets/Images/Home Page Images/1.png',
-    title: 'Electrical Services',
-    desc: 'HT/LT Cable Laying • Transformer Installation • Panel Wiring'
-  },
-  {
-    url: '/assets/Images/Home Page Images/2.png',
-    title: 'Mechanical & HVAC',
-    desc: 'Chiller Systems • Sheet Metal Fabrication • Equipment Installation'
-  },
-  {
-    url: '/assets/Images/Home Page Images/3.png',
-    title: 'Civil & Demolition',
-    desc: 'Foundation Work • Safe Dismantling • Concrete Breaking'
-  },
-  {
-    url: '/assets/Images/Home Page Images/4.png',
-    title: 'IT & Networking',
-    desc: 'Structured Cabling • Server Installation • Fiber Solutions'
-  },
-  {
-    url: '/assets/Images/Home Page Images/5.png',
-    title: 'Manpower Supply',
-    desc: 'Skilled Engineers • Technicians • Supervisors • Helpers'
-  }
-].map((slide, index) => (
-            <motion.div
-              key={index}
-              className="absolute inset-0"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: [0, 1, 1, 0],
-                scale: [1, 1.02, 1.02, 1]
-              }}
-              transition={{
-                duration: 25, // Total duration for all slides (5 slides × 5s each)
-                times: [0, 0.05, 0.95, 1], // Fade in/out timing
-                ease: "linear",
-                repeat: Infinity,
-                repeatDelay: 0,
-                delay: index * 5 // Each slide stays for 5 seconds
-              }}
-            >
-              <img
-                src={slide.url}
-                alt={slide.title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-800/60 to-transparent">
-                {/* Removed the bottom left text section */}
-              </div>
-            </motion.div>
-          ))}
+  <section className="relative h-screen flex items-center justify-center overflow-hidden">
+  {/* Image Carousel */}
+  <div className="absolute inset-0 z-0">
+    {[
+      {
+        url: '/assets/Images/Home Page Images/1.png',
+        title: 'Electrical Services',
+        desc: 'HT/LT Cable Laying • Transformer Installation • Panel Wiring'
+      },
+      {
+        url: '/assets/Images/Home Page Images/2.png',
+        title: 'Mechanical & HVAC',
+        desc: 'Chiller Systems • Sheet Metal Fabrication • Equipment Installation'
+      },
+      {
+        url: '/assets/Images/Home Page Images/3.png',
+        title: 'Civil & Demolition',
+        desc: 'Foundation Work • Safe Dismantling • Concrete Breaking'
+      },
+      {
+        url: '/assets/Images/Home Page Images/4.png',
+        title: 'IT & Networking',
+        desc: 'Structured Cabling • Server Installation • Fiber Solutions'
+      }
+    ].map((slide, index) => (
+      <motion.div
+        key={index}
+        className="absolute inset-0"
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: [0, 1, 1, 0],
+          scale: [1, 1.02, 1.02, 1]
+        }}
+        transition={{
+          duration: 24, // Total duration for all slides (4 slides × 6s each)
+          times: [0, 0.04, 0.96, 1], // Adjusted fade timing for 6 second duration
+          ease: "linear",
+          repeat: Infinity,
+          repeatDelay: 0,
+          delay: index * 6 // Each slide now stays for 6 seconds
+        }}
+      >
+        <img
+          src={slide.url}
+          alt={slide.title}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-800/60 to-transparent">
+          {/* Removed the bottom left text section */}
         </div>
+      </motion.div>
+    ))}
+  </div>
 
-        {/* Main Hero Content (centered) */}
-        <motion.div
-          className="relative z-10 text-center max-w-6xl mx-auto px-4"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2 }}
-        >
-          <motion.h1 
-            className="text-4xl md:text-6xl font-bold mb-8 text-white leading-tight"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-          >
-            Global India Corporation
-          </motion.h1>
-          
-          <motion.p 
-            className="text-xl md:text-2xl mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-          >
-           Everything is Possible
-          </motion.p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link
-              to="/services/electrical"
-              className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-3 text-white shadow-2xl"
-            >
-              Explore Services 
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link
-              to="/contact"
-              className="group bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 text-white flex items-center gap-3"
-            >
-              <Phone className="h-5 w-5" />
-              Contact Us
-            </Link>
-          </div>
-        </motion.div>
-      </section>
+  {/* Main Hero Content (centered) */}
+  <motion.div
+    className="relative z-10 text-center max-w-6xl mx-auto px-4"
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1.2 }}
+  >
+    <motion.h1 
+      className="text-4xl md:text-6xl font-bold mb-8 text-white leading-tight"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.5 }}
+    >
+      Global India Corporation
+    </motion.h1>
+                 
+    <motion.p 
+      className="text-xl md:text-2xl mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.8 }}
+    >
+      Everything is Possible
+    </motion.p>
+                 
+    <div className="flex flex-col sm:flex-row gap-6 justify-center">
+      <Link
+        to="/services/electrical"
+        className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-3 text-white shadow-2xl"
+      >
+        Explore Services 
+        <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+      </Link>
+      <Link
+        to="/contact"
+        className="group bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 text-white flex items-center gap-3"
+      >
+        <Phone className="h-5 w-5" />
+        Contact Us
+      </Link>
+    </div>
+  </motion.div>
+</section>
 
       {/* Innovation Marquee */}
       <section className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white py-4 overflow-hidden border-y border-blue-700">
@@ -369,186 +370,132 @@ const visibleServices = services.slice(currentIndex, currentIndex + 5);
       </section>
 
       {/* Company Overview */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-white"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
-                About Us
-              </h2>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
-               Global India Corporation (GIC) is a leading multi-disciplinary engineering contracting and manpower supply company, established in 2016. We specialize in Electrical, Mechanical (HVAC), Civil, Demolition, and IT Networking services, delivering reliable solutions to industrial and commercial clients across various sectors.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed mb-10">
-                With a strong focus on quality, safety, and timely execution, GIC has earned a reputation for supporting complex engineering requirements with efficiency and professionalism. Our approach blends Indian and Korean-style work methodologies, enabling us to meet technical challenges while maintaining high standards of compliance and performance.
-At GIC, we believe that “Everything is Possible” — a mindset that drives every service we offer, from high-voltage electrical systems to structured network infrastructure and plant engineering support.
-
-              </p>
-{/*               
-              <div className="grid grid-cols-1 gap-6 mb-10">
-                <div className="p-6 bg-white rounded-xl shadow-lg">
-                  <h3 className="text-xl font-bold text-blue-600 mb-4">Our Mission</h3>
-                  <p className="text-gray-600">
-                    To empower industries with dependable engineering solutions by combining skilled manpower, technical precision, and a culture of "everything is possible." We aim to be the partner of choice for clients seeking safe, scalable, and custom-built infrastructure support.
-                  </p>
-                </div>
-                <div className="p-6 bg-white rounded-xl shadow-lg">
-                  <h3 className="text-xl font-bold text-blue-600 mb-4">Our Vision</h3>
-                  <p className="text-gray-600">
-                    To become a globally recognized engineering solutions provider known for our innovative approach, exceptional quality, and commitment to client success. We strive to set industry benchmarks in safety, efficiency, and sustainable practices while fostering long-term partnerships.
-                  </p>
-                </div>
-              </div> */}
-
-              <Link
-                to="/about" // Changed to link to Why GIC section
-                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
-              >
-                Learn More <ArrowRight className="h-5 w-5" />
-              </Link>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="relative">
-                <img
-                  src="\assets\Images\Main Page Section Images\About US 3.png"
-                  alt="Engineering Team"
-                  className="rounded-2xl shadow-2xl"
-                />
-                <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl">
-                  <div className="flex items-center gap-3">
-                    <Award className="h-8 w-8 text-yellow-500" />
-                    <div>
-                      <div className="font-bold text-gray-900">8+ Years</div>
-                      <div className="text-sm text-gray-600">Industry Experience</div>
-                    </div>
-                  </div>
-                </div>
+   <section className="py-24 bg-white relative overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-white"></div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+          About Us
+        </h2>
+        <p className="text-xl text-gray-600 leading-relaxed mb-8">
+          Global India Corporation (GIC) is a leading multi-disciplinary engineering contracting and manpower supply company, established in 2016. We specialize in Electrical,Mechanical & HVAC, Civil & Demolition, and IT Networking services.
+        </p>
+        <p className="text-lg text-gray-600 leading-relaxed mb-10">
+          With a strong focus on quality, safety, and timely execution, GIC has earned a reputation for supporting complex engineering requirements with efficiency and professionalism. At GIC, we believe that "Everything is Possible."
+        </p>
+         
+        <Link
+          to="/about"
+          onClick={() => window.scrollTo(0, 0)}
+          className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
+        >
+          Learn More <ArrowRight className="h-5 w-5" />
+        </Link>
+      </motion.div>
+       
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="relative"
+      >
+        <div className="relative">
+          <img
+            src="\assets\Images\Main Page Section Images\About US.png"
+            alt="Engineering Team"
+            className="rounded-2xl shadow-2xl"
+          />
+          <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl">
+            <div className="flex items-center gap-3">
+              <Award className="h-8 w-8 text-yellow-500" />
+              <div>
+                <div className="font-bold text-gray-900">8+ Years</div>
+                <div className="text-sm text-gray-600">Industry Experience</div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
-      </section>
-
+      </motion.div>
+    </div>
+  </div>
+</section>
       {/* Why Choose GIC Section */}
-      <section id="why-gic" className="py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-40">
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(59,130,246,0.05)_50%,transparent_75%)] bg-[length:60px_60px]"></div>
+     <section id="why-gic" className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 25% 25%, #3b82f6 0%, transparent 50%), 
+                           radial-gradient(circle at 75% 75%, #1e40af 0%, transparent 50%)`
+        }}></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Header Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-900 bg-clip-text text-transparent">
-              Why Choose GIC
-            </h2>
-            <h3 className="text-2xl md:text-3xl font-semibold text-gray-700 mb-8">
-              Where Engineering Meets Precision — Because Everything is Possible
-            </h3>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              When industrial clients look for a partner, they seek more than just a contractor — they seek dependability, skill, and integrity. At <strong className="text-blue-700">Global India Corporation (GIC)</strong>, we deliver all three.
-            </p>
-          </motion.div>
-        </motion.div>
-
-        {/* Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {innovations.map((innovation, index) => (
-            <motion.div
-              key={innovation.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              whileHover={{ y: -8, scale: 1.02 }}
-              className="group bg-white/80 backdrop-blur-sm p-8 rounded-3xl border border-gray-200 hover:border-blue-300 transition-all duration-500 shadow-lg hover:shadow-2xl relative overflow-hidden"
-            >
-              {/* Subtle hover effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <div className="relative z-10">
-                {/* Icon and Category */}
-                <div className="flex items-center justify-between mb-6">
-                  <motion.div
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.6 }}
-                    className="p-4 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-lg"
-                  >
-                    <innovation.icon className="h-8 w-8 text-white" />
-                  </motion.div>
-                  <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-semibold border">
-                    {innovation.category}
-                  </span>
-                </div>
-
-                {/* Content */}
-                <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-blue-800 transition-colors duration-300">
-                  {innovation.title}
-                </h3>
-                
-                <p className="text-gray-600 mb-6 leading-relaxed text-base">
-                  {innovation.desc}
-                </p>
-
-                {/* Impact Badge */}
-
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Call-to-Action Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-12 shadow-2xl">
-            <h3 className="text-3xl font-bold text-white mb-4">
-              Ready to Experience the GIC Difference?
-            </h3>
-            <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-              Discover how our integrated approach and proven methodology can transform your next industrial project.
-            </p>
-            <Link to='/careers'>
-            <motion.button
-              
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center px-8 py-4 bg-white text-blue-700 font-bold rounded-2xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl group"
-            >
-              Learn More Why GIC
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </motion.button>
-            </Link>
+      <div className="container mx-auto px-6 py-20 relative z-10">
+        {/* Split Layout */}
+        <div className="grid lg:grid-cols-2 gap-20 items-center min-h-screen">
+          
+          {/* Left Side - Content */}
+          <div className="space-y-12">
+            <div>
+              <h2 className="text-7xl md:text-8xl font-black mb-6 leading-none">
+                Why Choose <span className="text-blue-400">GIC</span>
+              </h2>
+              <div className="w-32 h-2 bg-blue-400 mb-8"></div>
+              <h3 className="text-3xl font-bold text-gray-300 mb-8">
+                Where Engineering Meets Precision — Because Everything is Possible
+              </h3>
+              <p className="text-xl text-gray-400 leading-relaxed max-w-2xl">
+                When industrial clients look for a partner, they seek more than just a contractor — they seek dependability, skill, and integrity. At <strong className="text-blue-400">Global India Corporation (GIC)</strong>, we deliver all three.
+              </p>
+            </div>
+            
+            {/* CTA */}
+            
+            <div className="pt-8">
+              <Link to='/careers'
+              onClick={() => window.scrollTo(0, 0)}
+              >
+              <button className="group inline-flex items-center px-12 py-6 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xl rounded-none border-l-4 border-blue-400 transition-all duration-300 shadow-lg hover:shadow-xl">
+                Learn More Why GIC
+                <ArrowRight className="ml-4 h-6 w-6 group-hover:translate-x-2 transition-transform duration-300" />
+              </button>
+              </Link>
+            </div>
+            
           </div>
-        </motion.div>
-        
+          
+          {/* Right Side - Features Grid */}
+          <div className="space-y-6">
+            {[
+              "Multi-Disciplinary Expertise",
+              "Skilled Workforce", 
+              "Precision Through Process",
+              "Adaptive Solutions",
+              "Indian-Korean Work Methodology"
+            ].map((title, index) => (
+              <div
+                key={title}
+                className="group relative bg-gray-800/50 hover:bg-gray-700/60 backdrop-blur-sm p-8 border-l-4 border-blue-500 transition-all duration-300 hover:border-blue-400 hover:translate-x-2"
+              >
+                <div className="flex items-center justify-between">
+                  <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+                    {title}
+                  </h3>
+                  <div className="text-4xl font-black text-blue-500 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+                </div>
+                <div className="absolute bottom-0 left-0 w-0 group-hover:w-full h-1 bg-blue-400 transition-all duration-500"></div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
       {/* Enhanced Services Section */}
@@ -594,18 +541,7 @@ At GIC, we believe that “Everything is Possible” — a mindset that drives e
                     <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-lg p-2">
                       <service.icon className="h-6 w-6 text-white" />
                     </div>
-                    <div className="absolute bottom-4 left-4 text-white">
-                      <div className="flex gap-4">
-                        <div>
-                          <div className="text-2xl font-bold">{service.projects}</div>
-                          <div className="text-xs opacity-80">Projects</div>
-                        </div>
-                        <div>
-                          <div className="text-2xl font-bold text-green-400">{service.growth}</div>
-                          <div className="text-xs opacity-80">Growth</div>
-                        </div>
-                      </div>
-                    </div>
+                    
                   </div>
                   
                   <div className="p-8">
@@ -620,12 +556,16 @@ At GIC, we believe that “Everything is Possible” — a mindset that drives e
                         </div>
                       ))}
                     </div>
-                    <Link 
-                      to="/services"
-                      className="block w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors duration-300 text-center"
-                    >
-                      Explore More
-                    </Link>
+                  <Link 
+  to={`/services/${service.serviceType}`}
+  onClick={() => {
+    const scrollPosition = window.innerHeight * 0.75;
+    window.scrollTo(0, scrollPosition);
+  }}
+  className="block w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors duration-300 text-center"
+>
+  Explore More
+</Link>
                   </div>
                 </motion.div>
               ))}
@@ -781,7 +721,7 @@ At GIC, we believe that “Everything is Possible” — a mindset that drives e
                   <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-600 rounded-full"></div>
                   <div className="pl-6">
                     <p className="mb-6 text-gray-700 leading-relaxed">
-                      At <span className="font-bold text-gray-900 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Global India Corporation (GIC)</span>, we take pride in delivering high-quality engineering and contracting services to some of the most respected names in the industrial sector. Since our inception in 2016, we have successfully executed a wide range of projects across <span className="font-semibold text-blue-600">electrical</span>, <span className="font-semibold text-green-600">mechanical (HVAC)</span>, <span className="font-semibold text-purple-600">civil</span>, <span className="font-semibold text-orange-600">demolition</span>, and <span className="font-semibold text-indigo-600">IT networking domains</span>, with precision, safety, and client satisfaction at the core.
+                      At <span className="font-bold text-gray-900 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Global India Corporation (GIC)</span>, we take pride in delivering high-quality engineering and contracting services to some of the most respected names in the industrial sector. Since our inception in 2016, we have successfully executed a wide range of projects across <span className="font-semibold text-blue-600">electrical</span>, <span className="font-semibold text-green-600">Mechanical & HVAC</span>, <span className="font-semibold text-purple-600">Civil & Demolition</span>, and <span className="font-semibold text-indigo-600">IT networking domains</span>, with precision, safety, and client satisfaction at the core.
                     </p>
                     <p className="text-gray-700 leading-relaxed">
                       Each project reflects our ability to adapt, mobilize skilled manpower, and meet technical requirements within committed timelines — making us a dependable partner in critical industrial operations.
@@ -791,7 +731,8 @@ At GIC, we believe that “Everything is Possible” — a mindset that drives e
                 
                 {/* CTA Button */}
                 <div className="mt-8 text-center">
-                  <Link to='/services/Electrical Services'>
+                  <Link to='/services/Electrical Services'
+                  >
                   <button className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 via-blue-700 to-purple-700 hover:from-blue-700 hover:via-blue-800 hover:to-purple-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-blue-500/20">
                     <span className="relative z-10">Explore All Projects</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />

@@ -185,69 +185,76 @@ export default function Services() {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section with Background Image */}
-      <section className="relative py-32 overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop"
-            alt="GIC Engineering Services"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/80 to-indigo-900/90"></div>
+// Add this import at the top of your component file
+// import ServicesImage from '/assets/Images/Services.PNG';
+
+<section className="relative py-32 overflow-hidden">
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img
+      src="/assets/Images/Services.PNG"
+      alt="GIC Engineering Services"
+      className="w-full h-full object-cover"
+      onError={(e) => {
+        console.error('Image failed to load:', e.target.src);
+        e.target.style.backgroundColor = '#1e40af';
+      }}
+    />
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/80 to-indigo-900/90"></div>
+  </div>
+  
+  {/* Content */}
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="text-center text-white"
+    >
+      <motion.h1
+        className="text-5xl md:text-7xl font-bold mb-6"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+      >
+        GIC Engineering Services
+      </motion.h1>
+      <motion.p
+        className="text-xl md:text-2xl max-w-4xl mx-auto opacity-90 mb-8"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+      >
+        Multi-disciplinary engineering contracting and manpower solutions since 2016, delivering quality, safety, and innovation
+      </motion.p>
+      <motion.div
+        className="flex flex-wrap justify-center gap-8 text-sm md:text-base"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6 }}
+      >
+        <div className="text-center">
+          <div className="text-2xl md:text-3xl font-bold text-yellow-400">2016</div>
+          <div className="opacity-90">Established</div>
         </div>
-        
-        {/* Content */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center text-white"
-          >
-            <motion.h1 
-              className="text-5xl md:text-7xl font-bold mb-6"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              GIC Engineering Services
-            </motion.h1>
-            <motion.p 
-              className="text-xl md:text-2xl max-w-4xl mx-auto opacity-90 mb-8"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-            >
-              Multi-disciplinary engineering contracting and manpower solutions since 2016, delivering quality, safety, and innovation
-            </motion.p>
-            <motion.div
-              className="flex flex-wrap justify-center gap-8 text-sm md:text-base"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-            >
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-yellow-400">2016</div>
-                <div className="opacity-90">Established</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-yellow-400">500+</div>
-                <div className="opacity-90">Skilled Personnel</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-yellow-400">30+</div>
-                <div className="opacity-90">Clients Served</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-yellow-400">100%</div>
-                <div className="opacity-90">Safety Record</div>
-              </div>
-            </motion.div>
-          </motion.div>
+        <div className="text-center">
+          <div className="text-2xl md:text-3xl font-bold text-yellow-400">500+</div>
+          <div className="opacity-90">Skilled Personnel</div>
         </div>
-      </section>
+        <div className="text-center">
+          <div className="text-2xl md:text-3xl font-bold text-yellow-400">30+</div>
+          <div className="opacity-90">Clients Served</div>
+        </div>
+        <div className="text-center">
+          <div className="text-2xl md:text-3xl font-bold text-yellow-400">100%</div>
+          <div className="opacity-90">Safety Record</div>
+        </div>
+      </motion.div>
+    </motion.div>
+  </div>
+</section>
 
       {/* Services Navigation */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Sidebar Navigation */}

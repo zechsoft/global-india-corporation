@@ -37,10 +37,10 @@ export default function Contact() {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+      <section className="py-40 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
           <img
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop"
+            src="public\assets\Images\Contact us .PNG"
             alt="Contact background"
             className="w-full h-full object-cover"
           />

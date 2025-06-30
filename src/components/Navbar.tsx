@@ -16,7 +16,7 @@ export default function Navbar() {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
+    { name: 'About Us', href: '/about' },
     { name: 'Why GIC', href: '/careers' },
     { name: 'Services', href: '/services', hasDropdown: true },
     { name: 'Projects', href: '/projects' },
@@ -58,26 +58,26 @@ export default function Navbar() {
     }
   ];
 
-  // Function to handle client section navigation
-  const handleClientClick = (e) => {
-    e.preventDefault();
-    
-    // If we're not on the home page, navigate to home first
-    if (location.pathname !== '/') {
-      navigate('/');
-      // Wait for navigation to complete, then scroll to clients section
-      setTimeout(() => {
-        scrollToClients();
-      }, 100);
-    } else {
-      // If we're already on home page, just scroll to clients section
-      scrollToClients();
-    }
-    
-    // Close mobile menu if open
-    setIsOpen(false);
+  // Function to scroll to top of page
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
+  // Function to scroll to 30% of page for services
+  const scrollToServicesPosition = () => {
+    const windowHeight = window.innerHeight;
+    const scrollPosition = windowHeight * 0.76; // 30% of viewport height
+    
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: 'smooth'
+    });
+  };
+
+  // Function to scroll to clients section
   const scrollToClients = () => {
     const clientsSection = document.getElementById('clients');
     if (clientsSection) {
@@ -88,14 +88,116 @@ export default function Navbar() {
     }
   };
 
-  // Handle scroll effect
+  // Function to handle navigation with appropriate scrolling
+  const handleNavigation = (href, isSection = false) => {
+    if (isSection) {
+      // Handle client section navigation
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          scrollToClients();
+        }, 300);
+      } else {
+        scrollToClients();
+      }
+    } else {
+      // Check if it's a services page
+      const isServicesPage = href.startsWith('/services/');
+      
+      if (location.pathname !== href) {
+        // First scroll to top immediately for non-services pages
+        if (!isServicesPage) {
+          window.scrollTo(0, 0);
+        }
+        
+        // Navigate to the new page
+        navigate(href);
+        
+        // Handle scrolling after navigation
+        if (isServicesPage) {
+          // For services pages, scroll to 30% position
+          setTimeout(() => {
+            scrollToServicesPosition();
+          }, 100);
+        } else {
+          // For other pages, scroll to top
+          setTimeout(() => {
+            window.scrollTo({
+              top: 0,
+              behavior: 'auto'
+            });
+          }, 50);
+          
+          setTimeout(() => {
+            scrollToTop();
+          }, 200);
+        }
+      } else {
+        // If already on the same page
+        if (isServicesPage) {
+          scrollToServicesPosition();
+        } else {
+          scrollToTop();
+        }
+      }
+    }
+    
+    // Close mobile menu if open
+    setIsOpen(false);
+    setIsServicesOpen(false);
+  };
+
+  // Function to handle client section navigation (keeping original for backward compatibility)
+  const handleClientClick = (e) => {
+    e.preventDefault();
+    handleNavigation('/', true);
+  };
+
+  // State to track if clients section is in view
+  const [isClientsInView, setIsClientsInView] = useState(false);
+
+  // Function to check if clients section is in view
+  const checkClientsInView = () => {
+    const clientsSection = document.getElementById('clients');
+    if (clientsSection && location.pathname === '/') {
+      const rect = clientsSection.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      // Check if the clients section is in view (at least 50% visible)
+      const isInView = rect.top <= windowHeight * 0.5 && rect.bottom >= windowHeight * 0.5;
+      setIsClientsInView(isInView);
+    } else {
+      setIsClientsInView(false);
+    }
+  };
+
+  // Handle scroll effect and clients section visibility
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+      checkClientsInView();
     };
+    
     window.addEventListener('scroll', handleScroll);
+    // Check on mount
+    checkClientsInView();
+    
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
+
+  // Check clients section visibility when route changes
+  useEffect(() => {
+    setTimeout(() => {
+      checkClientsInView();
+    }, 100);
+  }, [location.pathname]);
+
+  // Updated useEffect to handle route changes appropriately
+  useEffect(() => {
+    // Only scroll to top for non-services pages
+    if (!location.pathname.startsWith('/services/')) {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname]);
 
   // Close mobile menu when route changes
   useEffect(() => {
@@ -186,9 +288,10 @@ export default function Navbar() {
           
           {/* Logo Section */}
           <motion.div 
-            className="flex items-center space-x-3"
+            className="flex items-center space-x-3 cursor-pointer"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
+            onClick={() => handleNavigation('/')}
           >
             <div className="relative">
               <motion.div
@@ -219,9 +322,10 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
             {navigation.map((item, index) => {
-              const isActive = location.pathname === item.href || 
+              const isActive = (item.name === 'Home' && location.pathname === '/' && !isClientsInView) ||
                 (item.name === 'Services' && location.pathname.startsWith('/services')) ||
-                (item.name === 'Clients' && location.pathname === '/');
+                (item.name === 'Clients' && isClientsInView) ||
+                (item.name !== 'Home' && item.name !== 'Services' && item.name !== 'Clients' && location.pathname === item.href);
               
               if (item.hasDropdown) {
                 return (
@@ -273,10 +377,9 @@ export default function Navbar() {
                                 animate="visible"
                                 variants={serviceItemVariants}
                               >
-                                <Link
-                                  to={service.href}
-                                  className="flex items-center px-4 py-3 hover:bg-gray-50 transition-colors duration-200 group"
-                                  onClick={() => setIsServicesOpen(false)}
+                                <button
+                                  onClick={() => handleNavigation(service.href)}
+                                  className="flex items-center w-full px-4 py-3 hover:bg-gray-50 transition-colors duration-200 group text-left"
                                 >
                                   <ServiceIcon className="w-5 h-5 text-gray-400 group-hover:text-blue-600 mr-3 transition-colors duration-200" />
                                   <div>
@@ -284,7 +387,7 @@ export default function Navbar() {
                                       {service.name}
                                     </h3>
                                   </div>
-                                </Link>
+                                </button>
                               </motion.div>
                             );
                           })}
@@ -305,7 +408,7 @@ export default function Navbar() {
                     transition={{ duration: 0.2 }}
                   >
                     <button
-                      onClick={handleClientClick}
+                      onClick={() => handleNavigation('/', true)}
                       className={`relative px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
                         isActive
                           ? 'text-blue-600 bg-blue-50'
@@ -333,8 +436,8 @@ export default function Navbar() {
                   whileHover={{ y: -2 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <Link
-                    to={item.href}
+                  <button
+                    onClick={() => handleNavigation(item.href)}
                     className={`relative px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
                       isActive
                         ? 'text-blue-600 bg-blue-50'
@@ -350,7 +453,7 @@ export default function Navbar() {
                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
                       />
                     )}
-                  </Link>
+                  </button>
                 </motion.div>
               );
             })}
@@ -401,9 +504,10 @@ export default function Navbar() {
           >
             <div className="px-4 py-6 space-y-2">
               {navigation.map((item, index) => {
-                const isActive = location.pathname === item.href ||
+                const isActive = (item.name === 'Home' && location.pathname === '/' && !isClientsInView) ||
                   (item.name === 'Services' && location.pathname.startsWith('/services')) ||
-                  (item.name === 'Clients' && location.pathname === '/');
+                  (item.name === 'Clients' && isClientsInView) ||
+                  (item.name !== 'Home' && item.name !== 'Services' && item.name !== 'Clients' && location.pathname === item.href);
                 
                 if (item.hasDropdown) {
                   return (
@@ -443,18 +547,14 @@ export default function Navbar() {
                             {services.map((service, idx) => {
                               const ServiceIcon = service.icon;
                               return (
-                                <Link
+                                <button
                                   key={service.name}
-                                  to={service.href}
-                                  className="flex items-center px-4 py-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-50 transition-colors duration-200"
-                                  onClick={() => {
-                                    setIsOpen(false);
-                                    setIsServicesOpen(false);
-                                  }}
+                                  onClick={() => handleNavigation(service.href)}
+                                  className="flex items-center w-full px-4 py-2 rounded-lg text-gray-600 hover:text-blue-600 hover:bg-gray-50 transition-colors duration-200 text-left"
                                 >
                                   <ServiceIcon className="w-4 h-4 mr-2" />
                                   <span className="text-sm">{service.name}</span>
-                                </Link>
+                                </button>
                               );
                             })}
                           </motion.div>
@@ -475,8 +575,8 @@ export default function Navbar() {
                       variants={linkVariants}
                     >
                       <button
-                        onClick={handleClientClick}
-                        className={`flex items-center w-full px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
+                        onClick={() => handleNavigation('/', true)}
+                        className={`flex items-center w-full px-4 py-3 rounded-xl font-medium transition-all duration-300 text-left ${
                           isActive
                             ? 'text-blue-600 bg-blue-50 border-l-4 border-blue-600'
                             : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
@@ -503,9 +603,9 @@ export default function Navbar() {
                     animate="visible"
                     variants={linkVariants}
                   >
-                    <Link
-                      to={item.href}
-                      className={`flex items-center px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
+                    <button
+                      onClick={() => handleNavigation(item.href)}
+                      className={`flex items-center w-full px-4 py-3 rounded-xl font-medium transition-all duration-300 text-left ${
                         isActive
                           ? 'text-blue-600 bg-blue-50 border-l-4 border-blue-600'
                           : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
@@ -519,7 +619,7 @@ export default function Navbar() {
                           className="ml-auto w-2 h-2 bg-blue-600 rounded-full"
                         />
                       )}
-                    </Link>
+                    </button>
                   </motion.div>
                 );
               })}

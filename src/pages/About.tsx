@@ -165,10 +165,10 @@
       <div className="min-h-screen" ref={containerRef}>
         {/* Hero Section with Video Background */}
         <section className="relative h-screen flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-purple-900/90 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/60 to-purple-900/0 z-10"></div>
           <div className="absolute inset-0">
             <img 
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop" 
+              src="public\assets\Images\About us .PNG" 
               alt="Industrial infrastructure"
               className="w-full h-full object-cover"
             />
@@ -320,8 +320,8 @@
                     <div className="flex items-center gap-2">
                       <Award className="h-6 w-6 text-yellow-500" />
                       <div>
-                        <div className="text-sm font-bold">Trusted Partner</div>
-                        <div className="text-xs text-gray-500">Samsung, Kia Motors</div>
+                        <div className="text-sm font-bold">8+ Years</div>
+                        <div className="text-xs text-gray-500">Industry Experience</div>
                       </div>
                     </div>
                     
@@ -334,98 +334,109 @@
             </div>
           </div>
         </section>
-         <section className="py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* Mission */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <div className="bg-white rounded-3xl p-12 shadow-2xl border border-blue-100 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-500/10 to-transparent rounded-full -mr-16 -mt-16"></div>
-                
-                <div className="relative">
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="bg-gradient-to-r from-blue-600 to-indigo-600 w-16 h-16 rounded-2xl flex items-center justify-center">
-                      <Compass className="h-8 w-8 text-white" />
-                    </div>
-                    <h3 className="text-3xl font-bold text-gray-900">Our Mission</h3>
-                  </div>
-                  
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    To empower industries with dependable engineering solutions by combining skilled manpower, technical precision, and a culture of "everything is possible." We aim to be the partner of choice for clients seeking safe, scalable, and custom-built infrastructure support.
-                  </p>
-                </div>
+        <section className="py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid lg:grid-cols-2 gap-16">
+      {/* Mission */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="relative"
+      >
+        <div className="bg-white rounded-3xl p-12 shadow-2xl border border-blue-100 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-500/10 to-transparent rounded-full -mr-16 -mt-16"></div>
+          
+          <div className="relative">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 w-16 h-16 rounded-2xl flex items-center justify-center">
+                <Compass className="h-8 w-8 text-white" />
               </div>
-            </motion.div>
-
-            {/* Vision */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <div className="bg-gradient-to-br from-gray-900 to-blue-900 rounded-3xl p-12 shadow-2xl text-white relative overflow-hidden">
-                <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-purple-500/20 to-transparent rounded-full -ml-20 -mb-20"></div>
-                
-                <div className="relative">
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="bg-gradient-to-r from-purple-500 to-pink-500 w-16 h-16 rounded-2xl flex items-center justify-center">
-                      <Lightbulb className="h-8 w-8 text-white" />
-                    </div>
-                    <h3 className="text-3xl font-bold">Our Vision</h3>
-                  </div>
-                  
-                  <p className="text-lg text-blue-100 leading-relaxed mb-8">
-                    To become India's most trusted industrial engineering partner, setting new benchmarks in project excellence while expanding our footprint across global markets through innovative solutions and sustainable growth.
-                  </p>
-
-                 
-                </div>
-              </div>
-            </motion.div>
+              <h3 className="text-3xl font-bold text-gray-900">Our Mission</h3>
+            </div>
+            
+            <p className="text-lg text-gray-700 leading-relaxed">
+              To empower industries with dependable engineering solutions by combining skilled manpower, technical precision, and a culture of "everything is possible." We aim to be the partner of choice for clients seeking safe, scalable, and custom-built infrastructure support.
+            </p>
           </div>
         </div>
-      </section>
+      </motion.div>
+
+      {/* Vision */}
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="relative"
+      >
+        <div className="bg-white rounded-3xl p-12 shadow-2xl border border-purple-100 relative overflow-hidden">
+          <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-purple-500/10 to-transparent rounded-full -ml-20 -mb-20"></div>
+          
+          <div className="relative">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="bg-gradient-to-r from-purple-500 to-pink-500 w-16 h-16 rounded-2xl flex items-center justify-center">
+                <Lightbulb className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-3xl font-bold text-gray-900">Our Vision</h3>
+            </div>
+            
+            <p className="text-lg text-gray-700 leading-relaxed mb-8">
+              To become India's most trusted industrial engineering partner, setting new benchmarks in project excellence while expanding our footprint across global markets through innovative solutions and sustainable growth.
+            </p>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+</section>
               {/* Strengths Grid */}
         <section className="py-24 bg-slate-50">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="text-center mb-16">
-              
-              <h2 className="text-4xl font-bold text-slate-900 mb-6">
-                Our Strength
-              </h2>
-              <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-                The fundamental strengths that make us the preferred partner for engineering solutions
-              </p>
-            </div>
+  <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-bold text-slate-900 mb-6">
+        Our Strength
+      </h2>
+      <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+        The fundamental strengths that make us the preferred partner for engineering solutions
+      </p>
+    </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {strengths.map((strength, index) => (
-                <div
-                  key={strength.title}
-                  className="bg-white p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300 group"
-                >
-                  <div className="flex items-center justify-center w-16 h-16 bg-slate-100 rounded-xl mb-6 group-hover:bg-slate-200 transition-colors duration-300">
-                    <strength.icon className="h-8 w-8 text-slate-600" />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">
-                    {strength.title}
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    {strength.description}
-                  </p>
-                </div>
-              ))}
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {strengths.map((strength, index) => {
+        // Define different colors for each strength
+        const colorClasses = [
+          { bg: 'bg-blue-100', hover: 'group-hover:bg-blue-200', icon: 'text-blue-600' },
+          { bg: 'bg-emerald-100', hover: 'group-hover:bg-emerald-200', icon: 'text-emerald-600' },
+          { bg: 'bg-purple-100', hover: 'group-hover:bg-purple-200', icon: 'text-purple-600' },
+          { bg: 'bg-orange-100', hover: 'group-hover:bg-orange-200', icon: 'text-orange-600' },
+          { bg: 'bg-pink-100', hover: 'group-hover:bg-pink-200', icon: 'text-pink-600' },
+          { bg: 'bg-indigo-100', hover: 'group-hover:bg-indigo-200', icon: 'text-indigo-600' }
+        ];
+        
+        const colorClass = colorClasses[index % colorClasses.length];
+        
+        return (
+          <div
+            key={strength.title}
+            className="bg-white p-8 rounded-xl border border-slate-200 hover:shadow-lg transition-all duration-300 group"
+          >
+            <div className={`flex items-center justify-center w-16 h-16 ${colorClass.bg} rounded-xl mb-6 ${colorClass.hover} transition-colors duration-300`}>
+              <strength.icon className={`h-8 w-8 ${colorClass.icon}`} />
             </div>
+            <h3 className="text-xl font-bold text-slate-900 mb-4">
+              {strength.title}
+            </h3>
+            <p className="text-slate-600 leading-relaxed">
+              {strength.description}
+            </p>
           </div>
-        </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
         {/* Innovation Section */}
         {/* <section className="py-24 bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50">
@@ -530,61 +541,78 @@
         </section>
 
         {/* Leadership Team */}
+        {/* Words from the Founder */}
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-20"
-            >
-              <div className="inline-block bg-blue-100 text-blue-800 px-6 py-2 rounded-full text-sm font-semibold mb-6">
-                Leadership Excellence
-              </div>
-              <h2 className="text-5xl font-bold text-gray-900 mb-6">Our Expert Team</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Meet the professionals driving our industrial contracting services and client success.
-              </p>
-            </motion.div>
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Left side - Image */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
+                <div className="relative">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=700&fit=crop"
+                    alt="Founder - Managing Director"
+                    className="rounded-2xl shadow-2xl w-full"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent rounded-2xl"></div>
+                  
+                  {/* Floating element */}
+                  <motion.div
+                    className="absolute -bottom-6 -right-6 bg-white rounded-xl p-6 shadow-xl border border-blue-100"
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 4, repeat: Infinity }}
+                  >
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-blue-600">8+</div>
+                      <div className="text-sm text-gray-600">Years Leading</div>
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {leaders.map((leader, index) => (
-                <motion.div
-                  key={leader.name}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="group relative"
-                >
-                  <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 text-center hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
-                    <div className="relative mb-8">
-                      <img
-                        src={leader.image}
-                        alt={leader.name}
-                        className="w-32 h-32 rounded-full mx-auto object-cover ring-4 ring-blue-100 group-hover:ring-blue-300 transition-all duration-300"
-                      />
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-t from-blue-600/20 to-transparent group-hover:from-blue-600/30 transition-all duration-300"></div>
-                    </div>
-                    
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{leader.name}</h3>
-                    <p className="text-blue-600 font-semibold mb-3">{leader.position}</p>
-                    <p className="text-gray-600 text-sm mb-2">{leader.education}</p>
-                    <p className="text-gray-500 text-sm mb-4">{leader.experience}</p>
-                    
-                    <div className="bg-white rounded-lg p-3 shadow-sm">
-                      <div className="flex items-center justify-center gap-2 text-yellow-600">
-                        <Star className="h-4 w-4 fill-current" />
-                        <span className="text-xs font-medium">{leader.achievement}</span>
-                      </div>
-                    </div>
+              {/* Right side - Content */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="space-y-8"
+              >
+                <div>
+                  <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                    Leadership Excellence
                   </div>
-                </motion.div>
-              ))}
+                  <h2 className="text-4xl font-bold text-gray-900 mb-8">Words from the Founder</h2>
+                </div>
+
+                <div className="space-y-6">
+                  <blockquote className="text-lg text-gray-700 leading-relaxed italic">
+                    "When I started Global India Corporation, the goal was simple — to build a company that delivers dependable engineering solutions with honesty, discipline, and quality workmanship. Today, that goal remains unchanged, and it drives everything we do."
+                  </blockquote>
+                  
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    We've grown steadily by understanding our clients' needs, responding with skilled manpower, and executing with a commitment to safety and timelines. Our strength lies in our people, our partnerships, and our ability to adapt to every challenge with a mindset that 'Everything is Possible.'
+                  </p>
+                  
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    As we continue to evolve, my vision is to see GIC expand into new industries and regions, while staying rooted in the values that built our reputation — trust, performance, and professionalism.
+                  </p>
+                </div>
+
+                <div className="border-l-4 border-blue-500 pl-6 bg-blue-50 py-4 rounded-r-lg">
+                  <div className="text-lg font-semibold text-gray-900">— [Your Full Name]</div>
+                  <div className="text-blue-600 font-medium">Founder & Managing Director</div>
+                  <div className="text-gray-600">Global India Corporation</div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
-
         {/* Values */}
         <section className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
           <div className="absolute inset-0">

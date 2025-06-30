@@ -2,15 +2,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const clients = [
-  { name: 'Samsung India', logo: 'https://via.placeholder.com/150x60/0066CC/FFFFFF?text=Samsung', sector: 'Electronics' },
-  { name: 'Kia Motors', logo: 'https://via.placeholder.com/150x60/FF0000/FFFFFF?text=KIA', sector: 'Automotive' },
-  { name: 'FLSmidth', logo: 'https://via.placeholder.com/150x60/007ACC/FFFFFF?text=FLSmidth', sector: 'Engineering' },
-  { name: 'HAEWON Engineering', logo: 'https://via.placeholder.com/150x60/333333/FFFFFF?text=HAEWON', sector: 'Construction' },
-  { name: 'JUNGDO Engineering', logo: 'https://via.placeholder.com/150x60/006600/FFFFFF?text=JUNGDO', sector: 'Engineering' },
-  { name: 'SAMHO Construction', logo: 'https://via.placeholder.com/150x60/FF6600/FFFFFF?text=SAMHO', sector: 'Construction' },
-  { name: 'DAEMYOUNG Engineering', logo: 'https://via.placeholder.com/150x60/9900CC/FFFFFF?text=DAEMYOUNG', sector: 'Engineering' },
-  { name: 'HYOJIN Engineering', logo: 'https://via.placeholder.com/150x60/CC3300/FFFFFF?text=HYOJIN', sector: 'Engineering' },
-  { name: 'NEW VISION Fire Safety', logo: 'https://via.placeholder.com/150x60/FF9900/FFFFFF?text=NEW+VISION', sector: 'Safety' }
+  { name: 'Samsung India', logo: '/assets/Images/Client/63dccd92f171bbfa08adf4d5_Logo Jungdo 2021 Scan.png', sector: 'Electronics' },
+  { name: 'Kia Motors', logo: '/assets/Images/Client/Blue_Star_primary_logo.png', sector: 'Automotive' },
+  { name: 'FLSmidth', logo: '/assets/Images/Client/ChatGPT Image Jun 19, 2025, 01_09_51 PM.png', sector: 'Engineering' },
+  { name: 'HAEWON Engineering', logo: '/assets/Images/Client/Client logo1.jpg', sector: 'Construction' },
+  { name: 'JUNGDO Engineering', logo: '/assets/Images/Client/Client logo2.png', sector: 'Engineering' },
+  { name: 'SAMHO Construction', logo: '/assets/Images/Client/Client logo3.png', sector: 'Construction' },
+  { name: 'DAEMYOUNG Engineering', logo: '/assets/Images/Client/Client logo4.png', sector: 'Engineering' },
+  { name: 'HYOJIN Engineering', logo: '/assets/Images/Client/Client logo5.png', sector: 'Engineering' },
+  { name: 'NEW VISION Fire Safety', logo: '/assets/Images/Client/FLSmidth.png', sector: 'Safety' },
+  { name: 'NEW VISION Fire Safety', logo: '/assets/Images/Client/Thermax_logo.svg.png', sector: 'Safety' }
 ];
 
 export default function ClientCarousel() {
@@ -71,9 +72,7 @@ export default function ClientCarousel() {
             ))}
           </motion.div>
         </div>
-
-
-      </div>
+        </div>
     </section>
   );
 }

@@ -310,11 +310,7 @@ export default function Projects() {
                       {project.status}
                     </span>
                   </div>
-                  <div className="absolute bottom-4 left-4">
-                    <span className="bg-blue-600 text-white px-2 py-1 rounded text-sm font-medium">
-                      {project.category}
-                    </span>
-                  </div>
+                 
                 </div>
                 
                 <div className="p-6">

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   Building,
@@ -13,9 +12,9 @@ import {
   ArrowUp,
   Heart,
   Zap,
-  Cog,
+  Settings,
   HardHat,
-  Cpu,
+  Wifi,
   Users
 } from 'lucide-react';
 
@@ -24,34 +23,33 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Updated footer links to match navbar structure - Fixed duplicate About Us
   const footerLinks = {
     company: [
+      { name: 'Home', href: '/' },
       { name: 'About Us', href: '/about' },
-      { name: 'Why GIC', href: '/why-gic' },
-      { name: 'Our Team', href: '/about#team' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'News & Media', href: '/news' }
+      { name: 'Why GIC', href: '/careers' },
+      { name: 'Contact', href: '/contact' }
     ],
     services: [
       { name: 'Electrical Services', href: '/services/electrical', icon: Zap },
-      { name: 'Mechanical & HVAC', href: '/services/mechanical', icon: Cog },
+      { name: 'Mechanical & HVAC', href: '/services/mechanical', icon: Settings },
       { name: 'Civil & Demolition', href: '/services/civil', icon: HardHat },
-      { name: 'IT & Networking', href: '/services/it', icon: Cpu },
+      { name: 'IT & Networking', href: '/services/it', icon: Wifi },
       { name: 'Manpower Supply', href: '/services/manpower', icon: Users }
     ],
     projects: [
       { name: 'Samsung Display Center', href: '/projects#samsung' },
       { name: 'Kia Motors India', href: '/projects#kia' },
       { name: 'FLSmidth Plant', href: '/projects#flsmidth' },
-      { name: 'HAEWON Engineering', href: '/projects#haewon' },
-      { name: 'All Projects', href: '/projects' }
+      { name: 'HAEWON Engineering', href: '/projects#haewon' }
     ],
     legal: [
       { name: 'Terms of Service', href: '/terms' },
       { name: 'Privacy Policy', href: '/privacy' },
       { name: 'Safety Policy', href: '/safety' },
       { name: 'Quality Standards', href: '/quality' },
-      { name: 'Contact Us', href: '/contact' }
+      { name: 'Our Clients', href: '/#clients', isSection: true }
     ]
   };
 
@@ -62,6 +60,105 @@ export default function Footer() {
     { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:text-pink-600' },
     { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:text-red-600' }
   ];
+
+  // Enhanced function to handle navigation with top scrolling
+  const handleNavigation = (href, isSection = false) => {
+    if (isSection) {
+      // Handle client section navigation
+      if (window.location.pathname !== '/') {
+        // Navigate to home page first
+        window.location.href = '/';
+        // Use sessionStorage to remember we need to scroll to clients section
+        sessionStorage.setItem('scrollToClients', 'true');
+      } else {
+        // Already on home page, scroll to clients section
+        const clientsSection = document.getElementById('clients');
+        if (clientsSection) {
+          clientsSection.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    } else {
+      // For regular page navigation
+      if (window.location.pathname === href) {
+        // Same page, just scroll to top
+        scrollToTop();
+      } else {
+        // Different page, navigate and scroll to top will happen automatically
+        // But we can add a flag to ensure it happens
+        sessionStorage.setItem('scrollToTop', 'true');
+        window.location.href = href;
+      }
+    }
+  };
+
+  // Function to handle quote request via Gmail
+  const handleQuoteRequest = () => {
+    const subject = encodeURIComponent('Request for Project Quote - Global India Corporation');
+    const body = encodeURIComponent(`Dear Global India Corporation Team,
+
+I hope this email finds you well. I am writing to request a detailed quote for an upcoming project.
+
+Project Details:
+- Project Type: [Please specify - Electrical/Mechanical/Civil/IT/Manpower]
+- Project Location: [Your Location]
+- Project Timeline: [Expected Start/End Date]
+- Project Scope: [Brief description of your requirements]
+- Budget Range: [Your approximate budget]
+
+Additional Requirements:
+[Please describe any specific requirements, technical specifications, or special considerations]
+
+I would appreciate if you could provide:
+1. Detailed project proposal
+2. Cost breakdown
+3. Project timeline
+4. Terms and conditions
+5. Your company profile and past project references
+
+Please let me know if you need any additional information from my end to prepare an accurate quote.
+
+I look forward to hearing from you soon.
+
+Best regards,
+[Your Name]
+[Your Company/Organization]
+[Your Contact Number]
+[Your Email Address]`);
+
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=globalindiacorps@gmail.com&su=${subject}&body=${body}`;
+    window.open(gmailUrl, '_blank');
+  };
+
+  // Add effect to handle scrolling after page load (this would go in your main app component)
+  const handlePageLoad = () => {
+    // Check if we need to scroll to clients section
+    if (sessionStorage.getItem('scrollToClients') === 'true') {
+      sessionStorage.removeItem('scrollToClients');
+      setTimeout(() => {
+        const clientsSection = document.getElementById('clients');
+        if (clientsSection) {
+          clientsSection.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    }
+    
+    // Check if we need to scroll to top
+    if (sessionStorage.getItem('scrollToTop') === 'true') {
+      sessionStorage.removeItem('scrollToTop');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  // You should call handlePageLoad in your main app component's useEffect
+  // useEffect(() => {
+  //   handlePageLoad();
+  // }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -111,14 +208,14 @@ export default function Footer() {
             {/* Company Info */}
             <motion.div className="lg:col-span-2" variants={itemVariants}>
               <div className="flex items-center space-x-3 mb-6">
-                
                 <div>
                   <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                     Global India Corporation
                   </h3>
-                  <p className="text-gray-400 text-sm">Engineering Excellence Since 2016</p>
+                  <p className="text-gray-400 text-sm">Everything is Possible</p>
                 </div>
               </div>
+              
               
               
 
@@ -139,54 +236,59 @@ export default function Footer() {
               </div>
             </motion.div>
 
-            {/* Quick Links */}
+            {/* Quick Links - Updated to match navbar */}
             <motion.div variants={itemVariants}>
-              <h4 className="text-lg font-semibold mb-6 text-white">Company</h4>
+              <h4 className="text-lg font-semibold mb-6 text-white">Quick Links</h4>
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
-                    <Link 
-                      to={link.href}
-                      className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm flex items-center gap-2"
+                    <button 
+                      onClick={() => handleNavigation(link.href)}
+                      className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm flex items-center gap-2 text-left"
                     >
                       {link.name}
-                    </Link>
+                    </button>
                   </li>
                 ))}
               </ul>
             </motion.div>
 
+            {/* Services */}
             <motion.div variants={itemVariants}>
               <h4 className="text-lg font-semibold mb-6 text-white">Services</h4>
               <ul className="space-y-3">
                 {footerLinks.services.map((link) => (
                   <li key={link.name}>
-                    <Link 
-                      to={link.href}
-                      className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm flex items-center gap-2"
+                    <button 
+                      onClick={() => handleNavigation(link.href)}
+                      className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm flex items-center gap-2 text-left"
                     >
                       <link.icon className="w-4 h-4" />
                       {link.name}
-                    </Link>
+                    </button>
                   </li>
                 ))}
               </ul>
             </motion.div>
 
+            {/* Projects & Legal */}
             <motion.div variants={itemVariants}>
               <h4 className="text-lg font-semibold mb-6 text-white">Projects</h4>
-              <ul className="space-y-3">
+              <ul className="space-y-3 mb-8">
                 {footerLinks.projects.map((link) => (
                   <li key={link.name}>
-                    <Link 
-                      to={link.href}
-                      className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm"
+                    <button 
+                      onClick={() => handleNavigation(link.href)}
+                      className="text-gray-300 hover:text-blue-400 transition-colors duration-200 text-sm text-left"
                     >
                       {link.name}
-                    </Link>
+                    </button>
                   </li>
                 ))}
               </ul>
+
+              
+             
             </motion.div>
           </div>
 
@@ -203,18 +305,18 @@ export default function Footer() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link
-                  to="/contact"
+                <button
+                  onClick={handleQuoteRequest}
                   className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:from-blue-700 hover:to-purple-700 text-center"
                 >
                   Request a Quote
-                </Link>
-                <Link
-                  to="/contact"
+                </button>
+                <button
+                  onClick={() => handleNavigation('/contact')}
                   className="bg-gray-800 border border-gray-700 text-white px-6 py-3 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-700 text-center"
                 >
                   Contact Our Team
-                </Link>
+                </button>
               </div>
             </div>
           </motion.div>
@@ -233,7 +335,6 @@ export default function Footer() {
                     src="/assets/make-in-india-seeklogo.png" 
                     alt="Make in India" 
                     className="w-full h-full object-contain filter brightness-0 invert"
-              
                   />
                 </div>
                 <div className="flex items-center space-x-1 text-gray-300 text-sm">

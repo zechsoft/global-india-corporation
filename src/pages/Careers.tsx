@@ -88,38 +88,48 @@ export default function WhyGIC() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-transparent"></div>
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.1),transparent_70%)]"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-600/20 border border-blue-400/30 rounded-full mb-8">
-              <span className="text-blue-300 text-sm font-medium">Engineering Excellence Since 2016</span>
-            </div>
-            
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Why Choose
-              <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mt-2">
-                GIC Engineering?
-              </span>
-            </h1>
-            
-            <p className="text-xl lg:text-2xl text-slate-300 mb-8 leading-relaxed font-light">
-              Where Engineering Meets Precision — Because Everything is Possible
-            </p>
-            
-            <div className="max-w-3xl mx-auto">
-              <p className="text-lg text-slate-400 leading-relaxed">
-                When industrial clients seek a partner, they require more than just a contractor — they need dependability, skill, and unwavering integrity in every project delivery.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
+     <section className="relative py-28 min-h-[90vh] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden">
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img 
+      src="public/assets/Images/Why choose GIc (1).PNG" 
+      alt="Global India Corporation Engineering Excellence"
+      className="w-full h-full object-cover object-bottom opacity-80"
+    />
+    <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/70 to-slate-900/80"></div>
+  </div>
+  
+  {/* Gradient Overlays */}
+  <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-transparent"></div>
+  <div className="absolute inset-0">
+    <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.1),transparent_70%)]"></div>
+  </div>
+           
+  <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+    <div className="text-center max-w-4xl mx-auto">
+      <div className="inline-flex items-center px-4 py-2 bg-blue-600/20 border border-blue-400/30 rounded-full mb-8">
+        <span className="text-blue-300 text-sm font-medium">Engineering Excellence Since 2016</span>
+      </div>
+                   
+      <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        Why Choose
+        <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mt-2">
+          Global India Corporation?
+        </span>
+      </h1>
+                   
+      <p className="text-xl lg:text-2xl text-slate-300 mb-8 leading-relaxed font-light">
+        Where Engineering Meets Precision — Because Everything is Possible
+      </p>
+                   
+      <div className="max-w-3xl mx-auto">
+        <p className="text-lg text-slate-400 leading-relaxed">
+          When industrial clients seek a partner, they require more than just a contractor — they need dependability, skill, and unwavering integrity in every project delivery.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
       {/* Stats Section */}
       <section className="py-20 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
