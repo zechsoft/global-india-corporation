@@ -18,7 +18,7 @@ const services = [
     title: 'Electrical Services', 
     icon: Zap, 
     desc: 'Reliable, safe, and efficient electrical contracting services for industrial and commercial projects',
-    features: ['HT/LT Cable Laying & Termination', 'Transformer Installation', 'High Mast & Street Lighting', 'Panel Installation & Wiring', 'Electrical Equipment Testing & Maintenance', 'Overhead Line Erection'],
+    features: ['HT/LT Cable Laying & Termination', 'Transformer Installation', 'Panel Installation & Wiring'],
     image: '/assets/Images/Main Page Section Images/Services Section/Electrical Services N.png',
     projects: '120+',
     growth: '+35%',
@@ -28,7 +28,7 @@ const services = [
     title: 'Mechanical & HVAC', 
     icon: Cog, 
     desc: 'Expert mechanical services with strong specialization in HVAC systems',
-    features: ['Equipment & Machinery Installation', 'Sheet Metal Fabrication', 'Industrial Piping Support', 'Chiller Systems & Ductless Units', 'Dust Collection & Exhaust Systems', 'Refrigeration Piping'],
+    features: ['Equipment & Machinery Installation', 'Chiller Systems & Ductless Units'],
     image: '/assets/Images/Main Page Section Images/Services Section/Mechanical & HVAC N.png',
     projects: '90+',
     growth: '+40%',
@@ -38,7 +38,7 @@ const services = [
     title: 'Civil & Demolition', 
     icon: Building, 
     desc: 'Targeted civil construction support and controlled demolition solutions',
-    features: ['Flooring & Masonry', 'Foundation Work', 'Safe Dismantling', 'Concrete Breaking', 'Trenches & Drains', 'Controlled Industrial Demolition'],
+    features: ['Foundation Work', 'Safe Dismantling & Demolition', 'Concrete Breaking & Flooring'],
     image: '/assets/Images/Main Page Section Images/Services Section/Civil & Demolition N.png',
     projects: '75+',
     growth: '+30%',
@@ -48,7 +48,7 @@ const services = [
     title: 'IT & Networking', 
     icon: Globe, 
     desc: 'Secure, scalable, and high-performance IT infrastructure solutions',
-    features: ['Structured Network Cabling', 'Server Installation', 'Smart Surveillance', 'City Fiber Solutions', 'Power & Cooling Management', 'On-site Technical Support'],
+    features: ['Structured Network Cabling', 'Server Installation & Power Management', 'Smart Surveillance & Monitoring'],
     image: '/assets/Images/Main Page Section Images/Services Section/Electrical Services N.png',
     projects: '60+',
     growth: '+50%',
@@ -58,7 +58,7 @@ const services = [
     title: 'Manpower Supply', 
     icon: Users, 
     desc: 'Skilled and semi-skilled manpower across all engineering disciplines',
-    features: ['Engineers & Supervisors', 'Electricians & Fitters', 'Welders & Riggers', 'HVAC Technicians', 'Painters & Helpers', 'Network Operators'],
+    features: ['Engineers & Supervisors', 'Electricians, Fitters & HVAC Technicians', 'Welders, Riggers & Helpers'],
     image: '/assets/Images/Main Page Section Images/Services Section/Manpower Supply N.png',
     projects: '200+',
     growth: '+25%',
@@ -71,11 +71,11 @@ const featuredProjects = [
       id: "samsung-display-noida"
     },
     {
-      title: "Vendor Projects for Samsung India Electronics Pvt Ltd",
+      title: "Samsung India Electronics Pvt Ltd",
       id: "samsung-vendor-projects"
     },
     {
-      title: "Vendor projects for Kia Motors India",
+      title: "Kia Motors India",
       id: "kia-motors-vendor"
     },
     {
@@ -309,7 +309,7 @@ const visibleServices = services.slice(currentIndex, currentIndex + 5);
       </motion.div>
     ))}
   </div>
-
+ 
   {/* Main Hero Content (centered) */}
   <motion.div
     className="relative z-10 text-center max-w-6xl mx-auto px-4"
@@ -325,16 +325,16 @@ const visibleServices = services.slice(currentIndex, currentIndex + 5);
     >
       Global India Corporation
     </motion.h1>
-                 
+                      
     <motion.p 
-      className="text-xl md:text-2xl mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed"
+      className="text-xl md:text-2xl mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed italic"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.8 }}
     >
       Everything is Possible
     </motion.p>
-                 
+                      
     <div className="flex flex-col sm:flex-row gap-6 justify-center">
       <Link
         to="/services/electrical"
@@ -358,7 +358,7 @@ const visibleServices = services.slice(currentIndex, currentIndex + 5);
       <section className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white py-4 overflow-hidden border-y border-blue-700">
         <motion.div 
           animate={{ x: [-1000, 1000] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           className="whitespace-nowrap"
         >
           <span className="text-lg font-medium mx-8">⚡ Electrical Contracting Services</span>
@@ -395,7 +395,7 @@ const visibleServices = services.slice(currentIndex, currentIndex + 5);
           onClick={() => window.scrollTo(0, 0)}
           className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
         >
-          Learn More <ArrowRight className="h-5 w-5" />
+          Read More <ArrowRight className="h-5 w-5" />
         </Link>
       </motion.div>
        
@@ -462,7 +462,7 @@ const visibleServices = services.slice(currentIndex, currentIndex + 5);
               onClick={() => window.scrollTo(0, 0)}
               >
               <button className="group inline-flex items-center px-12 py-6 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xl rounded-none border-l-4 border-blue-400 transition-all duration-300 shadow-lg hover:shadow-xl">
-                Learn More Why GIC
+                Why GIC
                 <ArrowRight className="ml-4 h-6 w-6 group-hover:translate-x-2 transition-transform duration-300" />
               </button>
               </Link>

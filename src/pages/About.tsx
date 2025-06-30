@@ -605,7 +605,7 @@
                 </div>
 
                 <div className="border-l-4 border-blue-500 pl-6 bg-blue-50 py-4 rounded-r-lg">
-                  <div className="text-lg font-semibold text-gray-900">— [Your Full Name]</div>
+                  <div className="text-lg font-semibold text-gray-900">— Elavarasan K</div>
                   <div className="text-blue-600 font-medium">Founder & Managing Director</div>
                   <div className="text-gray-600">Global India Corporation</div>
                 </div>
