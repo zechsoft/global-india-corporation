@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useNavigate, useLocation } from 'react-router-dom'; // Add this import
 import { 
   Building,
   Mail, 
@@ -17,8 +18,12 @@ import {
   Wifi,
   Users
 } from 'lucide-react';
+import { useEffect } from 'react'; // Add this import
 
 export default function Footer() {
+  const navigate = useNavigate(); // Add this hook
+  const location = useLocation(); // Add this hook
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -61,13 +66,13 @@ export default function Footer() {
     // { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:text-red-600' }
   ];
 
-  // Enhanced function to handle navigation with top scrolling
+  // Enhanced function to handle navigation with React Router
   const handleNavigation = (href: string, isSection = false) => {
     if (isSection) {
       // Handle client section navigation
-      if (window.location.pathname !== '/') {
-        // Navigate to home page first
-        window.location.href = '/';
+      if (location.pathname !== '/') {
+        // Navigate to home page first, then scroll to clients section
+        navigate('/');
         // Use sessionStorage to remember we need to scroll to clients section
         sessionStorage.setItem('scrollToClients', 'true');
       } else {
@@ -81,18 +86,71 @@ export default function Footer() {
         }
       }
     } else {
-      // For regular page navigation
-      if (window.location.pathname === href) {
-        // Same page, just scroll to top
-        scrollToTop();
+      // Handle hash links (like #samsung, #kia, etc.)
+      if (href.includes('#')) {
+        const [path, hash] = href.split('#');
+        if (location.pathname === path) {
+          // Same page, just scroll to the section
+          const element = document.getElementById(hash);
+          if (element) {
+            element.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        } else {
+          // Different page, navigate and store hash for later scrolling
+          sessionStorage.setItem('scrollToHash', hash);
+          navigate(path);
+        }
       } else {
-        // Different page, navigate and scroll to top will happen automatically
-        // But we can add a flag to ensure it happens
-        sessionStorage.setItem('scrollToTop', 'true');
-        window.location.href = href;
+        // Regular page navigation
+        if (location.pathname === href) {
+          // Same page, just scroll to top
+          scrollToTop();
+        } else {
+          // Different page, navigate with React Router
+          navigate(href);
+          // Scroll to top after navigation
+          setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }, 100);
+        }
       }
     }
   };
+
+  // Effect to handle scrolling after navigation
+  useEffect(() => {
+    // Check if we need to scroll to clients section
+    if (sessionStorage.getItem('scrollToClients') === 'true') {
+      sessionStorage.removeItem('scrollToClients');
+      setTimeout(() => {
+        const clientsSection = document.getElementById('clients');
+        if (clientsSection) {
+          clientsSection.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    }
+    
+    // Check if we need to scroll to a hash section
+    const hashToScroll = sessionStorage.getItem('scrollToHash');
+    if (hashToScroll) {
+      sessionStorage.removeItem('scrollToHash');
+      setTimeout(() => {
+        const element = document.getElementById(hashToScroll);
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+    }
+  }, [location.pathname]); // Run when pathname changes
 
   // Function to handle quote request via Gmail
   const handleQuoteRequest = () => {
@@ -131,34 +189,6 @@ Best regards,
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=globalindiacorps@gmail.com&su=${subject}&body=${body}`;
     window.open(gmailUrl, '_blank');
   };
-
-  // Add effect to handle scrolling after page load (this would go in your main app component)
-  const handlePageLoad = () => {
-    // Check if we need to scroll to clients section
-    if (sessionStorage.getItem('scrollToClients') === 'true') {
-      sessionStorage.removeItem('scrollToClients');
-      setTimeout(() => {
-        const clientsSection = document.getElementById('clients');
-        if (clientsSection) {
-          clientsSection.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }, 100);
-    }
-    
-    // Check if we need to scroll to top
-    if (sessionStorage.getItem('scrollToTop') === 'true') {
-      sessionStorage.removeItem('scrollToTop');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
-  // You should call handlePageLoad in your main app component's useEffect
-  // useEffect(() => {
-  //   handlePageLoad();
-  // }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -216,9 +246,6 @@ Best regards,
                 </div>
               </div>
               
-              
-              
-
               {/* Contact Info */}
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-gray-300">
@@ -286,9 +313,6 @@ Best regards,
                   </li>
                 ))}
               </ul>
-
-              
-             
             </motion.div>
           </div>
 
