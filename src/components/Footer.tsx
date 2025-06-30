@@ -62,7 +62,7 @@ export default function Footer() {
   ];
 
   // Enhanced function to handle navigation with top scrolling
-  const handleNavigation = (href, isSection = false) => {
+  const handleNavigation = (href: string, isSection = false) => {
     if (isSection) {
       // Handle client section navigation
       if (window.location.pathname !== '/') {
