@@ -54,11 +54,11 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { name: 'Facebook', icon: Facebook, href: '#', color: 'hover:text-blue-600' },
-    { name: 'Twitter', icon: Twitter, href: '#', color: 'hover:text-blue-400' },
+    // { name: 'Facebook', icon: Facebook, href: '#', color: 'hover:text-blue-600' },
+    // { name: 'Twitter', icon: Twitter, href: '#', color: 'hover:text-blue-400' },
     { name: 'LinkedIn', icon: Linkedin, href: '#', color: 'hover:text-blue-700' },
-    { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:text-pink-600' },
-    { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:text-red-600' }
+    // { name: 'Instagram', icon: Instagram, href: '#', color: 'hover:text-pink-600' },
+    // { name: 'YouTube', icon: Youtube, href: '#', color: 'hover:text-red-600' }
   ];
 
   // Enhanced function to handle navigation with top scrolling
