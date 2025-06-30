@@ -92,7 +92,7 @@ export default function WhyGIC() {
   {/* Background Image */}
   <div className="absolute inset-0">
     <img 
-      src="public/assets/Images/Why choose GIc (1).PNG" 
+      src="/assets/Images/Why choose GIc (1).PNG" 
       alt="Global India Corporation Engineering Excellence"
       className="w-full h-full object-cover object-bottom opacity-80"
     />

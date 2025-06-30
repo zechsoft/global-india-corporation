@@ -185,8 +185,7 @@ export default function Services() {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section with Background Image */}
-// Add this import at the top of your component file
-// import ServicesImage from '/assets/Images/Services.PNG';
+
 
 <section className="relative py-32 overflow-hidden">
   {/* Background Image */}

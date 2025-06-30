@@ -40,7 +40,7 @@ export default function Contact() {
       <section className="py-40 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img
-            src="public\assets\Images\Contact us .PNG"
+            src="/assets/Images/Contact us .PNG"
             alt="Contact background"
             className="w-full h-full object-cover"
           />
