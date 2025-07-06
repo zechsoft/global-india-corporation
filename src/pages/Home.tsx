@@ -83,7 +83,7 @@ const featuredProjects = [
       id: "flsmidth-german"
     }
   ];
-  const handleProjectClick = (projectId) => {
+  const handleProjectClick = (projectId: string) => {
     // This would typically navigate to the project page
     console.log(`Navigating to project: ${projectId}`);
     // In a real application, you might use:
@@ -318,7 +318,7 @@ const visibleServices = services.slice(currentIndex, currentIndex + 5);
     transition={{ duration: 1.2 }}
   >
     <motion.h1 
-      className="text-4xl md:text-6xl font-bold mb-8 text-white leading-tight"
+      className="text-4xl md:text-7xl font-bold mb-8 text-white leading-tight"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5 }}
@@ -327,7 +327,7 @@ const visibleServices = services.slice(currentIndex, currentIndex + 5);
     </motion.h1>
                       
     <motion.p 
-      className="text-xl md:text-2xl mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed italic"
+      className="text-xl md:text-4xl mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed italic"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.8 }}

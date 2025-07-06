@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Filter, MapPin, Calendar, Award, TrendingUp, Building, Target, Clock } from 'lucide-react';
+import { Filter, MapPin, Calendar, TrendingUp, Building, Target, Clock } from 'lucide-react';
 
 // Counter animation hook
-const useCounter = (end, duration = 2000, start = 0) => {
+const useCounter = (end: unknown, duration = 2000, start = 0) => {
   const [count, setCount] = useState(start);
   
   useEffect(() => {
-    let startTime;
-    let animationFrame;
+    let startTime: number;
+    let animationFrame: number;
     
-    const animate = (timestamp) => {
+    const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = (timestamp - startTime) / duration;
       
@@ -138,70 +138,36 @@ export default function Projects() {
     }
   ];
 
-  const clients = [
-    { name: "Samsung", logo: "https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" },
-    { name: "Kia Motors", logo: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Kia_logo_%282021%29.svg" },
-    { name: "FLSmidth", logo: "https://upload.wikimedia.org/wikipedia/commons/6/6f/FLSmidth_logo.svg" },
-    { name: "HAEWON Engineering", logo: "https://via.placeholder.com/150x80?text=HAEWON" },
-    { name: "JUNGDO Engineering", logo: "https://via.placeholder.com/150x80?text=JUNGDO" },
-    { name: "SAMHO Construction", logo: "https://via.placeholder.com/150x80?text=SAMHO" },
-    { name: "DAEMYOUNG Engineering", logo: "https://via.placeholder.com/150x80?text=DAEMYOUNG" },
-    { name: "HYOJIN Engineering", logo: "https://via.placeholder.com/150x80?text=HYOJIN" },
-    { name: "NEW VISION Fire Safety", logo: "https://via.placeholder.com/150x80?text=NEW+VISION" }
-  ];
 
-  const testimonials = [
-    {
-      quote: "GIC has consistently delivered high-quality electrical and mechanical support for our operations. Their team is responsive, technically sound, and always meets deadlines with precision.",
-      author: "Samsung India Electronics"
-    },
-    {
-      quote: "We've partnered with GIC across multiple sites for HVAC and civil work. Their professionalism, safety standards, and trained workforce have made them a reliable extension of our project team.",
-      author: "Kia Motors India"
-    },
-    {
-      quote: "From manpower supply to IT infrastructure setup, GIC has proven to be a dependable partner. Their flexibility and ability to scale based on our site needs is impressive.",
-      author: "FLSmidth India"
-    },
-    {
-      quote: "The demolition project was handled with care, compliance, and zero disruption to ongoing site activities. GIC's execution was smooth, timely, and cost-effective.",
-      author: "HAEWON Engineering"
-    },
-    {
-      quote: "We trust GIC for their all-in-one approach — skilled manpower, technical execution, and commitment to safety. They bring valuable support to every phase of our projects.",
-      author: "JUNGDO Engineering"
-    }
-  ];
 
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section with Background Image */}
-      <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1080&fit=crop"
-            alt="Engineering projects background"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/80 to-blue-700/70"></div>
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center text-white"
-          >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Our Projects
-            </h1>
-            <p className="text-xl md:text-2xl max-w-4xl mx-auto opacity-90 leading-relaxed">
-              Proven Execution. Trusted by Industry Leaders. Showcasing our excellence across electrical, mechanical, civil, and IT domains.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
+      <section className="relative py-40 overflow-hidden">
+  <div className="absolute inset-0">
+    <img
+      src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1080&fit=crop"
+      alt="Engineering projects background"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/80 to-blue-700/70"></div>
+  </div>
+  
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="text-center text-white"
+    >
+      <h1 className="text-5xl md:text-7xl font-bold mb-6">
+        Our Projects
+      </h1>
+      <p className="text-xl md:text-2xl max-w-4xl mx-auto opacity-90 leading-relaxed">
+        Proven Execution. Trusted by Industry Leaders. Showcasing our excellence across electrical, mechanical, civil, and IT domains.
+      </p>
+    </motion.div>
+  </div>
+</section>
       {/* Enhanced Project Stats */}
       <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-6xl mx-auto px-4">

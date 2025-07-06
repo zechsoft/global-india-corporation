@@ -555,7 +555,7 @@
               >
                 <div className="relative">
                   <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=700&fit=crop"
+                    src="\assets\Images\Founder.png"
                     alt="Founder - Managing Director"
                     className="rounded-2xl shadow-2xl w-full"
                   />

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -14,7 +14,7 @@ export default function Contact() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     setIsSubmitting(true);
     
@@ -37,7 +37,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="py-40 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white relative overflow-hidden">
+      <section className="py-36 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img
             src="/assets/Images/Contact us .PNG"
