@@ -122,10 +122,12 @@
     ];
 
     const achievements = [
-      { number: '200+', label: 'Projects Completed', icon: CheckCircle },
-      { number: '500+', label: 'Team Members', icon: Users },
-      { number: '20+', label: 'Industrial Clients', icon: Globe },
-      { number: '₹50Cr+', label: 'Project Value', icon: TrendingUp }
+      { number: '8+', label: 'Years Excellence', icon: CheckCircle },
+      { number: '10+', label: 'Projects Delivered', icon: TrendingUp },
+      { number: '15+', label: 'Industrial Clients', icon: Globe },
+      { number: '1000+', label: 'Skilled Workers', icon: Users }
+      
+
     ];
 
     const values = [

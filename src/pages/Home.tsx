@@ -14,9 +14,9 @@ export default function Home() {
 
   
 const services = [
-  { 
-    title: 'Electrical Services', 
-    icon: Zap, 
+  {
+    title: 'Electrical Services',
+    icon: Zap,
     desc: 'Reliable, safe, and efficient electrical contracting services for industrial and commercial projects',
     features: ['HT/LT Cable Laying & Termination', 'Transformer Installation', 'Panel Installation & Wiring'],
     image: '/assets/Images/Main Page Section Images/Services Section/Electrical Services N.png',
@@ -24,9 +24,9 @@ const services = [
     growth: '+35%',
     serviceType: 'electrical' // This matches the :serviceType parameter
   },
-  { 
-    title: 'Mechanical & HVAC', 
-    icon: Cog, 
+  {
+    title: 'Mechanical & HVAC',
+    icon: Cog,
     desc: 'Expert mechanical services with strong specialization in HVAC systems',
     features: ['Equipment & Machinery Installation', 'Chiller Systems & Ductless Units','Dust Collection & Exhaust Systems'],
     image: '/assets/Images/Main Page Section Images/Services Section/Mechanical & HVAC N.png',
@@ -34,19 +34,19 @@ const services = [
     growth: '+40%',
     serviceType: 'mechanical' // This matches the :serviceType parameter
   },
-  { 
-    title: 'Civil & Demolition', 
-    icon: Building, 
+  {
+    title: 'Civil & Demolition',
+    icon: Building,
     desc: 'Targeted civil construction support and controlled demolition solutions',
-    features: ['Foundation Work', 'Safe Dismantling & Demolition', 'Concrete Breaking & Flooring'],
+    features: ['Foundation Work', 'Safe Dismantling & Demolition', 'Concrete Breaking & Flooring'],
     image: '/assets/Images/Main Page Section Images/Services Section/Civil & Demolition N.png',
     projects: '75+',
     growth: '+30%',
     serviceType: 'civil' // This matches the :serviceType parameter
   },
-  { 
-    title: 'IT & Networking', 
-    icon: Globe, 
+  {
+    title: 'IT & Networking',
+    icon: Globe,
     desc: 'Secure, scalable, and high-performance IT infrastructure solutions',
     features: ['Structured Network Cabling', 'Server Installation & Power Management', 'Smart Surveillance & Monitoring'],
     image: '/assets/Images/Main Page Section Images/Services Section/Electrical Services N.png',
@@ -54,15 +54,26 @@ const services = [
     growth: '+50%',
     serviceType: 'it' // This matches the :serviceType parameter
   },
-  { 
-    title: 'Manpower Supply', 
-    icon: Users, 
+  {
+    title: 'Manpower Supply',
+    icon: Users,
     desc: 'Skilled and semi-skilled manpower across all engineering disciplines',
-    features: ['Engineers & Supervisors', 'Electricians, Fitters & HVAC Technicians', 'Welders, Riggers & Helpers'],
+    features: ['Engineers & Supervisors', 'Electricians, Fitters & HVAC Technicians', 'Welders, Riggers & Helpers'],
     image: '/assets/Images/Main Page Section Images/Services Section/Manpower Supply N.png',
     projects: '200+',
     growth: '+25%',
     serviceType: 'manpower' // This matches the :serviceType parameter
+  },
+  
+  {
+    title: 'Industrial Surveillance',
+    icon: Eye, // You'll need to import Eye from lucide-react or use another appropriate icon
+    desc: 'We provide high-quality CCTV camera systems and monitoring infrastructure',
+    features: ['Centralized Monitoring & Recording Systems', 'IP & Analog Camera Setup', 'Motion Detection & Alert Integration'],
+    image: '/assets/Images/Main Page Section Images/Services Section/Servi.png', // You'll need to add this image
+    projects: '45+',
+    growth: '+60%',
+    serviceType: 'surveillance' // This matches the :serviceType parameter
   }
 ];
 const featuredProjects = [
@@ -102,12 +113,12 @@ const prevSlide = () => {
   );
 };
 
-const visibleServices = services.slice(currentIndex, currentIndex + 5);
+const visibleServices = services.slice(currentIndex, currentIndex + 6);
 
   const stats = [
     { number: '8+', label: 'Years Excellence', icon: Award, desc: 'Since 2016' },
-    { number: '300+', label: 'Projects Delivered', icon: Building, desc: 'Across India' },
-    { number: '50+', label: 'Enterprise Clients', icon: Users, desc: 'Including Fortune 500' },
+    { number: '10+', label: 'Projects Delivered', icon: Building, desc: 'Across India' },
+    { number: '15+', label: 'Enterprise Clients', icon: Users, desc: 'Including Fortune 500' },
     { number: '1000+', label: 'Skilled Workers', icon: Users, desc: 'Trained Professionals' }
   ];
 
@@ -266,7 +277,7 @@ const visibleServices = services.slice(currentIndex, currentIndex + 5);
         desc: 'HT/LT Cable Laying • Transformer Installation • Panel Wiring'
       },
       {
-        url: '/assets/Images/Home Page Images/2.png',
+        url: '/assets/Images/Home Page Images/11.png',
         title: 'Mechanical & HVAC',
         desc: 'Chiller Systems • Sheet Metal Fabrication • Equipment Installation'
       },

@@ -11,7 +11,11 @@ const clients = [
   { name: 'DAEMYOUNG Engineering', logo: '/assets/Images/Client/Client logo4.png', sector: 'Engineering' },
   { name: 'HYOJIN Engineering', logo: '/assets/Images/Client/Client logo5.png', sector: 'Engineering' },
   { name: 'NEW VISION Fire Safety', logo: '/assets/Images/Client/FLSmidth.png', sector: 'Safety' },
-  { name: 'NEW VISION Fire Safety', logo: '/assets/Images/Client/Thermax_logo.svg.png', sector: 'Safety' }
+  { name: 'NEW VISION Fire Safety', logo: '/assets/Images/Client/Thermax_logo.svg.png', sector: 'Safety' },
+  { name: 'HAEWON ENGINEERING INDIA PVT LTD', logo: '/assets/Images/Client/Client log1.png', sector: 'Engineering' },
+  { name: 'NEW VISION FIRE SAFETY LLP', logo: '/assets/Images/Client/Client log2.png', sector: 'Engineering' },
+  { name: 'HYOJIN ENGINEERING', logo: '/assets/Images/Client/log3.png', sector: 'Safety' },
+  { name: 'SUNGWON ENGINEERING INDIA LLP', logo: '/assets/Images/Client/log4.svg.png', sector: 'Safety' }
 ];
 
 export default function ClientCarousel() {

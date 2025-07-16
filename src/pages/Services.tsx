@@ -12,7 +12,9 @@ import {
   CheckCircle,
   Phone,
   Mail,
-  MapPin
+  MapPin,
+  CameraIcon
+
 } from 'lucide-react';
 
 export default function Services() {
@@ -169,6 +171,37 @@ export default function Services() {
       ],
       image: '/assets/Images/Main Page Section Images/Services Section/Manpower Supply N.png', // Fixed: Added leading slash
       stats: { personnel: '500+', clients: '30+', retention: '95%' }
+    },
+    {
+      title: 'Industrial Surveillance Solutions',
+      slug: 'surveillance',
+       icon: CameraIcon,
+       // Make sure to import Camera from lucide-react
+      description: 'High-quality CCTV camera systems and monitoring infrastructure ',
+      features: [
+        'CCTV System Design & Installation',
+        'IP & Analog Camera Setup',
+        'Centralized Monitoring Systems',
+        'Motion Detection & Alert Systems',
+        'Remote Access & Mobile Monitoring',
+        'Maintenance & AMC Support',
+        'Video Wall Integration',
+        'Cloud Backup Solutions',
+        'Intrusion Detection Systems',
+        'Multi-site Viewing Capabilities',
+        'High-Definition Recording',
+        '24/7 Monitoring Solutions'
+      ],
+      projects: [
+        'Factory Surveillance Systems',
+        'Warehouse Security Installation',
+        'Office Building CCTV',
+        'Industrial Plant Monitoring',
+        'Utility Area Surveillance',
+        'Multi-site Security Solutions'
+      ],
+      image: '/assets/Images/Main Page Section Images/Services Section/servi.png',
+      stats: { installations: '75+', uptime: '99.8%', clients: '22+' }
     }
   ];
 

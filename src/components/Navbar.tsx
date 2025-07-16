@@ -295,7 +295,7 @@ export default function Navbar() {
           >
             <div className="relative">
               <motion.div
-                className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg overflow-hidden"
+                className="w-17 h-16 rounded-xl flex items-center justify-center shadow-lg overflow-hidden"
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
               >

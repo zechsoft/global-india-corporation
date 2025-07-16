@@ -42,56 +42,86 @@ export default function Projects() {
 
   const projects = [
     {
-      title: 'Samsung Display Center - Noida',
+      title: 'Samsung India Electronics Pvt Ltd (Korean Vendors)',
       category: 'Electrical',
       location: 'Noida, Uttar Pradesh',
-      year: '2020',
+      year: '2018- 2020',
       status: 'Completed',
       image: '/assets/Images/Key Completed Projects/Samsung display Noida-Plant-Pict n.jpg',
       value: '₹15 Crores'
     },
     {
-      title: 'Samsung India Electronics Projects',
+      title: 'Samsung india electronics Pvt Ltd (Korean Vendors)',
       category: 'Electrical',
-      location: 'Noida & Chennai',
-      year: '2019-2022',
+      location: ' Chennai Tamil Nadu',
+      year: '2021-2023',
       status: 'Completed',
       image: '/assets/Images/Key Completed Projects/samsung-electronics-1 N.jpg',
       description: 'Electrical and IT networking support, manpower supply, and on-site engineering assistance for multiple projects.',
       value: '₹25 Crores'
     },
     {
-      title: 'Kia Motors India - Penukonda',
+      title: 'Samsung india electronics Pvt Ltd (Korean Vendors)',
+      category: 'Electrical',
+      location: ' Chennai Tamil Nadu',
+      year: '2016',
+      status: 'Ongoing',
+      image: '/assets/Images/Key Completed Projects/samsung-electronics-1 N.jpg',
+      description: 'Electrical and IT networking support, manpower supply, and on-site engineering assistance for multiple projects.',
+      value: '₹25 Crores'
+    },
+    {
+      title: 'Kia Motors India (Korean Vendors)',
       category: 'Mechanical & HVAC',
       location: 'Penukonda, Andhra Pradesh',
-      year: '2021',
+      year: '2019 – 2021',
       status: 'Completed',
       image: '/assets/Images/Key Completed Projects/Kia.avif',
       description: 'Industrial electrical works, HVAC installation, and manpower support for Korean vendor operations.',
       value: '₹18 Crores'
     },
     {
-      title: 'FLSmidth Plant Systems',
+      title: 'FLSmidth',
       category: 'Mechanical & HVAC',
-      location: 'Multiple Locations',
-      year: '2022',
+      location: 'A German company',
+      year: '2019',
       status: 'Completed',
       image: 'https://images.unsplash.com/photo-1581093057305-409e0ff73cee?w=600&h=400&fit=crop',
       description: 'On-site manpower deployment and mechanical service support for plant systems and industrial assembly.',
       value: '₹12 Crores'
     },
     {
-      title: 'Korean Vendor Projects',
+      title: 'Hyundai Motors India Pvt (Korean Vendors)',
       category: 'Civil & Demolition',
-      location: 'Multiple Locations',
-      year: '2021-2023',
-      status: 'Completed',
+      location: 'Chennai Tamil Nadu',
+      year: '2024 March',
+      status: 'Ongoing',
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop',
+      description: 'Full-service contracting support for HAEWON, JUNGDO, SAMHO, DAEMYOUNG, HYOJIN, and NEW VISION Fire Safety.',
+      value: '₹30 Crores'
+    },
+     {
+      title: 'Hyundai Motors India Pvt (Korean Vendors)',
+      category: 'Civil & Demolition',
+      location: 'Pune',
+      year: '2024 May',
+      status: 'Ongoing',
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop',
       description: 'Full-service contracting support for HAEWON, JUNGDO, SAMHO, DAEMYOUNG, HYOJIN, and NEW VISION Fire Safety.',
       value: '₹30 Crores'
     },
     {
-      title: 'Industrial IT Infrastructure',
+      title: 'Blue Star Limited Maharashtra',
+      category: 'IT & Networking',
+      location: 'Chennai, Tamil Nadu',
+      year: '2023',
+      status: 'Ongoing',
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
+      description: 'Structured network cabling, server installation, and smart surveillance systems for industrial facility.',
+      value: '₹8 Crores'
+    },
+    {
+      title: 'Foxconn Hon Technology India',
       category: 'IT & Networking',
       location: 'Chennai, Tamil Nadu',
       year: '2023',
@@ -107,38 +137,37 @@ export default function Projects() {
     : projects.filter(project => project.category === activeFilter);
 
   const stats = [
+   
     {
+      icon: TrendingUp,
+      number: 8,
+      suffix: "+ ",
+      prefix: "",
+      label: "Years Excellence",
+      color: "from-green-500 to-green-600"
+    },
+     {
       icon: Building,
-      number: 50,
+      number: 10,
       suffix: "+",
       label: "Projects Completed",
       color: "from-blue-500 to-blue-600"
     },
     {
-      icon: TrendingUp,
-      number: 100,
-      suffix: "+ Cr",
-      prefix: "₹",
-      label: "Total Project Value",
-      color: "from-green-500 to-green-600"
-    },
-    {
       icon: Target,
-      number: 10,
+      number: 15,
       suffix: "+",
-      label: "Cities Covered",
+      label: "Clients",
       color: "from-purple-500 to-purple-600"
     },
     {
       icon: Clock,
-      number: 98,
-      suffix: "%",
-      label: "On-time Delivery",
+      number: 1000,
+      suffix: "+",
+      label: "skilled workers",
       color: "from-orange-500 to-orange-600"
     }
   ];
-
-
 
   return (
     <div className="min-h-screen pt-16">

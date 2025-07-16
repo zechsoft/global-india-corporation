@@ -72,9 +72,10 @@ export default function WhyGIC() {
 
   const stats = [
     { number: '2016', label: 'Year Established', sublabel: 'Years of Excellence' },
-    { number: '100+', label: 'Projects Completed', sublabel: 'Successful Deliveries' },
-    { number: '50+', label: 'Skilled Engineers', sublabel: 'Expert Team Members' },
-    { number: '24/7', label: 'Support Available', sublabel: 'Round-the-Clock Service' }
+    { number: '10+', label: 'Projects Completed', sublabel: 'Successful Deliveries' },
+    { number: '15+', label: 'Enterprise Clients', sublabel: 'Round-the-Clock Service' },
+    { number: '100+', label: 'Skilled Engineers', sublabel: 'Expert Team Members' }
+    
   ];
 
   const keyPoints = [
