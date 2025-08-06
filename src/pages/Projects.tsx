@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Filter, MapPin, Calendar, TrendingUp, Building, Target, Clock } from 'lucide-react';
+import { Filter, MapPin, Calendar, TrendingUp, Building, Target, Clock, Image, Camera } from 'lucide-react';
 
 // Counter animation hook
-const useCounter = (end: unknown, duration = 2000, start = 0) => {
+const useCounter = (end, duration = 2000, start = 0) => {
   const [count, setCount] = useState(start);
   
   useEffect(() => {
-    let startTime: number;
-    let animationFrame: number;
+    let startTime;
+    let animationFrame;
     
-    const animate = (timestamp: number) => {
+    const animate = (timestamp) => {
       if (!startTime) startTime = timestamp;
       const progress = (timestamp - startTime) / duration;
       
@@ -35,6 +35,33 @@ const AnimatedCounter = ({ end, suffix = "", prefix = "", duration = 2000 }) => 
   return <span>{prefix}{count}{suffix}</span>;
 };
 
+// Image placeholder component with icon
+const ImagePlaceholder = ({ category, alt }) => {
+  const getGradientByCategory = (category) => {
+    switch (category) {
+      case 'Electrical':
+        return 'from-yellow-400 to-orange-500';
+      case 'Mechanical & HVAC':
+        return 'from-blue-400 to-indigo-500';
+      case 'Civil & Demolition':
+        return 'from-gray-400 to-gray-600';
+      case 'IT & Networking':
+        return 'from-green-400 to-emerald-500';
+      default:
+        return 'from-purple-400 to-pink-500';
+    }
+  };
+
+  return (
+    <div className={`w-full h-48 bg-gradient-to-br ${getGradientByCategory(category)} flex items-center justify-center`}>
+      <div className="text-center text-white">
+        <Image className="h-16 w-16 mx-auto mb-2 opacity-80" />
+        <p className="text-sm font-medium opacity-90">{category}</p>
+      </div>
+    </div>
+  );
+};
+
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
 
@@ -48,7 +75,8 @@ export default function Projects() {
       year: '2018- 2020',
       status: 'Completed',
       image: '/assets/Images/Key Completed Projects/Samsung display Noida-Plant-Pict n.jpg',
-      value: '₹15 Crores'
+      value: '₹15 Crores',
+      useLocalImage: true
     },
     {
       title: 'Samsung india electronics Pvt Ltd (Korean Vendors)',
@@ -58,7 +86,8 @@ export default function Projects() {
       status: 'Completed',
       image: '/assets/Images/Key Completed Projects/samsung-electronics-1 N.jpg',
       description: 'Electrical and IT networking support, manpower supply, and on-site engineering assistance for multiple projects.',
-      value: '₹25 Crores'
+      value: '₹25 Crores',
+      useLocalImage: true
     },
     {
       title: 'Samsung india electronics Pvt Ltd (Korean Vendors)',
@@ -68,7 +97,8 @@ export default function Projects() {
       status: 'Ongoing',
       image: '/assets/Images/Key Completed Projects/samsung-electronics-1 N.jpg',
       description: 'Electrical and IT networking support, manpower supply, and on-site engineering assistance for multiple projects.',
-      value: '₹25 Crores'
+      value: '₹25 Crores',
+      useLocalImage: true
     },
     {
       title: 'Kia Motors India (Korean Vendors)',
@@ -78,7 +108,8 @@ export default function Projects() {
       status: 'Completed',
       image: '/assets/Images/Key Completed Projects/Kia.avif',
       description: 'Industrial electrical works, HVAC installation, and manpower support for Korean vendor operations.',
-      value: '₹18 Crores'
+      value: '₹18 Crores',
+      useLocalImage: true
     },
     {
       title: 'FLSmidth',
@@ -88,7 +119,8 @@ export default function Projects() {
       status: 'Completed',
       image: 'https://images.unsplash.com/photo-1581093057305-409e0ff73cee?w=600&h=400&fit=crop',
       description: 'On-site manpower deployment and mechanical service support for plant systems and industrial assembly.',
-      value: '₹12 Crores'
+      value: '₹12 Crores',
+      useLocalImage: false
     },
     {
       title: 'Hyundai Motors India Pvt (Korean Vendors)',
@@ -98,7 +130,8 @@ export default function Projects() {
       status: 'Ongoing',
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop',
       description: 'Full-service contracting support for HAEWON, JUNGDO, SAMHO, DAEMYOUNG, HYOJIN, and NEW VISION Fire Safety.',
-      value: '₹30 Crores'
+      value: '₹30 Crores',
+      useLocalImage: false
     },
      {
       title: 'Hyundai Motors India Pvt (Korean Vendors)',
@@ -108,7 +141,8 @@ export default function Projects() {
       status: 'Ongoing',
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop',
       description: 'Full-service contracting support for HAEWON, JUNGDO, SAMHO, DAEMYOUNG, HYOJIN, and NEW VISION Fire Safety.',
-      value: '₹30 Crores'
+      value: '₹30 Crores',
+      useLocalImage: false
     },
     {
       title: 'Blue Star Limited Maharashtra',
@@ -118,7 +152,8 @@ export default function Projects() {
       status: 'Ongoing',
       image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
       description: 'Structured network cabling, server installation, and smart surveillance systems for industrial facility.',
-      value: '₹8 Crores'
+      value: '₹8 Crores',
+      useLocalImage: false
     },
     {
       title: 'Foxconn Hon Technology India',
@@ -128,7 +163,8 @@ export default function Projects() {
       status: 'Ongoing',
       image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
       description: 'Structured network cabling, server installation, and smart surveillance systems for industrial facility.',
-      value: '₹8 Crores'
+      value: '₹8 Crores',
+      useLocalImage: false
     }
   ];
 
@@ -291,11 +327,27 @@ export default function Projects() {
                 className="bg-white rounded-lg shadow-lg overflow-hidden group cursor-pointer"
               >
                 <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
+                  {project.useLocalImage ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                      onError={(e) => {
+                        // Fallback to icon if local image fails to load
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                  ) : null}
+                  
+                  {/* Icon placeholder - shown by default for non-local images or as fallback */}
+                  <div 
+                    className={`${project.useLocalImage ? 'hidden' : 'flex'}`}
+                    style={{ display: project.useLocalImage ? 'none' : 'flex' }}
+                  >
+                    <ImagePlaceholder category={project.category} alt={project.title} />
+                  </div>
+                  
                   <div className="absolute top-4 right-4">
                     <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                       project.status === 'Completed' 
@@ -305,7 +357,6 @@ export default function Projects() {
                       {project.status}
                     </span>
                   </div>
-                 
                 </div>
                 
                 <div className="p-6">
@@ -325,7 +376,6 @@ export default function Projects() {
                       <Calendar className="h-4 w-4" />
                       <span>{project.year}</span>
                     </div>
-                    
                   </div>
                 </div>
               </motion.div>
@@ -333,15 +383,6 @@ export default function Projects() {
           </motion.div>
         </div>
       </section>
-
-      {/* Clients Section */}
-     
-
-      {/* Testimonials Section */}
-     
-
-      {/* CTA Section */}
-     
     </div>
   );
 }
